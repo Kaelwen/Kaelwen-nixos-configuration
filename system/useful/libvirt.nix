@@ -1,0 +1,30 @@
+{ pkgs, ... }:
+{
+  programs.virt-manager.enable = true;
+  users.users.binigo = {
+    isNormalUser = true;
+    extraGroups = [
+      "libvirtd"
+      "kvm"
+    ];
+  };
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      runAsRoot = true;
+      swtpm.enable = true;
+      vhostUserPackages = with pkgs; [
+        virtiofsd
+        virtio-win
+        virglrenderer
+      ];
+    };
+  };
+
+  boot.extraModprobeConfig = "options kvm-intel nested=1";
+
+  # virtualisation.libvirtd.extraConfig = "uri_default = \"qemu:///system\"";
+
+  virtualisation.spiceUSBRedirection.enable = true;
+}
