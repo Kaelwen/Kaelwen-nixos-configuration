@@ -14,23 +14,24 @@
   home-manager.users."binigo" = {
     imports = [
       ./dotfiles.nix
+      ./swayidle.nix
+      ./waypaper.nix
+      ./mako.nix
+      ./vicinae.nix
+      ./waybar.nix
     ];
+    xresources.properties = {
+      "Xft.dpi" = 144;
+    };
+
   };
   environment.systemPackages = with pkgs; [
     pwvucontrol
     brightnessctl
     loupe
     xwayland-satellite
-    nemo-with-extensions
-    # nautilus
+    nautilus
     file-roller
-    nmgui
-    waybar
-    # fuzzel
-    mako
-    swayidle
-    swaybg
-    vicinae
   ];
 
   programs = {
@@ -65,6 +66,5 @@
     autostart.enable = true;
     icons.fallbackCursorThemes = [ "Bibata-Modern-Classic" ];
   };
-  services.xserver.dpi = 120;
   services.acpid.enable = true;
 }
