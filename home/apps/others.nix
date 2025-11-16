@@ -12,8 +12,8 @@
     filezilla
     # openssh
     # ffmpeg
-    obsidian
-    # typora
+    # obsidian
+    typora
     # cherry-studio
     (bottles.override {
       removeWarningPopup = true;

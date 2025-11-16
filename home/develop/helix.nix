@@ -5,7 +5,10 @@
 }:
 
 {
-  home.packages = [ pkgs.nixd ];
+  home.packages = with pkgs; [
+    nixd
+    llvmPackages_21.clang-tools
+  ];
 
   programs.helix = {
     enable = true;
@@ -28,16 +31,67 @@
           ];
         }
         {
+          name = "c";
+          auto-format = true;
+          formatter.command = "clang-format";
+          language-servers = [
+            "clangd"
+          ];
+        }
+        {
+          name = "cpp";
+          auto-format = true;
+          formatter.command = "clang-format";
+          language-servers = [
+            "clangd"
+          ];
+        }
+        {
           name = "python";
           auto-format = true;
           language-servers = [
             "pylsp"
           ];
         }
+        {
+          name = "rust";
+          auto-format = true;
+          language-servers = [
+            "rust-analyzer"
+          ];
+        }
+        {
+          name = "go";
+          auto-format = true;
+          language-servers = [
+            "gopls"
+          ];
+        }
+        {
+          name = "vue";
+          auto-format = true;
+          language-servers = [
+            "vue-language-server"
+            "tailwindcss-language-server"
+            "typescript-language-server"
+          ];
+        }
+        {
+          name = "typescript";
+          auto-format = true;
+          language-servers = [
+            "typescript-language-server"
+          ];
+        }
       ];
       language-server = {
         nixd.command = lib.getExe pkgs.nixd;
         pylsp.command = lib.getExe pkgs.python312Packages.python-lsp-server;
+        rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
+        gopls.command = lib.getExe pkgs.gopls;
+        vue-language-server.command = lib.getExe pkgs.vue-language-server;
+        typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
+        tailwindcss-language-server.command = lib.getExe pkgs.tailwindcss-language-server;
       };
     };
 
