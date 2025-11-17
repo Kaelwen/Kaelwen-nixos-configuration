@@ -13,16 +13,12 @@
           font-family: "Iosevka Nerd Font Propo";
           font-weight: 500;
           font-size: 14px;
-          border-radius: 18px;
           text-shadow: none;
           transition: background 0.2s ease, color 0.2s ease;
       }
 
       window#waybar {
           background-color: alpha(@base00, 0.92);
-          padding: 4px 10px;
-          border-top-left-radius: 6px;
-          border-top-right-radius: 6px;
           border-bottom: none;
           font-family: inherit;
       }
@@ -31,7 +27,7 @@
       .modules-center,
       .modules-right {
           background: transparent;
-          padding: 0 6px;
+          padding: 0;
           margin: 0;
       }
 
@@ -64,10 +60,10 @@
       #wireplumber,
       #wlr-taskbar,
       #clock {
-          border-radius: 10px;
+          border-radius: 16px;
           color: @base07;
-          padding: 0px 4px;
-          margin: 8px 2px;
+          padding: 0px 5px;
+          margin: 5px 4px;
       }
 
       #battery { color: @base0C; }
@@ -99,4 +95,3 @@
     '';
   };
 }
-

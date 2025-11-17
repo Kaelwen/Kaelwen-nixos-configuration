@@ -26,12 +26,15 @@
 
   };
   environment.systemPackages = with pkgs; [
-    pwvucontrol
+    # pwvucontrol
     brightnessctl
     loupe
     xwayland-satellite
     nautilus
     file-roller
+    yazi
+    nmgui
+    easyeffects
   ];
 
   programs = {
