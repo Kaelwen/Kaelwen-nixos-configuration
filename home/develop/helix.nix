@@ -83,6 +83,14 @@
             "typescript-language-server"
           ];
         }
+        {
+          name = "markdown";
+          auto-format = true;
+          formatter.command = lib.getExe pkgs.dprint;
+          language-servers = [
+            "marksman"
+          ];
+        }
       ];
       language-server = {
         nixd.command = lib.getExe pkgs.nixd;
@@ -92,6 +100,7 @@
         vue-language-server.command = lib.getExe pkgs.vue-language-server;
         typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
         tailwindcss-language-server.command = lib.getExe pkgs.tailwindcss-language-server;
+        marksman.command = lib.getExe pkgs.marksman;
       };
     };
 

@@ -21,8 +21,8 @@
       loupe # 图片查看器
       gnome-text-editor # 文本编辑器
       showtime
-      # evince
-      papers
+      evince
+      # papers
     ]
     ++ (with gnomeExtensions; [
       appindicator # 系统托盘

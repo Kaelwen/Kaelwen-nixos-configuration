@@ -1,6 +1,6 @@
-spawn-at-startup "waypaper" "--restore"
+// spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "fcitx5" "-d"
-
+spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
 // spawn-sh-at-startup "wl-paste --watch cliphist store &"
 
 prefer-no-csd
@@ -250,11 +250,38 @@ binds {
     Mod+8       { focus-workspace 8; }
     Mod+9       { focus-workspace 9; }
 
-    Mod+Alt+L   hotkey-overlay-title="锁屏" repeat=false { spawn "gtklock"; }
+    Mod+Alt+L   hotkey-overlay-title="锁屏" repeat=false { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+C hotkey-overlay-title="打开剪切板"      repeat=false    { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Mod+D hotkey-overlay-title="打开搜索"        repeat=false    { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+T hotkey-overlay-title="打开终端" repeat=false { spawn "kitty"; }
+    XF86AudioLowerVolume  allow-when-locked=true  { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMicMute      allow-when-locked=true  { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioMute         allow-when-locked=true  { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioRaiseVolume  allow-when-locked=true  { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86MonBrightnessDown allow-when-locked=true  { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86MonBrightnessUp   allow-when-locked=true  { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    Mod+Ctrl+R  hotkey-overlay-title="随机壁纸"   { spawn "noctalia-shell" "ipc" "call" "wallpaper" "random"; }
+
+
+    
+    // Mod+Alt+L   hotkey-overlay-title="锁屏" repeat=false { spawn "gtklock"; }
+    // Mod+C hotkey-overlay-title="打开剪切板"      repeat=false    { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    // Mod+D hotkey-overlay-title="打开搜索"        repeat=false    { spawn "vicinae" "toggle"; }
+    // Mod+T hotkey-overlay-title="打开终端" repeat=false { spawn "kitty"; }
+    // XF86AudioLowerVolume  allow-when-locked=true  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    // XF86AudioMicMute      allow-when-locked=true  { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    // XF86AudioMute         allow-when-locked=true  { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    // XF86AudioRaiseVolume  allow-when-locked=true  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    // XF86MonBrightnessDown allow-when-locked=true  { spawn "brightnessctl" "set" "5%-"; }
+    // XF86MonBrightnessUp   allow-when-locked=true  { spawn "brightnessctl" "set" "5%+"; }
+    // Mod+Ctrl+R  hotkey-overlay-title="随机壁纸"          { spawn "waypaper" "--random"; }
+
+
+
+
 
     Mod+Ctrl+C  hotkey-overlay-title="将窗口移至中央"    { center-column; }
     Mod+Ctrl+F  hotkey-overlay-title="使窗口悬浮"        { toggle-window-floating; }
-    Mod+Ctrl+R  hotkey-overlay-title="随机壁纸"          { spawn "waypaper" "--random"; }
 
     Mod+Ctrl+K     hotkey-overlay-title="上移窗口"    { move-window-up; }
     Mod+Ctrl+Up    hotkey-overlay-title="上移窗口"    { move-window-up; }
@@ -270,9 +297,7 @@ binds {
 
     Mod+Ctrl+Page_Down hotkey-overlay-title="窗口移至下一工作区"  { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   hotkey-overlay-title="窗口移至上一工作区"  { move-column-to-workspace-up; }
-
-    Mod+C hotkey-overlay-title="打开剪切板"      repeat=false    { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
-    Mod+D hotkey-overlay-title="打开搜索"        repeat=false    { spawn "vicinae" "toggle"; }
+    
     Mod+F hotkey-overlay-title="窗口最大化"                      { maximize-column; }
     Mod+Q hotkey-overlay-title="关闭窗口"        repeat=false    { close-window; }
     Mod+R hotkey-overlay-title="更改窗口大小"                    { switch-preset-column-width; }
@@ -339,21 +364,12 @@ binds {
     Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-column-right; }
     Mod+Shift+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
 
-    Mod+T hotkey-overlay-title="打开终端" repeat=false { spawn "kitty"; }
 
     Mod+WheelScrollDown  cooldown-ms=150  { focus-workspace-down; }
     Mod+WheelScrollLeft  cooldown-ms=150  { focus-column-left; }
     Mod+WheelScrollRight cooldown-ms=150  { focus-column-right; }
     Mod+WheelScrollUp    cooldown-ms=150  { focus-workspace-up; }
-
-
-
-    XF86AudioLowerVolume  allow-when-locked=true  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMicMute      allow-when-locked=true  { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86AudioMute         allow-when-locked=true  { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioRaiseVolume  allow-when-locked=true  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86MonBrightnessDown allow-when-locked=true  { spawn "brightnessctl" "set" "5%-"; }
-    XF86MonBrightnessUp   allow-when-locked=true  { spawn "brightnessctl" "set" "5%+"; }
+    
 }
 
 switch-events {

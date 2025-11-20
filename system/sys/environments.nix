@@ -18,7 +18,7 @@
     ]
     ++ (with my-pkgs; [
       # qq
-      #wpsoffice
+      # wpsoffice
     ]);
   programs.nix-ld.enable = true;
 

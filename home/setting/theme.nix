@@ -8,10 +8,10 @@
 
   gtk = {
     enable = true;
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
-    };
+    # iconTheme = {
+    # package = pkgs.papirus-icon-theme;
+    # name = "Papirus-Dark";
+    # };
     # theme = {
     #   package = pkgs.catppuccin-gtk;
     #   name = "Catppuccin-Mocha";

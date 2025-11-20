@@ -94,17 +94,17 @@
           panelsAttachedToBar = true;
           panelsOverlayLayer = false;
         };
-        # location = {
-        #   name = "Tokyo";
-        #   weatherEnabled = true;
-        #   useFahrenheit = false;
-        #   use12hourFormat = false;
-        #   showWeekNumberInCalendar = false;
-        #   showCalendarEvents = true;
-        #   showCalendarWeather = true;
-        #   analogClockInCalendar = false;
-        #   firstDayOfWeek = -1;
-        # };
+        location = {
+          name = "Xiamen";
+          weatherEnabled = true;
+          useFahrenheit = false;
+          use12hourFormat = false;
+          showWeekNumberInCalendar = false;
+          showCalendarEvents = true;
+          showCalendarWeather = true;
+          analogClockInCalendar = false;
+          firstDayOfWeek = -1;
+        };
         screenRecorder = {
           directory = "~/视频/屏幕记录/";
           frameRate = 60;
@@ -118,7 +118,7 @@
         };
         wallpaper = {
           enabled = true;
-          overviewEnabled = true;
+          overviewEnabled = false;
           directory = "~/图片/壁纸/";
           enableMultiMonitorDirectories = false;
           recursiveSearch = false;
@@ -135,7 +135,7 @@
           panelPosition = "follow_bar";
         };
         appLauncher = {
-          enableClipboardHistory = false;
+          enableClipboardHistory = true;
           position = "center";
           backgroundOpacity = 1;
           pinnedExecs = [ ];
@@ -190,10 +190,10 @@
               enabled = true;
               id = "audio-card";
             }
-            # {
-            #   enabled = true;
-            #   id = "weather-card";
-            # }
+            {
+              enabled = true;
+              id = "weather-card";
+            }
             {
               enabled = true;
               id = "media-sysmon-card";
