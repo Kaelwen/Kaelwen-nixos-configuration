@@ -8,7 +8,7 @@
     # ./apps.nix
     ./sudo.nix
     ./stylix.nix
-    #./waydroid.nix
+    ./waydroid.nix
 
     # ./direnv.nix
   ];

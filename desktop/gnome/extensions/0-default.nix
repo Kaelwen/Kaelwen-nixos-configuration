@@ -7,7 +7,7 @@
     ./transparent-top-bar.nix
     ./caffeine.nix
     ./clipboard-history.nix
-    ./blur-my-shell.nix
+    # ./blur-my-shell.nix
     ./kimpanel.nix
     ./appindicator.nix
     # ./unite.nix

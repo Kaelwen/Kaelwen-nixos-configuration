@@ -21,7 +21,7 @@
 
       click-action = "focus-or-appspread";
       transparency-mode = "FIXED";
-      background-opacity = 0.0;
+      background-opacity = 0.4;
       shortcut = [ "<Shift><Super>h" ];
       shortcut-text = "<Super><Shift>h";
       scroll-action = "cycle-windows";

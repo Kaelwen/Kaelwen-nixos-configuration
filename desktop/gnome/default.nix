@@ -32,4 +32,6 @@
     dconf-editor
     # papers
   ];
+  programs.nautilus-open-any-terminal.enable = true;
+  services.gnome.sushi.enable = true;
 }

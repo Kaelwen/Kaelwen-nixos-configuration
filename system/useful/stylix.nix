@@ -10,7 +10,7 @@
     overlays.enable = true;
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-moka.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
     polarity = "dark";
 
