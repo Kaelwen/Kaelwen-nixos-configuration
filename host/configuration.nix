@@ -26,6 +26,9 @@
       ];
     };
   };
+  networking.hosts = {
+    "140.82.114.4" = [ "github.com" ];
+  };
 
   # services.displayManager.gdm.enable = true;
   nixpkgs.config = {

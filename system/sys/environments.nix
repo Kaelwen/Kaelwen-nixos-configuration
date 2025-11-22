@@ -18,7 +18,7 @@
     ]
     ++ (with my-pkgs; [
       # qq
-      # wpsoffice
+      wpsoffice
     ]);
   programs.nix-ld.enable = true;
 
@@ -36,16 +36,18 @@
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";
-    # EDITOR = "nvim";
-    # XDG_TERMINAL_EXECUTOR = "kitty";
-    GOPROXY = "https://goproxy.cn,direct";
-    GO111MODULE = "on";
+    EDITOR = "hx";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
   xdg.terminal-exec = {
     enable = true;
     settings = {
       default = [ "kitty.desktop" ];
     };
+  };
+  documentation = {
+    nixos.enable = false;
   };
 
 }

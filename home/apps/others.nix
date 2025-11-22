@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    libreoffice
+    # libreoffice
     # wpsoffice-cn
     wechat
     (qq.override {
@@ -13,8 +13,9 @@
     filezilla
     # openssh
     # ffmpeg
-    # obsidian
-    typora
+    obsidian
+    # typora
+    bilibili
     # cherry-studio
     (bottles.override {
       removeWarningPopup = true;
@@ -22,7 +23,5 @@
     kdePackages.kdenlive
     gimp3-with-plugins
     inkscape-with-extensions
-
-    # postman
   ];
 }

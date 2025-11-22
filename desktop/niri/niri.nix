@@ -20,10 +20,6 @@
       # ./vicinae.nix
       # ./waybar.nix
     ];
-    # xresources.properties = {
-    # "Xft.dpi" = 144;
-    # };
-
   };
   environment.systemPackages = with pkgs; [
     # pwvucontrol
@@ -37,7 +33,7 @@
     mpv # 视频播放器
     file-roller # 文件解压
     yazi # 文件管理器
-    kdePackages.okular # pdf阅读器
+    # kdePackages.okular # pdf阅读器
     go-musicfox # 网易云播放器
     # nmgui
     # easyeffects

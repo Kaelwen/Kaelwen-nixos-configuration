@@ -10,6 +10,6 @@
     ./stylix.nix
     #./waydroid.nix
 
-    ./direnv.nix
+    # ./direnv.nix
   ];
 }

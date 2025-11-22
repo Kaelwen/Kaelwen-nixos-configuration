@@ -6,7 +6,7 @@
     intel-ocl # Intel 核显 OpenCL 运行时（支持 GPU 加速计算，如视频编码、AI 推理）
     sof-firmware # Sound Open Firmware（Intel 音频 SOF 驱动固件，即使前面切 HDA 也建议保留，避免兼容问题）
   ];
-
+  hardware.bluetooth.enable = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [

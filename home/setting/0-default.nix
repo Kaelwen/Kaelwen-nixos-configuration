@@ -5,5 +5,6 @@
     ./git.nix
     ./xdg.nix
     ./theme.nix
+    ./rime/default.nix
   ];
 }

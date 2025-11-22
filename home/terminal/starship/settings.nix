@@ -1,0 +1,227 @@
+{
+  lib,
+  config,
+  ...
+}:
+
+{
+  programs.starship.settings = {
+    "$schema" = "https://starship.rs/config-schema.json";
+
+    format = lib.concatStrings [
+      "[ ](color_orange)"
+      "$os"
+      "$username"
+      "[](bg:color_yellow fg:color_orange)"
+      "$directory"
+      "[](fg:color_yellow bg:color_aqua)"
+      "$git_branch"
+      "$git_status"
+      "[](fg:color_aqua bg:color_blue)"
+      "$c"
+      "$cpp"
+      "$rust"
+      "$golang"
+      "$nodejs"
+      "$php"
+      "$java"
+      "$kotlin"
+      "$haskell"
+      "$python"
+      "[](fg:color_blue bg:color_bg3)"
+      "$direnv"
+      "$docker_context"
+      "$conda"
+      "$pixi"
+      "[](fg:color_bg3 bg:color_bg2)"
+      "$time"
+      "[ ](fg:color_bg2)"
+      "$line_break$character"
+    ];
+
+    palette = "nixos";
+
+    palettes.nixos = with config.lib.stylix.colors; {
+      color_fg0 = "#${base00}";
+      color_fg1 = "#${base07}";
+      color_bg2 = "#${base02}";
+      color_bg3 = "#${base03}";
+      color_blue = "#${base0D}";
+      color_aqua = "#${base0C}";
+      color_green = "#${base0B}";
+      color_orange = "#${base09}";
+      color_purple = "#${base0E}";
+      color_red = "#${base08}";
+      color_yellow = "#${base0A}";
+    };
+
+    os = {
+      disabled = false;
+      style = "bg:color_orange fg:color_fg0";
+    };
+
+    os.symbols = {
+      Windows = "󰍲";
+      Ubuntu = "󰕈";
+      SUSE = "";
+      Raspbian = "󰐿";
+      Mint = "󰣭";
+      Macos = "󰀵";
+      Manjaro = "";
+      NixOS = "󱄅";
+      Linux = "󰌽";
+      Gentoo = "󰣨";
+      Fedora = "󰣛";
+      Alpine = "";
+      Amazon = "";
+      Android = "";
+      AOSC = "";
+      Arch = "󰣇";
+      Artix = "󰣇";
+      EndeavourOS = "";
+      CentOS = "";
+      Debian = "󰣚";
+      Redhat = "󱄛";
+      RedHatEnterprise = "󱄛";
+      Pop = "";
+    };
+
+    username = {
+      show_always = true;
+      style_user = "bg:color_orange fg:color_fg0";
+      style_root = "bg:color_orange fg:color_fg0";
+      format = "[ $user ]($style)";
+    };
+
+    directory = {
+      style = "fg:color_fg0 bg:color_yellow";
+      format = "[ $path ]($style)";
+      truncation_length = 3;
+      truncation_symbol = "…/";
+    };
+
+    directory.substitutions = {
+      "Documents" = "󰈙";
+      "Downloads" = "";
+      "Music" = "󰝚";
+      "Pictures" = "";
+      "Developer" = "󰲋";
+    };
+
+    git_branch = {
+      symbol = "";
+      style = "bg:color_aqua";
+      format = "[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)";
+    };
+
+    git_status = {
+      style = "bg:color_aqua";
+      format = "[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)";
+    };
+
+    nodejs = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    c = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    cpp = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    rust = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    golang = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    php = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    java = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    kotlin = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    haskell = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    python = {
+      symbol = "";
+      style = "bg:color_blue";
+      format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    };
+
+    docker_context = {
+      symbol = "";
+      style = "bg:color_bg3";
+      format = "[[ $symbol( $context) ](fg:color_blue bg:color_bg3)]($style)";
+    };
+
+    conda = {
+      style = "bg:color_bg3";
+      format = "[[ $symbol( $environment) ](fg:color_blue bg:color_bg3)]($style)";
+    };
+
+    direnv = {
+      disabled = false;
+      symbol = "";
+      style = "bg:color_bg3";
+      format = "[[ $symbol $loaded/$allowed ](fg:color_aqua bg:color_bg3)]($style)";
+    };
+
+    pixi = {
+      style = "bg:color_bg3";
+      format = "[[ ($version)](fg:color_orange bg:color_bg3)]($style)";
+    };
+
+    time = {
+      disabled = false;
+      time_format = "%R";
+      style = "bg:color_bg2";
+      format = "[[  $time ](fg:color_fg1 bg:color_bg2)]($style)";
+    };
+
+    line_break = {
+      disabled = false;
+    };
+
+    character = {
+      disabled = false;
+      success_symbol = "[ >](bold fg:color_green)";
+      error_symbol = "[ >](bold fg:color_red)";
+      vimcmd_symbol = "[ <](bold fg:color_green)";
+      vimcmd_replace_one_symbol = "[ <](bold fg:color_purple)";
+      vimcmd_replace_symbol = "[ <](bold fg:color_purple)";
+      vimcmd_visual_symbol = "[ <](bold fg:color_yellow)";
+    };
+
+  };
+}

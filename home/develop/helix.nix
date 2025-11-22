@@ -94,7 +94,7 @@
       ];
       language-server = {
         nixd.command = lib.getExe pkgs.nixd;
-        pylsp.command = lib.getExe pkgs.python312Packages.python-lsp-server;
+        pylsp.command = lib.getExe pkgs.pyright;
         rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
         gopls.command = lib.getExe pkgs.gopls;
         vue-language-server.command = lib.getExe pkgs.vue-language-server;

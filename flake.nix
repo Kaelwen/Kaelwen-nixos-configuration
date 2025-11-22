@@ -13,18 +13,18 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # nix-flatpak.url = "github:gmodena/nix-flatpak";
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
-    };
+    # quickshell = {
+    #   url = "github:outfoxxed/quickshell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.quickshell.follows = "quickshell"; # Use same quickshell version
+    # };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -52,7 +52,7 @@
       # nixvim,
       myNixpkgs,
       # nixpkgs-stable,
-      # chaotic,
+      chaotic,
       # niri-flake,
       stylix,
       ...
@@ -72,7 +72,7 @@
         modules = [
           ./host/configuration.nix
 
-          # chaotic.nixosModules.default
+          chaotic.nixosModules.default
           home-manager.nixosModules.default
 
           stylix.nixosModules.stylix
