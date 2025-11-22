@@ -5,7 +5,7 @@
     type = "fcitx5";
     fcitx5 = {
       addons = with pkgs; [
-        qt6Packages.fcitx5-chinese-addons
+        # qt6Packages.fcitx5-chinese-addons
         (fcitx5-rime.override {
           rimeDataPkgs = [
             rime-ice
@@ -25,7 +25,7 @@
       #       DefaultIM = "keyboard-us";
       #     };
       #     "Groups/0/Items/0".Name = "keyboard-us";
-      #     "Groups/0/Items/1".Name = "pinyin";
+      #     "Groups/0/Items/1".Name = "rime";
       #     # "Groups/0/Items/2".Name = "mozc";
       #   };
       # };
