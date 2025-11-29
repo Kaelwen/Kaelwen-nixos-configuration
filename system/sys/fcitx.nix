@@ -11,7 +11,7 @@
             rime-ice
             rime-moegirl
             rime-zhwiki
-            catppuccin-fcitx5
+            # catppuccin-fcitx5
           ];
         })
       ];
