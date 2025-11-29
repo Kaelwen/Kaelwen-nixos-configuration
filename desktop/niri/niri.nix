@@ -8,7 +8,7 @@
   imports = [
     ./sddm.nix
     ./noctalia/default.nix
-
+    ./overlays.nix
   ];
   # services.displayManager.ly.enable = true;
   home-manager.users."binigo" = {
@@ -25,11 +25,10 @@
     # pwvucontrol
     # brightnessctl
     # loupe
-    # viu
     xwayland-satellite
     # nautilus
     nomacs
-    nemo-with-extensions
+    # nemo-with-extensions
     mpv # 视频播放器
     file-roller # 文件解压
     yazi # 文件管理器

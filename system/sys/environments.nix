@@ -4,22 +4,20 @@
   ...
 }:
 {
-  environment.systemPackages =
-    with pkgs;
-    [
-      wget
-      git
-      fastfetch
-      zip
-      unzip
-      nix-output-monitor
-      unrar
-      btop
-    ]
-    ++ (with my-pkgs; [
-      # qq
-      wpsoffice
-    ]);
+  environment.systemPackages = with pkgs; [
+    wget
+    git
+    fastfetch
+    zip
+    unzip
+    nix-output-monitor
+    unrar
+    btop
+  ];
+  # ++ (with my-pkgs; [
+  #   # qq
+  #   wpsoffice
+  # ]);
   programs.nix-ld.enable = true;
 
   # programs = {

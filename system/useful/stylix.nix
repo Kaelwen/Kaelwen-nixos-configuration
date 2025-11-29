@@ -10,8 +10,8 @@
     overlays.enable = true;
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-moka.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
     polarity = "dark";
 
     fonts = {
@@ -51,7 +51,7 @@
     opacity = {
       desktop = 0.9;
       popups = 0.95;
-      terminal = 0.9;
+      terminal = 0.8;
     };
   };
 }

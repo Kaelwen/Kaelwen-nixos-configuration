@@ -9,5 +9,8 @@
         "blur-my-shell@aunetx"
       ];
     };
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+      blur = false;
+    };
   };
 }

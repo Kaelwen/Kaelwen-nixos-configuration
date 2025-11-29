@@ -12,7 +12,7 @@
         settingsVersion = 18;
         setupCompleted = false;
         bar = {
-          position = "top";
+          position = "left";
           backgroundOpacity = 1;
           monitors = [ ];
           density = "default";

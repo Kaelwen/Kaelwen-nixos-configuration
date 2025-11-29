@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 let
   # path to your nvim config directory
   niriPath = "${config.home.homeDirectory}/nixos/desktop/niri/dotfiles/niri";

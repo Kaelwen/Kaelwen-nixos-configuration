@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home-manager.users."binigo" = {
     imports = [
@@ -17,7 +17,10 @@
     core-apps.enable = false;
     core-developer-tools.enable = false;
     games.enable = false;
+    gnome-online-accounts.enable = false;
+    gnome-keyring.enable = lib.mkForce false;
     gnome-settings-daemon.enable = true;
+
   };
 
   # services.udev.packages = [ pkgs.gnome-settings-daemon ];
@@ -28,8 +31,11 @@
     loupe # 图片查看器
     # gnome-text-editor # 文本编辑器
     showtime
-    evince
+    # papers
     dconf-editor
+    gnome-music
+    gnome-connections
+
     # papers
   ];
   programs.nautilus-open-any-terminal.enable = true;
