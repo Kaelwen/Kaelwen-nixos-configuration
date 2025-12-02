@@ -2,30 +2,30 @@
 {
   home.packages = with pkgs; [
     # libreoffice
-    # wpsoffice-cn
-    (libreoffice.overrideAttrs {
-      variant = "fresh";
-      withHelp = false;
-      kdeIntegration = false;
-      withJava = false;
+    wpsoffice-cn
+    # (libreoffice.overrideAttrs {
+    #   variant = "fresh";
+    #   withHelp = false;
+    #   kdeIntegration = false;
+    #   withJava = false;
 
-      langs = [
-        "en-GB"
-        "en-US"
-        "zh-CN"
-      ];
+    #   langs = [
+    #     "en-GB"
+    #     "en-US"
+    #     "zh-CN"
+    #   ];
 
-      noto-fonts = null;
-      noto-fonts-lgc-plus = null;
-      noto-fonts-cjk-sans = null;
-    })
+    #   noto-fonts = null;
+    #   noto-fonts-lgc-plus = null;
+    #   noto-fonts-cjk-sans = null;
+    # })
 
     wechat
     (qq.override {
       commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
     })
     telegram-desktop
-    # spotify
+    spotify
     # vscode-fhs
     # zed-editor-fhs
     filezilla
@@ -43,5 +43,6 @@
     gimp3-with-plugins
     inkscape-with-extensions
     godot
+    # openscad
   ];
 }

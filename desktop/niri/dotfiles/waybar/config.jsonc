@@ -7,9 +7,18 @@
   "width":36,
   // "margin": "0 8 0 8",
   "fixed-center": true,
-  "modules-left": ["custom/search", "group/power", "niri/workspaces"],
-  "modules-center": ["wlr/taskbar"],
-  "modules-right": ["tray", "group/status", "clock"],
+  "modules-left": ["niri/workspaces","group/power"],
+  "modules-center": ["clock"],
+  "modules-right": [
+      "tray",
+      "battery",
+      "cpu",
+      "memory",
+      "network",
+      "wireplumber",
+      "backlight",
+      "power-profiles-daemon",
+  ],
 
   "backlight": {
     "scroll-step": 5,

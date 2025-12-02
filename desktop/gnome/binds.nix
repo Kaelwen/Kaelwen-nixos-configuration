@@ -13,7 +13,7 @@
         command = "kitty";
         binding = "<Primary><Alt>t";
       };
-      "org.gnome.desktop.wm.keybindings" = {
+      "org/gnome/desktop/wm/keybindings" = {
         switch-to-workspace-left = "<Super>Left";
         switch-to-workspace-right = "<Super>Right";
       };

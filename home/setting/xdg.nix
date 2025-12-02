@@ -3,8 +3,8 @@
   ...
 }:
 let
-  photoViewer = "org.nomacs.ImageLounge.desktop";
-  pdfViewer = "org.pwmt.zathura.desktop";
+  photoViewer = "org.gnome.Loupe.desktop";
+  pdfViewer = "wps-office-pdf.desktop";
 
 in
 {

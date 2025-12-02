@@ -17,4 +17,3 @@
 
   stylix.targets.starship.enable = false;
 }
-

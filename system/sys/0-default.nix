@@ -2,8 +2,8 @@
 {
   imports = [
     ./boot.nix
-    # ./docker.nix
-    ./podman.nix
+    ./docker.nix
+    # ./podman.nix
     ./environments.nix
     ./fcitx.nix
     ./firewall.nix

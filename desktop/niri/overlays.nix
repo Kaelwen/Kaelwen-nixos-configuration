@@ -11,28 +11,10 @@
           # HACK: no more kde stuff
           fcitx5-configtool = prev'.fcitx5-configtool.override { kcmSupport = false; };
 
-          # HACK: no more qtwebengine, opencc
-          fcitx5-chinese-addons =
-            (prev'.fcitx5-chinese-addons.override {
-              curl = null;
-              opencc = null;
-              qtwebengine = null;
-            }).overrideAttrs
-              (oldAttrs: {
-                buildInputs = oldAttrs.buildInputs ++ [
-                  prev.gettext
-                  prev'.qtbase
-                ];
-                cmakeFlags = oldAttrs.cmakeFlags ++ [
-                  (prev.lib.cmakeBool "ENABLE_BROWSER" false)
-                  (prev.lib.cmakeBool "ENABLE_CLOUDPINYIN" false)
-                  (prev.lib.cmakeBool "ENABLE_OPENCC" false)
-                ];
-              });
         }
       );
 
-      podman = prev.podman.override { iptables = final.nftables; };
+      # podman = prev.podman.override { iptables = final.nftables; };
 
       # HACK: no more gtk2
       gnome-themes-extra = (prev.gnome-themes-extra.override { gtk2 = null; }).overrideAttrs {

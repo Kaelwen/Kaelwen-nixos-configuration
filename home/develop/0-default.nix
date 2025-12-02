@@ -8,7 +8,8 @@
     ./helix.nix
     ./environments.nix
     ./direnv/default.nix
-    ./yazi.nix
+    # ./yazi.nix
+    # ./code.nix
   ];
 
 }
