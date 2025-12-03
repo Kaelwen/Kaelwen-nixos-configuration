@@ -8,18 +8,6 @@
 
   gtk = {
     enable = true;
-    # iconTheme = {
-    # package = pkgs.papirus-icon-theme;
-    # name = "Papirus-Dark";
-    # };
-    # theme = {
-    #   package = pkgs.catppuccin-gtk;
-    #   name = "Catppuccin-Mocha";
-    # };
-    # font = {
-    #   package = pkgs.noto-fonts-cjk-sans;
-    #   name = "Noto
-    # };
   };
   home.sessionVariables = {
     XDG_ICON_THEME = "Papirus-Dark";

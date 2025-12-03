@@ -15,30 +15,28 @@
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
-        
+
         ms-vscode-remote.remote-ssh
         ms-vscode.remote-explorer
         ms-ceintl.vscode-language-pack-zh-hans
+        adpyke.codesnap
 
         #python
         ms-python.python
-        # ms-pyright.pyright
-        ms-python.vscode-pylance
+        ms-pyright.pyright
+        charliermarsh.ruff
         ms-python.debugpy
 
         #c/c++
-        # ms-vscode.cpptools
         ms-vscode.cmake-tools
-        # cheshirekow.cmake-format
         ms-vscode.makefile-tools
         xaver.clang-format
         llvm-vs-code-extensions.vscode-clangd
-        
+
         #go
         golang.go
 
         #rust
-        # 1yib.rust-bundle
         rust-lang.rust-analyzer
 
         #nix
@@ -54,7 +52,6 @@
         #前端
         bradlc.vscode-tailwindcss
         vue.volar
-        # febean.vue-format
 
         # stylelint.vscode-stylelint
         skyapps.fish-vscode
@@ -65,21 +62,38 @@
         redhat.vscode-yaml
 
         tekumara.typos-vscode
-        
+
         yzhang.markdown-all-in-one
+
         yzhang.dictionary-completion
 
       ];
 
       userSettings = {
-        # "C_Cpp.autocompleteAddParentheses" = true;
         "files.autoSave" = "onFocusChange";
         "editor.autoIndentOnPaste" = true;
 
         "editor.formatOnSave" = true;
 
-        "files.associations"={
-            "*.css"="tailwindcss";
+        "files.associations" = {
+          "*.css" = "tailwindcss";
+        };
+
+        "[python]" = {
+          "editor.formatOnSave" = true;
+          "editor.defaultFormatter" = "charliermarsh.ruff";
+        };
+        "[c]" = {
+          "editor.formatOnSave" = true;
+          "editor.defaultFormatter" = "xaver.clang-format";
+        };
+        "[cpp]" = {
+          "editor.formatOnSave" = true;
+          "editor.defaultFormatter" = "xaver.clang-format";
+        };
+        "[nix]" = {
+          "editor.formatOnSave" = true;
+          "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
         };
 
         "editor.tabSize" = "2";
@@ -87,7 +101,7 @@
         "git.enableSmartCommit" = true;
         # "locale" = "zh-cn";
         "nix.enableLanguageServer" = true;
-        "nix.formatterPath" = lib.getExe pkgs.nixfmt-rfc-style;
+        "nix.formatterPath" = "nixfmt";
         "nix.hiddenLanguageServerErrors" = [
           "textDocument/definition"
         ];
@@ -98,7 +112,7 @@
         "window.autoDetectColorScheme" = true;
         "workbench.preferredDarkColorTheme" = "Stylix";
         "workbench.iconTheme" = "vs-seti";
-        "files.defaultLanguage"="zh-cn";
+        # "files.defaultLanguage" = "zh-cn";
       };
     };
   };

@@ -3,7 +3,7 @@
 }:
 
 {
-    fonts.fontconfig = {
+  fonts.fontconfig = {
     enable = true;
     defaultFonts = {
       serif = [
@@ -24,4 +24,3 @@
     };
   };
 }
-

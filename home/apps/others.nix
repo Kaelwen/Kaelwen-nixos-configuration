@@ -25,7 +25,8 @@
       commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
     })
     telegram-desktop
-    spotify
+    # spotify
+    splayer
     # vscode-fhs
     # zed-editor-fhs
     filezilla

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   home-manager.users."binigo" = {
     imports = [
@@ -18,7 +18,6 @@
     core-developer-tools.enable = false;
     games.enable = false;
     gnome-online-accounts.enable = false;
-    gnome-keyring.enable = lib.mkForce false;
     gnome-settings-daemon.enable = true;
 
   };

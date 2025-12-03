@@ -5,7 +5,6 @@
 let
   photoViewer = "org.gnome.Loupe.desktop";
   pdfViewer = "wps-office-pdf.desktop";
-
 in
 {
   xdg = {
@@ -37,14 +36,5 @@ in
 
       };
     };
-    # desktopEntries = {
-    #   qq = {
-    #     name = "QQ";
-    #     exec = "steam-run ${pkgs.qq}/bin/qq --disable-gpu --disable-gpu-compositing %U";
-    #     icon = "${pkgs.qq}/share/icons/hicolor/512x512/apps/qq.png";
-    #     categories = [ "Network" ];
-    #     comment = "轻松做自己";
-    #   };
-    # };
   };
 }

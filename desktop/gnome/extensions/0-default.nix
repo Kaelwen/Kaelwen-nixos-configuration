@@ -13,7 +13,7 @@
     ./tophat.nix
     # ./battery-health-charging.nix
     ./bing-wallpaper.nix
-    ./paperWM.nix
+    # ./paperWM.nix
     # ./unite.nix
   ];
 }
