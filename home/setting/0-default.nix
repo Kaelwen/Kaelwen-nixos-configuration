@@ -7,5 +7,6 @@
     ./theme.nix
     ./rime/default.nix
     ./keepass.nix
+    # ./bin.nix
   ];
 }

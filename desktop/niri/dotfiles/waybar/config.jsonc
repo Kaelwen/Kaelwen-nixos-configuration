@@ -4,78 +4,120 @@
   "orientation": "vertical",
   "spacing": 0,
   // "height": 30,
-  "width":36,
+  "width": 36,
   // "margin": "0 8 0 8",
   "fixed-center": true,
-  "modules-left": ["niri/workspaces","group/power"],
-  "modules-center": ["clock"],
-  "modules-right": [
-      "tray",
-      "battery",
-      "cpu",
-      "memory",
-      "network",
-      "wireplumber",
-      "backlight",
-      "power-profiles-daemon",
+  "modules-left": [
+    "clock",
+    "cpu",
+    "memory",
+    "battery",
+    "power-profiles-daemon"
   ],
-
+  "modules-center": [
+    "niri/workspaces"
+  ],
+  "modules-right": [
+    "tray",
+    "bluetooth",
+    "network",
+    "wireplumber",
+    "backlight"
+  ],
   "backlight": {
     "scroll-step": 5,
     "format": "{icon}",
-    "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    "format-icons": [
+      "󰛩",
+      "󱩎",
+      "󱩏",
+      "󱩐",
+      "󱩑",
+      "󱩒",
+      "󱩓",
+      "󱩔",
+      "󱩕",
+      "󱩖",
+      "󰛨"
+    ],
     "min-length": 3,
     "on-click": "brightnessctl set 1%+",
-    "on-click-right": "brightnessctl set 1%-",
+    "on-click-right": "brightnessctl set 1%-"
   },
-
   "battery": {
     "interval": 5,
     "states": {
       "warning": 30,
-      "critical": 10,
+      "critical": 10
     },
-
     "format": "{icon}",
     "format-charging": "",
     "format-plugged": "",
     "format-alt": "{icon}",
-    "format-icons": ["", "", "", "", ""],
-    "tooltip": true,
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": true
   },
-
   "clock": {
     "interval": 1,
     "format": "{:%H\n%M\n%S}",
     "tooltip": true,
     "tooltip-format": " {:%Y-%m-%d}，右键清除通知",
-    "on-click-right": "makoctl reload",
+    "on-click-right": "makoctl reload"
   },
-
   "cpu": {
     "interval": 5,
     "format": "",
     "tooltip": true,
+    "on-click": "kitty btop"
   },
-
   "memory": {
     "interval": 5,
     "format": "",
     "tooltip": true,
     "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G",
-    "on-click": "btop",
+    "on-click": "kitty btop"
   },
-
   "network": {
-    "interval": 5,
-    "format-wifi": "",
-    "format-ethernet": "",
-    "format-linked": "",
-    "format-disconnected": "",
-    "tooltip-format": "{ifname} {ipaddr}/{cidr}\nIP: {gwaddr}\n信号强度: {signalStrength}%",
+    "format-disconnected": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-icons": {
+      "disconnected": "󰤮",
+      "wifi": [
+        "󰤯",
+        "󰤟",
+        "󰤢",
+        "󰤥",
+        "󰤨"
+      ],
+      "ethernet": "󰈀"
+    },
+    //鼠标悬浮在wifi图标上会显示wifi名称、信号强度、ip地址、设备名
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} : {ipaddr}",
+    "tooltip-format-ethernet": "{ifname} : {ipaddr} | Click to Open GUI",
+    "tooltip-format-disconnected": "Disconnected | Click to open GUI",
     "on-click": "nmgui",
+    "on-click-right": "nm-connection-editor"
   },
-
+  "bluetooth": {
+    //蓝牙关闭状态下的图标和鼠标悬浮时的提示
+    "format-disabled": "󰂲",
+    "tooltip-format-disabled": "Click to enable",
+    "format": "󰂯",
+    "tooltip-format-on": " 󰂯 Click to disable or Right click to open GUI",
+    //连接状态下的图标和提示
+    "format-connected": "󰂱",
+    "tooltip-format-connected": "󰂱 {device_alias}Richt click to open GUI",
+    //点击功能
+    // "on-click": "~/.config/waybar/scripts/toggle-bluetooth.sh",
+    "on-click": "blueberry"
+  },
   "niri/workspaces": {
     "all-outputs": true,
     "expand": false,
@@ -86,126 +128,50 @@
       "Chat": "",
       "Code": "",
       "Game": "󰺵",
-      "Work": "",
+      "Work": ""
     },
-    "tooltip": true,
+    "tooltip": true
   },
-
   "tray": {
     "icon-size": 16,
-    "spacing": 12,
+    "spacing": 12
   },
-
   "wireplumber": {
-    "scroll-step": 5,
+    "scroll-step": 1,
     "format": "{icon}",
     "format-muted": "",
     "format-bluetooth": "󰂰",
     "format-bluetooth-muted": "󰂲",
     "format-icons": {
-      "default": ["", "", "", ""],
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "easyeffects",
-    "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"],
-    "tooltip-format": "{volume}%",
+    "ignored-sinks": [
+      "AudioRelay Virtual Sink",
+      "Recorder Sink"
+    ],
+    "tooltip-format": "{volume}%"
   },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-  
-
-  "wlr/taskbar": {
+  "power-profiles-daemon": {
     "format": "{icon}",
-    "icon-size": 24,
-    "icon-theme": "Papirus-Dark",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": ["Alacritty", "foot","kitty"],
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal",
-    },
-  },
-
-  "group/power": {
-    "orientation": "inherit",
-    "modules": [
-      "custom/caffeine",
-      "custom/hibernate",
-      "custom/lock",
-      "custom/poweroff",
-      "custom/reboot",
-    ],
-    "drawer": {
-      "transition-duration": 400,
-      "children-class": "not-lock",
-      "transition-left-to-right": true,
-    },
-  },
-
-  "group/status": {
-    "orientation": "inherit",
-    "modules": [
-
-      "battery",
-      "cpu",
-      "memory",
-      "network",
-      "wireplumber",
-      "backlight",
-      "power-profiles-daemon",
-    ],
-    "drawer": {
-      "transition-duration": 400,
-      "children-class": "not-battery",
-      "transition-left-to-right": false,
-    },
-  },
-
-  "custom/lock": {
-    "format": "",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
-    "tooltip-format": "锁定",
-    "on-click": "niri msg action power-off-monitors && gtklock -d",
-  },
-  "custom/poweroff": {
-    "format": "",
-    "tooltip": true,
-    "tooltip-format": "关机",
-    "on-click": "systemctl poweroff",
-  },
-  "custom/reboot": {
-    "format": "",
-    "tooltip": true,
-    "tooltip-format": "重启",
-    "on-click": "systemctl reboot",
-  },
-  "custom/hibernate": {
-    "format": "󰒲",
-    "tooltip": true,
-    "tooltip-format": "休眠",
-    "on-click": "systemctl hibernate",
-  },
-  "custom/search": {
-    "format": "",
-    "tooltip": true,
-    "tooltip-format": "搜索",
-    "on-click": "vicinae toggle",
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   },
   "custom/caffeine": {
     "format": "",
     "tooltip": true,
     "tooltip-format": "左键禁用自动休眠，右键启用自动休眠",
     "on-click": "systemctl stop --user swayidle.service && notify-send '自动休眠已禁用'",
-    "on-click-right": "systemctl start --user swayidle.service && notify-send '自动休眠已启用'",
-  },
+    "on-click-right": "systemctl start --user swayidle.service && notify-send '自动休眠已启用'"
+  }
 }

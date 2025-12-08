@@ -1,8 +1,15 @@
 { ... }:
 {
   # Open ports in the firewall.
-  #networking.firewall.allowedTCPPorts = [ 25157 ];
-  #networking.firewall.allowedUDPPorts = [ 25157 ];
+  networking.firewall.allowedTCPPorts = [
+    7897
+    53
+  ];
+  networking.firewall.allowedUDPPorts = [
+    7897
+    53
+  ];
+  networking.firewall.trustedInterfaces = [ "mihomo" ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
 }

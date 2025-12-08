@@ -13,29 +13,31 @@
   # services.displayManager.ly.enable = true;
   home-manager.users."binigo" = {
     imports = [
-      ./dotfiles.nix
+      ./dotfiles/default.nix
       ./swayidle.nix
       ./waypaper.nix
       ./mako.nix
       ./vicinae.nix
       ./waybar.nix
+      # ./fuzzel.nix
     ];
+    xresources.properties = {
+      "Xft.dpi" = 144;
+    };
   };
   environment.systemPackages = with pkgs; [
     # pwvucontrol
     brightnessctl
     loupe
     xwayland-satellite
-    # nautilus
-    # nomacs
-    # nemo-with-extensions
     mpv # 视频播放器
     file-roller # 文件解压
     yazi # 文件管理器
-    # kdePackages.okular # pdf阅读器
-    go-musicfox # 网易云播放器
+    kdePackages.okular # pdf阅读器
     nmgui
     easyeffects
+    blueberry
+    nautilus
   ];
 
   programs = {
@@ -58,8 +60,13 @@
       xdgOpenUsePortal = true;
       config = {
         common = {
-          default = [ "gnome" ];
-          "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+          default = [
+            "gnome"
+            "gtk"
+          ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "gnome" ];
+          "org.freedesktop.impl.portal.Access" = [ "gtk" ];
+          "org.freedesktop.impl.portal.Notification" = [ "gtk" ];
         };
       };
       extraPortals = [
@@ -71,4 +78,5 @@
     icons.fallbackCursorThemes = [ "Bibata-Modern-Classic" ];
   };
   services.acpid.enable = true;
+  hardware.bluetooth.enable = true;
 }

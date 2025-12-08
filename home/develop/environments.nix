@@ -3,9 +3,12 @@
   home.packages = with pkgs; [
     hexo-cli
     gcc
+    cmake
+    gnumake
     go
     nodejs
     rustup
+
   ];
   home.sessionVariables = {
     RUSTUP_DIST_SERVER = "https://mirrors.ustc.edu.cn/rust-static";

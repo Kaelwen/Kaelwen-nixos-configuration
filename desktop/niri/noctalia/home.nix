@@ -13,14 +13,14 @@
         setupCompleted = false;
         bar = {
           position = "left";
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.4;
           monitors = [ ];
           density = "default";
           showCapsule = true;
           floating = false;
           marginVertical = 0.25;
           marginHorizontal = 0.25;
-          outerCorners = true;
+          outerCorners = false;
           exclusive = true;
           widgets = {
             left = [
@@ -68,7 +68,7 @@
           };
         };
         general = {
-          avatarImage = "";
+          avatarImage = "/home/binigo/nixos/assets/head/laoba.png";
           dimDesktop = true;
           showScreenCorners = false;
           forceBlackScreenCorners = false;
@@ -84,6 +84,7 @@
           shadowOffsetX = 2;
           shadowOffsetY = 3;
           language = "";
+
         };
         ui = {
           fontDefault = "Roboto";
@@ -143,6 +144,8 @@
           sortByMostUsed = true;
           terminalCommand = "xterm -e";
           customLaunchPrefixEnabled = false;
+          viewMode = "grid";
+
           customLaunchPrefix = "";
         };
         controlCenter = {

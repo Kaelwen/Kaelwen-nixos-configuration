@@ -7,8 +7,5 @@
   home.sessionVariables = {
     XMODIFIERS = "@im=fcitx";
     QT_IM_MODULE = "fcitx";
-    XIM = "fcitx";
-    XIM_PROGRAM = "fcitx";
-    GTK_IM_MODULE = "fcitx";
   };
 }

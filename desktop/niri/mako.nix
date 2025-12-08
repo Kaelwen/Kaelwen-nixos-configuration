@@ -1,8 +1,13 @@
 {
+  pkgs,
   ...
 }:
 
 {
+  home.packages = with pkgs; [
+    # notify
+    libnotify
+  ];
   services.mako = {
     enable = true;
     settings = {
@@ -36,4 +41,3 @@
     };
   };
 }
-

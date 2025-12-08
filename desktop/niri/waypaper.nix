@@ -6,10 +6,8 @@
 {
   home.packages = with pkgs; [
     swww
-    mpvpaper
+    # mpvpaper
     waypaper
-
     socat
   ];
 }
-

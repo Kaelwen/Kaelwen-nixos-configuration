@@ -1,4 +1,5 @@
-{...}:{
+{ ... }:
+{
   time.timeZone = "Asia/Shanghai";
 
   # Select internationalisation properties.

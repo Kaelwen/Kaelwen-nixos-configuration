@@ -33,7 +33,9 @@
     # papers
     dconf-editor
     gnome-music
-    gnome-connections
+    # gnome-connections
+    # gnome-tweaks
+    # gnome-software
 
     # papers
   ];

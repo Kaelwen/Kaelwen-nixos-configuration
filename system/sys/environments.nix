@@ -1,6 +1,5 @@
 {
   pkgs,
-  my-pkgs,
   ...
 }:
 {
@@ -13,22 +12,14 @@
     nix-output-monitor
     unrar
     btop
+    mesa
+    catppuccin-cursors
   ];
   # ++ (with my-pkgs; [
   #   # qq
   #   wpsoffice
   # ]);
   programs.nix-ld.enable = true;
-
-  # programs = {
-  #   adb.enable = true;
-  #   git.enable = true;
-  #   appimage = {
-  #     enable = true;
-  #     binfmt = true;
-  #   };
-  #   zoxide.enable = true;
-  # };
 
   environment.localBinInPath = true;
 

@@ -7,17 +7,18 @@
 {
   home.packages = with pkgs; [
     cliphist
+    wl-clipboard
   ];
 
   programs.fuzzel = {
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "monospace:size=10";
-        icons-enabled = "no";
+        font = lib.mkForce "monospace:size=12";
+        icons-enabled = "yes";
         layer = "overlay";
         line-height = "16";
-        terminal = "foot";
+        terminal = "kitty";
       };
       border = {
         width = "4";
@@ -26,4 +27,3 @@
     };
   };
 }
-

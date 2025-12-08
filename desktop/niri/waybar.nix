@@ -10,7 +10,7 @@
     systemd.enable = true;
     style = lib.mkAfter ''
       * {
-          font-family: "Iosevka Nerd Font Propo";
+          font-family: "Maple Mono NF CN", monospace;
           font-weight: 500;
           font-size: 14px;
           text-shadow: none;
@@ -18,7 +18,7 @@
       }
 
       window#waybar {
-          background-color: alpha(@base00, 0.92);
+          background-color: alpha(@base00, 0.7);
           border-bottom: none;
           font-family: inherit;
       }
@@ -50,7 +50,6 @@
       #custom-search,
       #custom-hibernate,
       #custom-caffeine,
-      #workspaces button,
       #tray,
       #backlight,
       #battery,
@@ -59,25 +58,33 @@
       #network,
       #wireplumber,
       #wlr-taskbar,
+      #bluetooth,
+      #power-profiles-daemon,
       #clock {
-          border-radius: 16px;
+          border-radius: 4px;
+          background-color: @base00;
+          padding: 0px 2px;
+          margin: 5px 2px;
+      }
+      #workspaces button{
+        border-radius: 4px;
           color: @base07;
-          padding: 0px 5px;
-          margin: 5px 4px;
+          padding: 0px 2px;
+          margin: 5px 2px;
       }
 
       #battery { color: @base0C; }
-      #clock { color: @base05; }
+      #clock { color: @base07; }
       #cpu { color: @base08; }
       #backlight { color: @base0A; }
       #memory { color: @base0E; }
       #wireplumber { color: @base0B; }
       #network { color: @base0C; }
-      #custom-lock { color: @base0A; }
-      #custom-poweroff { color: @base08; }
-      #custom-reboot { color: @base0C; }
-      #custom-hibernate { color: @base0B; }
-      #custom-caffeine { color: @base09; }
+      #custom-lock { background-color: @base0A; }
+      #custom-poweroff { background-color: @base08; }
+      #custom-reboot { background-color: @base0C; }
+      #custom-hibernate { background-color: @base0B; }
+      #custom-caffeine { background-color: @base09; }
 
       #workspaces button {
           background: transparent;
@@ -85,11 +92,11 @@
       }
 
       #workspaces button:hover {
-          background-color: alpha(@base07, 0.1);
+          background-color: alpha(@base07, 0.2);
       }
 
       #workspaces button.focused {
-          background-color: alpha(@base07, 0.2);
+          background-color: alpha(@base07, 0.4);
           color: @base0D;
       }
     '';

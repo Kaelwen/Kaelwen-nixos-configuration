@@ -1,4 +1,5 @@
-{pkgs,...}:{
+{ pkgs, ... }:
+{
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
@@ -15,14 +16,14 @@
       };
     };
   };
-    environment.systemPackages = [
-      (pkgs.sddm-astronaut.override {
-        embeddedTheme = "astronaut";
-        themeConfig = {
-          General = ''
-            HeaderText="请使用指纹或密码解锁"
-          '';
-        };
-      })
-    ];
+  environment.systemPackages = [
+    (pkgs.sddm-astronaut.override {
+      embeddedTheme = "astronaut";
+      themeConfig = {
+        General = ''
+          HeaderText="请使用指纹或密码解锁"
+        '';
+      };
+    })
+  ];
 }

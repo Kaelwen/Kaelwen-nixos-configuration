@@ -5,19 +5,38 @@
     type = "fcitx5";
     fcitx5 = {
       addons = with pkgs; [
-        # qt6Packages.fcitx5-chinese-addons
-        # libsForQt5.fcitx5-qt
-        # kdePackages.fcitx5-qt
         (fcitx5-rime.override {
           rimeDataPkgs = [
             rime-ice
             rime-moegirl
             rime-zhwiki
-            # catppuccin-fcitx5
           ];
         })
+        fcitx5-gtk
+        fcitx5-inflex-themes
       ];
+      # ignoreUserConfig = true;
       waylandFrontend = true;
+      settings = {
+        inputMethod = {
+          GroupOrder."0" = "Default";
+          "Groups/0" = {
+            Name = "Default";
+            "Default Layout" = "us";
+            DefaultIM = "rime";
+          };
+          "Groups/0/Items/0".Name = "keyboard-us";
+          "Groups/0/Items/1".Name = "rime";
+        };
+        addons = {
+          rime.globalSection = {
+            SwitchInputMethodBehavior = "Commit raw input";
+            PreeditMode = "Composing text";
+            PreeditCursorPositionAtBeginning = true;
+            InputState = "All";
+          };
+        };
+      };
     };
   };
 }

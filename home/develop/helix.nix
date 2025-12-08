@@ -13,7 +13,6 @@
   programs.helix = {
     enable = true;
     settings = {
-      # theme = lib.mkDefault "transparent";
       editor.cursor-shape = {
         normal = "block";
         insert = "bar";
@@ -49,6 +48,7 @@
         {
           name = "python";
           auto-format = true;
+          formatter.command = lib.getExe pkgs.python313Packages.ruff;
           language-servers = [
             "pylsp"
           ];
@@ -56,6 +56,7 @@
         {
           name = "rust";
           auto-format = true;
+          formatter.command = "rustfmt";
           language-servers = [
             "rust-analyzer"
           ];
@@ -68,50 +69,21 @@
           ];
         }
         {
-          name = "vue";
-          auto-format = true;
-          language-servers = [
-            "vue-language-server"
-            "tailwindcss-language-server"
-            "typescript-language-server"
-          ];
-        }
-        {
           name = "typescript";
           auto-format = true;
           language-servers = [
             "typescript-language-server"
           ];
         }
-        {
-          name = "markdown";
-          auto-format = true;
-          formatter.command = lib.getExe pkgs.dprint;
-          language-servers = [
-            "marksman"
-          ];
-        }
       ];
       language-server = {
         nixd.command = lib.getExe pkgs.nixd;
-        pylsp.command = lib.getExe pkgs.python312Packages.python-lsp-server;
+        pylsp.command = lib.getExe pkgs.python313Packages.python-lsp-server;
         gopls.command = lib.getExe pkgs.gopls;
-        vue-language-server.command = lib.getExe pkgs.vue-language-server;
         typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
         tailwindcss-language-server.command = lib.getExe pkgs.tailwindcss-language-server;
-        marksman.command = lib.getExe pkgs.marksman;
+        rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
       };
     };
-
-    # themes = {
-    #   transparent = {
-    #     "inherits" = "ayu_mirage";
-    #     "ui.background" = { };
-    #     "ui.text" = { };
-    #     "ui.help" = { };
-    #     "ui.menu" = { };
-    #     "ui.statusline" = { };
-    #   };
-    # };
   };
 }

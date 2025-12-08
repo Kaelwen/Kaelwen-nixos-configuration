@@ -2,6 +2,7 @@
 {
   imports = [
     ./firefox.nix
+    # ./chromium.nix
     ./obs-studio.nix
     ./lutris.nix
     ./others.nix

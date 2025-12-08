@@ -1,6 +1,6 @@
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "fcitx5" "-d"
-spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
+// spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
 // spawn-sh-at-startup "wl-paste --watch cliphist store &"
 
 prefer-no-csd
@@ -22,8 +22,8 @@ gestures {
 }
 
 cursor {
-    // xcursor-theme "Bibata-Modern-Classic"
-    // xcursor-size 26
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 26
 }
 
 input {
@@ -73,17 +73,17 @@ layout {
 
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
 
-// layer-rule {
-//     match namespace="waybar"
-//     shadow { off; }
-// }
+layer-rule {
+    match namespace="waybar"
+    shadow { off; }
+}
 
 layer-rule {
     match namespace="^notifications$"
     block-out-from "screencast"
 }
 layer-rule {
-  match namespace="^noctalia-wallpaper*"
+  match namespace="^swww*"
   place-within-backdrop true
 }
 overview {
@@ -119,6 +119,7 @@ window-rule {
     match app-id="org.keepassxc.KeePassXC"
     match app-id="QtScrcpy"
     match app-id="xdg-desktop-portal-gtk"
+    match app-id="blueberry"
 
     open-floating true
 }
@@ -134,7 +135,6 @@ window-rule {
     match app-id="gamescope"
     match app-id="r#'^steam_app'#"
     match app-id=".gamescope-wrapped"
-
     open-fullscreen true
 }
 
@@ -161,16 +161,13 @@ window-rule {
 
 window-rule {
     match is-window-cast-target=true
-
     focus-ring {
         active-color "#f38ba8"
         inactive-color "#7d0d2d"
     }
-
     border {
         inactive-color "#7d0d2d"
     }
-
     shadow {
         color "#7d0d2d70"
     }
@@ -276,7 +273,9 @@ binds {
 
     Mod+Alt+L   hotkey-overlay-title="锁屏" repeat=false { spawn "gtklock"; }
     Mod+C hotkey-overlay-title="打开剪切板"      repeat=false    { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    // Mod+C hotkey-overlay-title="打开剪切板"      repeat=false    { spawn "~/nixos/desktop/niri/my_script/clip.sh"; }
     Mod+D hotkey-overlay-title="打开搜索"        repeat=false    { spawn "vicinae" "toggle"; }
+    // Mod+D hotkey-overlay-title="打开搜索"        repeat=false    { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="打开终端" repeat=false { spawn "kitty"; }
     XF86AudioLowerVolume  allow-when-locked=true  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMicMute      allow-when-locked=true  { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }

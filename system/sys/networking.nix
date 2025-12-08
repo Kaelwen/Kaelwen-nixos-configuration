@@ -1,7 +1,8 @@
-{...}:{
+{ ... }:
+{
   networking = {
     hostName = "nixos";
-    
+
     modemmanager.enable = false;
     networkmanager = {
       enable = true;
