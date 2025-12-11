@@ -13,7 +13,8 @@
     unrar
     btop
     mesa
-    catppuccin-cursors
+    # catppuccin-cursors
+    intel-vaapi-driver
   ];
   # ++ (with my-pkgs; [
   #   # qq

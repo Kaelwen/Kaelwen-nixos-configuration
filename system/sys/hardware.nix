@@ -7,6 +7,7 @@
     sof-firmware # Sound Open Firmware（Intel 音频 SOF 驱动固件，即使前面切 HDA 也建议保留，避免兼容问题）
   ];
   hardware.bluetooth.enable = true;
+  hardware.intel-gpu-tools.enable = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -17,4 +18,12 @@
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ]; # 32 位 VA-API 驱动（兼容 32 位软件，如部分老游戏、播放器）
   };
+  boot.kernelParams = [
+    "acpi_backlight=native"
+    "intel_iommu=on"
+    # 添加性能和电源管理相关的内核参数
+    "i915.enable_psr=0" # 可选：禁用面板自刷新以提高稳定性
+    "i915.enable_dc=0" # 可选：禁用显示控制器电源节省
+  ];
+
 }

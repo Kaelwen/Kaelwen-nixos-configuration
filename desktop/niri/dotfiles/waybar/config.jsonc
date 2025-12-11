@@ -50,10 +50,10 @@
       "warning": 30,
       "critical": 10
     },
-    "format": "{icon}",
-    "format-charging": "",
-    "format-plugged": "",
-    "format-alt": "{icon}",
+    "format": "{icon}\n{capacity}",
+    "format-charging": "\n{capacity}",
+    "format-plugged": "\n{capacity}",
+    "format-alt": "{icon}\n{capacity}",
     "format-icons": [
       "",
       "",
@@ -72,13 +72,13 @@
   },
   "cpu": {
     "interval": 5,
-    "format": "",
+    "format": "\n{usage}",
     "tooltip": true,
     "on-click": "kitty btop"
   },
   "memory": {
     "interval": 5,
-    "format": "",
+    "format": "\n{}",
     "tooltip": true,
     "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G",
     "on-click": "kitty btop"

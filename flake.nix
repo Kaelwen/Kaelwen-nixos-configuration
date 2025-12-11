@@ -4,7 +4,7 @@
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-25.05 分支
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    # flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.url = "github:numtide/flake-utils";
     # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 

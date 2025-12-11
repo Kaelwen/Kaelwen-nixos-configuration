@@ -19,7 +19,6 @@
     games.enable = false;
     gnome-online-accounts.enable = false;
     gnome-settings-daemon.enable = true;
-
   };
 
   # services.udev.packages = [ pkgs.gnome-settings-daemon ];
@@ -33,11 +32,9 @@
     # papers
     dconf-editor
     gnome-music
-    # gnome-connections
+    gnome-connections
     # gnome-tweaks
-    # gnome-software
-
-    # papers
+    gnome-software
   ];
   programs.nautilus-open-any-terminal.enable = true;
   services.gnome.sushi.enable = true;

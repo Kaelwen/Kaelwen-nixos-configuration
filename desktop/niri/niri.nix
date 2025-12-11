@@ -32,7 +32,7 @@
     xwayland-satellite
     mpv # 视频播放器
     file-roller # 文件解压
-    yazi # 文件管理器
+    # yazi # 文件管理器
     kdePackages.okular # pdf阅读器
     nmgui
     easyeffects
@@ -41,7 +41,7 @@
   ];
 
   programs = {
-    xwayland.enable = true;
+    # xwayland.enable = true;
     niri.enable = true;
     gtklock.enable = true;
   };

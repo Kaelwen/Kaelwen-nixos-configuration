@@ -10,6 +10,7 @@
     ./direnv/default.nix
     ./vscodium.nix
     ./claude-code.nix
+    ./yazi.nix
     # ./stm32.nix
   ];
 

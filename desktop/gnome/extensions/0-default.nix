@@ -15,5 +15,6 @@
     ./bing-wallpaper.nix
     # ./paperWM.nix
     # ./unite.nix
+    ./docker.nix
   ];
 }

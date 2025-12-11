@@ -9,6 +9,7 @@
   gtk = {
     enable = true;
   };
+  qt.enable = true;
   home.sessionVariables = {
     XDG_ICON_THEME = "Papirus-Dark";
   };

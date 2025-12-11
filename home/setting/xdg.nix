@@ -5,6 +5,7 @@
 let
   photoViewer = "org.gnome.Loupe.desktop";
   pdfViewer = "org.kde.okular.desktop";
+  # pdfViewer = "wps-office-pdf.desktop";
 in
 {
   xdg = {
