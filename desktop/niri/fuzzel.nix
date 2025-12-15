@@ -5,11 +5,6 @@
 }:
 
 {
-  home.packages = with pkgs; [
-    cliphist
-    wl-clipboard
-  ];
-
   programs.fuzzel = {
     enable = true;
     settings = {

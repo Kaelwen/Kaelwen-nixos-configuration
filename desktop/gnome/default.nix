@@ -32,9 +32,9 @@
     # papers
     dconf-editor
     gnome-music
-    gnome-connections
+    # gnome-connections
     # gnome-tweaks
-    gnome-software
+    # gnome-software
   ];
   programs.nautilus-open-any-terminal.enable = true;
   services.gnome.sushi.enable = true;

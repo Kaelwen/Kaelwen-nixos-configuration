@@ -20,6 +20,7 @@
         ms-vscode.remote-explorer
         ms-ceintl.vscode-language-pack-zh-hans
         adpyke.codesnap
+        saoudrizwan.claude-dev
 
         #python
         ms-python.python

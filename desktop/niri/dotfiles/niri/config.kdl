@@ -1,7 +1,9 @@
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
-// spawn-sh-at-startup "wl-paste --watch cliphist store &"
+spawn-at-startup "waybar"
+// spawn-at-startup "copyq"
+spawn-sh-at-startup "wl-paste -t text --watch clipman store"
 prefer-no-csd
 hotkey-overlay {
     skip-at-startup
@@ -41,7 +43,7 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
 }
 layout {
-    gaps 4
+    gaps 3
     background-color "transparent"
     center-focused-column "on-overflow"
     always-center-single-column
@@ -55,7 +57,7 @@ layout {
     }
     focus-ring {
         // off
-        width 4
+        width 3
         active-gradient angle=45 from="89ddff" relative-to="window" to="ffcb6b"
         inactive-color "#505050"
     }
@@ -81,19 +83,19 @@ overview {
         off
     }
 }
-window-rule {
-    draw-border-with-background false
-    geometry-corner-radius 0
-    clip-to-geometry true
-    shadow {
-        on
-        softness 10
-        spread 0
-        offset x=0 y=0
-        draw-behind-window false
-        color "#000000"
-    }
-}
+// window-rule {
+//     draw-border-with-background false
+//     // geometry-corner-radius 8
+//     // clip-to-geometry true
+//     shadow {
+//         on
+//         softness 10
+//         spread 0
+//         offset x=0 y=0
+//         draw-behind-window false
+//         color "#000000"
+//     }
+// }
 window-rule {
     match app-id="com.network.manager"
     match app-id="connman-gtk"
@@ -105,6 +107,7 @@ window-rule {
     match app-id="QtScrcpy"
     match app-id="xdg-desktop-portal-gtk"
     match app-id="blueberry"
+    match app-id="copyq"
     open-floating true
 }
 window-rule {
@@ -282,19 +285,26 @@ binds {
     Mod+Alt+L hotkey-overlay-title="锁屏" repeat=false {
         spawn "gtklock"
     }
+    // Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
+    //     spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"
+    // }
+    // Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
+    //     spawn "copyq" "show"
+    // }
     Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-        spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"
+        spawn "clipman" "pick" "--tool" "wofi" "-T'--prompt=clipboard-history -i'"
     }
-    // Mod+C hotkey-overlay-title="打开剪切板"      repeat=false    { spawn "~/nixos/desktop/niri/my_script/clip.sh"; }
+    // Mod+D hotkey-overlay-title="打开搜索" repeat=false {
+    //     spawn "vicinae" "toggle"
+    // }
     Mod+D hotkey-overlay-title="打开搜索" repeat=false {
-        spawn "vicinae" "toggle"
+        spawn "wofi"
     }
-    // Mod+D hotkey-overlay-title="打开搜索"        repeat=false    { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="打开终端" repeat=false {
         spawn "kitty"
     }
     XF86AudioLowerVolume allow-when-locked=true {
-        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"
     }
     XF86AudioMicMute allow-when-locked=true {
         spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
@@ -303,7 +313,7 @@ binds {
         spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
     }
     XF86AudioRaiseVolume allow-when-locked=true {
-        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"
     }
     XF86MonBrightnessDown allow-when-locked=true {
         spawn "brightnessctl" "set" "5%-"

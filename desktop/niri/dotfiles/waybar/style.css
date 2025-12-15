@@ -28,13 +28,13 @@
 * {
     font-family: "Maple Mono NF CN", monospace;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     text-shadow: none;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
 window#waybar {
-    background-color: alpha(@base,0.6);
+    background-color: alpha(@base,0);
     border-bottom: none;
     font-family: inherit;
 }
@@ -47,24 +47,21 @@ window#waybar {
     margin: 0;
 }
 
+
+
 window#waybar.hidden {
     opacity: 0.2;
 }
 
 tooltip {
     color: @text;
-    /* font-family: "Sarasa Gothic SC"; */
     font-size: 10px;
     border-radius: 8px;
     padding: 6px 8px;
-    background-color: alpha(@base,0.9);;
+    background-color: alpha(@base,0.9);
 }
 
 #custom-lock,
-#custom-poweroff,
-#custom-reboot,
-#custom-search,
-#custom-hibernate,
 #custom-caffeine,
 #tray,
 #backlight,
@@ -77,38 +74,117 @@ tooltip {
 #bluetooth,
 #power-profiles-daemon,
 #clock {
-    border-radius: 4px;
-    background-color: @base;
-    padding: 0px 2px;
-    margin: 5px 2px;
+    /* border-radius: 4px; */
+    /* background-color: @base; */
+    padding: 0px 5px;
+    /* margin: 3px 2px; */
 }
 #workspaces button{
-border-radius: 4px;
-    color: @sapphire;
-    padding: 0px 2px;
-    margin: 5px 2px;
+    border-radius: 4px;
+     padding: 0px 0.56em; /* 10px */
+    color: @text;
 }
+      #workspaces button {
+          background: transparent;
+          transition: background 0.2s ease, color 0.2s ease;
+      }
 
-#battery { color: @green; }
-#clock { color: @text; }
-#cpu { color: @rosewater; }
-#backlight { color: @lavender; }
-#memory { color: @peach; }
-#wireplumber { color: @yellow; }
-#network { color: @teal; }
-#bluetooth {color: @blue;}
+      #workspaces button:hover {
+          background-color: alpha(@base, 0.2);
+      }
+
+      #workspaces button.focused {
+          background-color: alpha(@base, 0.4);
+          color: @blue;
+      }
+
+
+#battery {
+    color: @green;
+    background-color: @overlay0;
+}
+#clock {
+    color: @text;
+    background-color:@surface0;
+}
+#cpu {
+    color: @rosewater;
+    background-color:@surface1;
+}
+#backlight {
+    color: @lavender;
+    background-color:@surface1;
+ }
+#memory {
+    color: @peach;
+    background-color:@surface2;
+}
+#wireplumber {
+    color: @yellow;
+  background-color:@surface2;
+}
+#power-profiles-daemon {
+    color: @lavender;
+    background-color: @overlay1;
+}
+#workspaces {
+    background-color:@surface1;
+}
+#tray{
+    background-color:@surface1;
+}
 #custom-caffeine { background-color: @base09; }
 
-#workspaces button {
-    background: transparent;
-    transition: background 0.2s ease, color 0.2s ease;
+#bluetooth {
+    color: @sapphire;
+    background-color: @overlay1;
+}
+#network {
+    color: @teal;
+    background-color: @overlay0;
 }
 
-#workspaces button:hover {
-    background-color: alpha(@text, 0.2);
+#custom-r_div.1 {
+    background-color:@surface1;
+    color: @surface0;
+}
+#custom-r_div.2 {
+    background-color:@surface2;
+    color: @surface1;
+}
+#custom-r_div.3 {
+    background-color:@overlay0;
+    color: @surface2;
+}
+#custom-r_div.4 {
+    background-color:@overlay1;
+    color: @overlay0;
+}
+#custom-r_div.5 {
+    background-color: alpha(@base,0);
+    color: @overlay1;
 }
 
-#workspaces button.focused {
-    background-color: alpha(@text, 0.4);
-    color: @base0D;
+#custom-l_div.1 {
+    background-color:@surface1;
+    color: @surface0;
 }
+#custom-l_div.2 {
+    background-color:@surface2;
+    color: @surface1;
+}
+#custom-l_div.3 {
+    background-color:@overlay0;
+    color: @surface2;
+}
+
+#custom-l_div.4 {
+    background-color:@overlay1;
+    color: @overlay0;
+}
+#custom-l_div.5 {
+    background-color: alpha(@base,0);
+    color: @overlay1;
+}
+
+

@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    wpsoffice-cn
-    # libreoffice
+    # wpsoffice-cn
+    libreoffice
     wechat
     (qq.override {
       commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
@@ -11,14 +11,15 @@
     # spotify
     splayer
     filezilla
-    obsidian
+    # obsidian
+    siyuan
     localsend
     (bottles.override {
       removeWarningPopup = true;
     })
     kdePackages.kdenlive
     gimp3-with-plugins
-    inkscape-with-extensions
-    godot
+    # onlyoffice-desktopeditors # inkscape-with-extensions
+    # godot
   ];
 }

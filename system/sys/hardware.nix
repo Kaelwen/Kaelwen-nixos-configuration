@@ -18,12 +18,12 @@
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ]; # 32 位 VA-API 驱动（兼容 32 位软件，如部分老游戏、播放器）
   };
-  boot.kernelParams = [
-    "acpi_backlight=native"
-    "intel_iommu=on"
-    # 添加性能和电源管理相关的内核参数
-    "i915.enable_psr=0" # 可选：禁用面板自刷新以提高稳定性
-    "i915.enable_dc=0" # 可选：禁用显示控制器电源节省
-  ];
+  # boot.kernelParams = [
+  #   "acpi_backlight=native"
+  #   "intel_iommu=on"
+  #   # 添加性能和电源管理相关的内核参数
+  #   "i915.enable_psr=0" # 可选：禁用面板自刷新以提高稳定性
+  #   "i915.enable_dc=0" # 可选：禁用显示控制器电源节省
+  # ];
 
 }

@@ -3,7 +3,8 @@
   ...
 }:
 let
-  photoViewer = "org.gnome.Loupe.desktop";
+  # photoViewer = "org.gnome.Loupe.desktop";
+  photoViewer = "swayimg.desktop";
   pdfViewer = "org.kde.okular.desktop";
   # pdfViewer = "wps-office-pdf.desktop";
 in
