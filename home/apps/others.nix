@@ -9,17 +9,16 @@
     })
     telegram-desktop
     # spotify
-    splayer
+    # splayer
     filezilla
     # obsidian
-    siyuan
+    # siyuan
     localsend
     (bottles.override {
       removeWarningPopup = true;
     })
     kdePackages.kdenlive
     gimp3-with-plugins
-    # onlyoffice-desktopeditors # inkscape-with-extensions
-    # godot
+    go-musicfox
   ];
 }

@@ -20,7 +20,7 @@
         ms-vscode.remote-explorer
         ms-ceintl.vscode-language-pack-zh-hans
         adpyke.codesnap
-        saoudrizwan.claude-dev
+        # saoudrizwan.claude-dev
 
         #python
         ms-python.python
@@ -100,7 +100,6 @@
         "editor.tabSize" = "2";
         "git.confirmSync" = false;
         "git.enableSmartCommit" = true;
-        # "locale" = "zh-cn";
         "nix.enableLanguageServer" = true;
         "nix.formatterPath" = "nixfmt";
         "nix.hiddenLanguageServerErrors" = [
@@ -113,7 +112,6 @@
         "window.autoDetectColorScheme" = true;
         "workbench.preferredDarkColorTheme" = "Stylix";
         "workbench.iconTheme" = "vs-seti";
-        # "files.defaultLanguage" = "zh-cn";
       };
     };
   };

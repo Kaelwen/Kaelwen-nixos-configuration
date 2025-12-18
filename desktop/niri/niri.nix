@@ -17,8 +17,8 @@
       ./mako.nix
       # ./vicinae.nix
       # ./waybar.nix
-      ./fuzzel.nix
-      ./wofi.nix
+      # ./fuzzel.nix
+      # ./wofi.nix
     ];
     xresources.properties = {
       "Xft.dpi" = 144;
@@ -32,14 +32,13 @@
     swayimg
     mpv # 视频播放器
     file-roller # 文件解压
-    kdePackages.okular # pdf阅读器
+    papers # pdf阅读器
     nmgui
     easyeffects
     blueberry
     nautilus
     waybar
-    # rofi
-    # wofi
+    wofi
     wlogout
     # cliphist
     wl-clipboard

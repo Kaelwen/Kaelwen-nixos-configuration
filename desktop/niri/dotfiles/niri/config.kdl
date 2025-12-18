@@ -43,7 +43,7 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
 }
 layout {
-    gaps 3
+    gaps 16
     background-color "transparent"
     center-focused-column "on-overflow"
     always-center-single-column
@@ -58,7 +58,7 @@ layout {
     focus-ring {
         // off
         width 3
-        active-gradient angle=45 from="89ddff" relative-to="window" to="ffcb6b"
+        active-gradient angle=45 from="#ca9ee6" relative-to="window" to="#85c1dc"
         inactive-color "#505050"
     }
 }
@@ -83,19 +83,19 @@ overview {
         off
     }
 }
-// window-rule {
-//     draw-border-with-background false
-//     // geometry-corner-radius 8
-//     // clip-to-geometry true
-//     shadow {
-//         on
-//         softness 10
-//         spread 0
-//         offset x=0 y=0
-//         draw-behind-window false
-//         color "#000000"
-//     }
-// }
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 8
+    clip-to-geometry true
+ // shadow {
+        // on
+        // softness 10
+        // spread 0
+        // offset x=0 y=0
+        // draw-behind-window false
+        // color "#000000"
+    // }
+}
 window-rule {
     match app-id="com.network.manager"
     match app-id="connman-gtk"
