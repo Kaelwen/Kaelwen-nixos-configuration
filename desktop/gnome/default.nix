@@ -3,7 +3,7 @@
   home-manager.users."binigo" = {
     imports = [
       ./binds.nix
-      ./dotfiles.nix
+      # ./dotfiles.nix
       ./extensions/0-default.nix
     ];
   };

@@ -57,7 +57,7 @@ layout {
     }
     focus-ring {
         // off
-        width 3
+        width 4
         active-gradient angle=45 from="#ca9ee6" relative-to="window" to="#85c1dc"
         inactive-color "#505050"
     }
@@ -75,14 +75,14 @@ layer-rule {
 }
 layer-rule {
     match namespace="^swww*"
-    match namespace="^noctalia-wallpaper*"
+    // match namespace="^noctalia-wallpaper*"
     place-within-backdrop true
 }
-overview {
-    workspace-shadow {
-        off
-    }
-}
+// overview {
+//     workspace-shadow {
+//         off
+//     }
+// }
 window-rule {
     draw-border-with-background false
     geometry-corner-radius 8

@@ -41,7 +41,7 @@
     #   inputs.flake-utils.follows = "flake-utils";
     # };
 
-    # nixvim.url = "github:nix-community/nixvim";
+    nixvim.url = "github:nix-community/nixvim";
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
       inputs.nixpkgs.follows = "nixpkgs"; # 🔴 关键：让 myNixpkgs 复用系统的 nixpkgs 25.05，避免依赖冲突
@@ -53,7 +53,7 @@
       self,
       nixpkgs,
       home-manager,
-      # nixvim,
+      nixvim,
       myNixpkgs,
       # nixpkgs-stable,
       chaotic,

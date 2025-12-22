@@ -20,5 +20,6 @@
     kdePackages.kdenlive
     gimp3-with-plugins
     go-musicfox
+    baidupcs-go
   ];
 }

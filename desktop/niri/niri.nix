@@ -6,6 +6,8 @@
 {
   imports = [
     ./sddm.nix
+    ./gtklock.nix
+
     # ./noctalia/default.nix
     ./overlays.nix
   ];
@@ -40,23 +42,20 @@
     waybar
     wofi
     wlogout
+    # wleave
     # cliphist
     wl-clipboard
     clipman
+    # swaylock-effects
   ];
 
-  programs = {
-    niri.enable = true;
-    gtklock.enable = true;
-  };
+  programs.niri.enable = true;
   services = {
     # xserver.desktopManager.runXdgAutostartIfNone = true;
     gnome.gnome-keyring.enable = lib.mkForce false;
     gvfs.enable = true;
     seatd.enable = true;
   };
-
-  security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
 
   xdg = {
     portal = {

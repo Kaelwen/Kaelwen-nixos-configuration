@@ -7,6 +7,8 @@ let
   waybarPath = "${config.home.homeDirectory}/nixos/desktop/niri/dotfiles/waybar";
 
   wofiPath = "${config.home.homeDirectory}/nixos/desktop/niri/dotfiles/wofi";
+
+  wlogoutPath = "${config.home.homeDirectory}/nixos/desktop/niri/dotfiles/wlogout";
 in
 {
   xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink niriPath;
@@ -14,6 +16,7 @@ in
   # xdg.configFile."waybar/config.jsonc".source = config.lib.file.mkOutOfStoreSymlink waybarPath;
   xdg.configFile."waybar".source = config.lib.file.mkOutOfStoreSymlink waybarPath;
   xdg.configFile."wofi".source = config.lib.file.mkOutOfStoreSymlink wofiPath;
+  xdg.configFile."wlogout".source = config.lib.file.mkOutOfStoreSymlink wlogoutPath;
 
   # other configurations
 }

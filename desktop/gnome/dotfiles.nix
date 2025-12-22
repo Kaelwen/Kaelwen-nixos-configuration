@@ -1,7 +1,7 @@
 { config, ... }:
 let
   # path to your nvim config directory
-  wallpapersPath = "${config.home.homeDirectory}/nixos/assets/wallpapers";
+  wallpapersPath = "${config.home.homeDirectory}/图片/壁纸";
   # path to your doom emacs config directory
   # waybarPath = "${config.home.homeDirectory}/nixos/desktop/niri/dotfiles/waybar/config.jsonc";
 in

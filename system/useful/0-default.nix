@@ -4,7 +4,7 @@
     ./clash-verge.nix
     ./fish.nix
     ./libvirt.nix
-    ./steam.nix
+    # ./steam.nix
     # ./apps.nix
     ./sudo.nix
     ./stylix.nix
