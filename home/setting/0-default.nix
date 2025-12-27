@@ -6,7 +6,7 @@
     ./xdg.nix
     ./theme.nix
     ./rime/default.nix
-    ./keepass.nix
+  #  ./keepass.nix
     # ./bin.nix
   ];
 }

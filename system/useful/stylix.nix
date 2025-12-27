@@ -8,10 +8,13 @@
   stylix = {
     enable = true;
     overlays.enable = true;
+    targets.plymouth.enable = false;
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
+
     polarity = "dark";
 
     fonts = {
@@ -43,7 +46,6 @@
     icons = {
       enable = true;
       package = pkgs.papirus-icon-theme;
-
       dark = "Papirus-Dark";
       light = "Papirus-Light";
     };

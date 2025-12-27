@@ -1,8 +1,7 @@
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
-spawn-at-startup "waybar"
-// spawn-at-startup "copyq"
+// spawn-at-startup "waybar"
 spawn-sh-at-startup "wl-paste -t text --watch clipman store"
 prefer-no-csd
 hotkey-overlay {
@@ -78,11 +77,11 @@ layer-rule {
     // match namespace="^noctalia-wallpaper*"
     place-within-backdrop true
 }
-// overview {
-//     workspace-shadow {
-//         off
-//     }
-// }
+overview {
+    workspace-shadow {
+        off
+    }
+}
 window-rule {
     draw-border-with-background false
     geometry-corner-radius 8

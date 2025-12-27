@@ -17,10 +17,11 @@
       ./swayidle.nix
       ./waypaper.nix
       ./mako.nix
+      ./avizo.nix
       # ./vicinae.nix
-      # ./waybar.nix
+      ./waybar.nix
       # ./fuzzel.nix
-      # ./wofi.nix
+      ./wofi/default.nix
     ];
     xresources.properties = {
       "Xft.dpi" = 144;
@@ -29,24 +30,20 @@
   environment.systemPackages = with pkgs; [
     # pwvucontrol
     brightnessctl
-    # loupe
+    loupe
     xwayland-satellite
-    swayimg
+    # swayimg
     mpv # 视频播放器
     file-roller # 文件解压
-    papers # pdf阅读器
     nmgui
     easyeffects
     blueberry
     nautilus
-    waybar
-    wofi
     wlogout
     # wleave
     # cliphist
     wl-clipboard
     clipman
-    # swaylock-effects
   ];
 
   programs.niri.enable = true;

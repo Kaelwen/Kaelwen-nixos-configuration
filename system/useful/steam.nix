@@ -10,16 +10,16 @@
     gamescopeSession.enable = true;
 
     extraPackages = with pkgs; [
-      # mangohud_git
-      zulu8
+      javaPackages.compiler.temurin-bin.jre-8
     ];
-    extraCompatPackages = with pkgs; [
-      proton-cachyos_x86_64_v3
-      proton-cachyos_x86_64_v4
-      # proton-ge-custom
-      # proton-ge-bin
-      # luxtorpeda
-    ];
+
+    # extraCompatPackages = with pkgs; [
+    #   # proton-cachyos_x86_64_v3
+    #   proton-cachyos_x86_64_v4
+    #   # proton-ge-custom
+    #   # proton-ge-bin
+    #   # luxtorpeda
+    # ];
   };
   programs.gamescope = {
     enable = true;
@@ -28,8 +28,8 @@
       "--borderless"
       "--backend auto"
       "--force-grab-cursor"
-      #   "-W 3072"
-      #   "-H 1920"
+      "-W 1680"
+      "-H 1050"
     ];
   };
 

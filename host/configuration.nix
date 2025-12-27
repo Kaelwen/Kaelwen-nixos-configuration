@@ -66,9 +66,9 @@
     allowBroken = false;
   };
 
-  home-manager = {
+   home-manager = {
     useGlobalPkgs = true;
-    useUserPackages = true;
+   useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
       "binigo" = import ./home.nix;

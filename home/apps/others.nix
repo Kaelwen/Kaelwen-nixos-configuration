@@ -1,18 +1,16 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # wpsoffice-cn
-    libreoffice
-    wechat
+    wpsoffice
+    # libreoffice
+    # wechat
     (qq.override {
       commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
     })
     telegram-desktop
-    # spotify
+    #spotify
     # splayer
     filezilla
-    # obsidian
-    # siyuan
     localsend
     (bottles.override {
       removeWarningPopup = true;

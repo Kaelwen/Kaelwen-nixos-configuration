@@ -8,11 +8,11 @@
         idle-timeout = 10;
       };
     };
-    style = ''
-      window {
-        background-color: alpha(#1e1e2e,0.2);
-      }
-    '';
+    # style = ''
+    #   window {
+    #     background-color: alpha(#1e1e2e,0.2);
+    #   }
+    # '';
 
     modules = with pkgs; [
       gtklock-playerctl-module

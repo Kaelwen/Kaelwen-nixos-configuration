@@ -1,10 +1,10 @@
 {
   description = "A simple NixOS flake";
-
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-25.05 分支
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
@@ -42,6 +42,15 @@
     # };
 
     nixvim.url = "github:nix-community/nixvim";
+    minecraft-plymouth-theme = {
+      url = "github:nikp123/minecraft-plymouth-theme";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+
+    };
+
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
       inputs.nixpkgs.follows = "nixpkgs"; # 🔴 关键：让 myNixpkgs 复用系统的 nixpkgs 25.05，避免依赖冲突
@@ -59,6 +68,7 @@
       chaotic,
       # niri-flake,
       stylix,
+      minecraft-plymouth-theme,
       # winapps,
       ...
     }@inputs:
@@ -81,6 +91,7 @@
           home-manager.nixosModules.default
 
           stylix.nixosModules.stylix
+          inputs.minecraft-plymouth-theme.nixosModules.default
           # {
           # environment.systemPackages = [
           # winapps.packages."${system}".winapps

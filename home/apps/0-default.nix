@@ -8,5 +8,6 @@
     ./others.nix
     # ./winapps/default.nix
     # ./zathura.nix
+    ./mc.nix
   ];
 }
