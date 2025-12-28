@@ -8,7 +8,11 @@
   stylix = {
     enable = true;
     overlays.enable = true;
-    targets.plymouth.enable = false;
+    targets = {
+      plymouth.enable = false;
+      nixvim.enable = false;
+      # neovim.enable = false;
+    };
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";

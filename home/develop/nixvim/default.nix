@@ -11,6 +11,10 @@
     defaultEditor = true;
     vimdiffAlias = true;
     wrapRc = false;
+    colorschemes.catppuccin.enable = true;
+    extraConfig = ''
+      colorscheme catppuccin
+    '';
     opts.number = true;
     # 启用相对行号（常用于 Vim 风格高效移动）
     opts.relativenumber = false;

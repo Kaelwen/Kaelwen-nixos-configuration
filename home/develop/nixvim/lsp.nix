@@ -1,26 +1,26 @@
 { lib, pkgs, ... }:
 
 {
-  programs.nixvim = {
-    programs.nixvim.plugins = {
-      lsp.enable = true; # 启用 LSP 补全
-    };
+  programs.nixvim.plugins = {
     lsp = {
-      inlayHints.enable = true;
+      enable = true;
+      inlayHints = true;
       servers = {
-        rust_analyzer.enable = true;
+        rust_analyzer = {
+          enable = true;
+          installCargo = true;
+          installRustc = true;
+        };
         pyright.enable = true;
         clangd.enable = true;
-        cmake.enable = true;
         nixd.enable = true;
-        tsserver.enable = true;
         gopls.enable = true;
-        vue_ls.enable = true;
+        dockerls.enable = true;
         cssls.enable = true;
-        tailwindcss.enable = true;
+        #
       };
     };
-    plugins.conform-nvim = {
+    conform-nvim = {
       enable = true;
       settings = {
         format_on_save = {

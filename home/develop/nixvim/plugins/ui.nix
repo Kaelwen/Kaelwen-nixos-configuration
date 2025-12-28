@@ -3,10 +3,7 @@
   programs.nixvim.plugins = {
     bufferline.enable = true; # 缓冲区标签
     lualine.enable = true; # 状态栏
-    treesitter = {
-      # 语法高亮
-      enable = true;
-    };
-
+    luasnip.enable = true; # 代码片段
+    web-devicons.enable = true; # 文件图标
   };
 }
