@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     wpsoffice
     # libreoffice
-    # wechat
+    wechat
     (qq.override {
       commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
     })

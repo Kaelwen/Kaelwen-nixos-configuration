@@ -9,7 +9,7 @@
         spec = [
           {
             __unkeyed-1 = "<leader>b";
-            group = "Buffers";
+            group = "标签页操作";
             icon = "󰓩 ";
           }
         ];

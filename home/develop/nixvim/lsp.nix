@@ -11,9 +11,13 @@
         rust_analyzer.enable = true;
         pyright.enable = true;
         clangd.enable = true;
+        cmake.enable = true;
         nixd.enable = true;
         tsserver.enable = true;
         gopls.enable = true;
+        vue_ls.enable = true;
+        cssls.enable = true;
+        tailwindcss.enable = true;
       };
     };
     plugins.conform-nvim = {

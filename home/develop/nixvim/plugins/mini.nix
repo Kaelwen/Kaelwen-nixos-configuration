@@ -10,8 +10,6 @@
         bufremove.enable = true; # 快速删除缓冲区
         indentscope.enable = true; # 缩进可视化
         pairs.enable = true; # 自动括号
-        fuzzy.enable = true;
-
         notify.enable = true; # 美化通知
       };
     };
