@@ -6,18 +6,21 @@
 
 {
   home.packages = with pkgs; [
-    nixd
-    llvmPackages_21.clang-tools
+    # nixd
     lldb
+    # llvmPackages.clang-tools
   ];
 
   programs.helix = {
     enable = true;
     settings = {
-      editor.cursor-shape = {
-        normal = "block";
-        insert = "bar";
-        select = "underline";
+      editor = {
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
+        bufferline = "multiple";
       };
     };
     languages = {
@@ -31,14 +34,14 @@
         {
           name = "c";
           auto-format = true;
-          formatter.command = "clang-format";
-          language-servers = [ "clangd" ];
+          formatter.command = "${pkgs.clang-tools}/bin/clang-format";
+          language-servers = [ "clang-dc" ];
         }
         {
           name = "cpp";
           auto-format = true;
-          formatter.command = "clang-format";
-          language-servers = [ "clangd" ];
+          formatter.command = "${pkgs.clang-tools}/bin/clang-format";
+          language-servers = [ "clangd-cpp" ];
         }
         {
           name = "python";
@@ -50,7 +53,7 @@
               "-"
             ];
           };
-          language-servers = [ "pylsp" ];
+          language-servers = [ "pyright" ];
         }
         {
           name = "rust";
@@ -110,7 +113,32 @@
       ];
       language-server = {
         nixd.command = lib.getExe pkgs.nixd;
-        pylsp.command = lib.getExe pkgs.python313Packages.python-lsp-server;
+        pyright = {
+          command = "${pkgs.pyright}/bin/pyright-langserver";
+          config = {
+            python.analysis.venvPath = ".";
+            python.analysis.venv = ".venv";
+          };
+        };
+        clangd-cpp = {
+          command = "${pkgs.clang-tools}/bin/clangd";
+          config = {
+            fallbackFlags = [
+              "-std=c++20"
+              "-Wall"
+              "-Wextra"
+            ];
+          };
+        };
+        clangd-c = {
+          command = "${pkgs.clang-tools}/bin/clangd";
+          config = {
+            fallbackFlags = [
+              "-std=c17"
+              "-Wall"
+            ];
+          };
+        };
         gopls.command = lib.getExe pkgs.gopls;
         typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
         tailwindcss-language-server.command = lib.getExe pkgs.tailwindcss-language-server;

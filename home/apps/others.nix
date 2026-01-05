@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    wpsoffice
-    # libreoffice
+    # wpsoffice
+    libreoffice
     wechat
     (qq.override {
       commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
@@ -19,5 +19,7 @@
     gimp3-with-plugins
     go-musicfox
     baidupcs-go
+    evince
+    gthumb
   ];
 }

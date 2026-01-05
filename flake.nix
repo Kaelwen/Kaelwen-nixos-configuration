@@ -41,7 +41,7 @@
     #   inputs.flake-utils.follows = "flake-utils";
     # };
 
-    nixvim.url = "github:nix-community/nixvim";
+    # nixvim.url = "github:nix-community/nixvim";
     minecraft-plymouth-theme = {
       url = "github:nikp123/minecraft-plymouth-theme";
       inputs = {
@@ -50,6 +50,13 @@
       };
 
     };
+    # zen-browser = {
+    #   url = "github:0xc000022070/zen-browser-flake";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #     home-manager.follows = "home-manager";
+    #   };
+    # };
 
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
@@ -62,7 +69,7 @@
       self,
       nixpkgs,
       home-manager,
-      nixvim,
+      # nixvim,
       myNixpkgs,
       # nixpkgs-stable,
       chaotic,
@@ -90,7 +97,7 @@
           chaotic.nixosModules.default
           home-manager.nixosModules.default
 
-          stylix.nixosModules.stylix
+          # stylix.nixosModules.stylix
           inputs.minecraft-plymouth-theme.nixosModules.default
           # {
           # environment.systemPackages = [

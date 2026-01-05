@@ -3,10 +3,10 @@
   ...
 }:
 let
-  photoViewer = "org.gnome.Loupe.desktop";
+  photoViewer = "org.gnome.gThumb.desktop";
   # photoViewer = "swayimg.desktop";
   # pdfViewer = "org.kde.okular.desktop";
-  pdfViewer = "wps-office-pdf.desktop";
+  pdfViewer = "org.gnome.Evince.desktop";
 in
 {
   xdg = {

@@ -4,9 +4,10 @@
     ./dconf.nix
     ./git.nix
     ./xdg.nix
-    ./theme.nix
+    # ./theme.nix
     ./rime/default.nix
-  #  ./keepass.nix
+    ./stylix.nix
+    #  ./keepass.nix
     # ./bin.nix
   ];
 }

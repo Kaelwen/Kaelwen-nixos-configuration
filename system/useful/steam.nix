@@ -13,13 +13,13 @@
       javaPackages.compiler.temurin-bin.jre-8
     ];
 
-    # extraCompatPackages = with pkgs; [
-    #   # proton-cachyos_x86_64_v3
-    #   proton-cachyos_x86_64_v4
-    #   # proton-ge-custom
-    #   # proton-ge-bin
-    #   # luxtorpeda
-    # ];
+    extraCompatPackages = with pkgs; [
+      # proton-cachyos_x86_64_v3
+      proton-cachyos_x86_64_v4
+      # proton-ge-custom
+      # proton-ge-bin
+      # luxtorpeda
+    ];
   };
   programs.gamescope = {
     enable = true;
