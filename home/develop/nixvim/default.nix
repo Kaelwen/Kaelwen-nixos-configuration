@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -11,14 +11,27 @@
     defaultEditor = true;
     vimdiffAlias = true;
     wrapRc = false;
-    colorschemes.catppuccin.enable = true;
-    extraConfig = ''
-      colorscheme catppuccin
-    '';
+    # colorschemes.catppuccin.enable = true;
+    # extraConfig = ''
+    #   colorscheme catppuccin
+    # '';
     opts.number = true;
     # 启用相对行号（常用于 Vim 风格高效移动）
     opts.relativenumber = false;
     opts.numberwidth = 3;
+    highlightOverride = with config.lib.stylix.colors.withHashtag; {
+      CursorLineNr = {
+        bg = base01;
+        fg = base06;
+      };
+      Comment.italic = true;
+      Comment.fg = base03;
+      Boolean.italic = true;
+      Boolean.fg = base0E;
+      String.italic = true;
+      String.fg = base0B;
+      StatusLine.bg = base00;
+    };
 
     clipboard = {
       # 剪贴板

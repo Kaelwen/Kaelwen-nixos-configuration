@@ -41,7 +41,7 @@
     #   inputs.flake-utils.follows = "flake-utils";
     # };
 
-    # nixvim.url = "github:nix-community/nixvim";
+    nixvim.url = "github:nix-community/nixvim";
     minecraft-plymouth-theme = {
       url = "github:nikp123/minecraft-plymouth-theme";
       inputs = {
@@ -50,35 +50,24 @@
       };
 
     };
-    # zen-browser = {
-    #   url = "github:0xc000022070/zen-browser-flake";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #     home-manager.follows = "home-manager";
-    #   };
-    # };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
 
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
       inputs.nixpkgs.follows = "nixpkgs"; # 🔴 关键：让 myNixpkgs 复用系统的 nixpkgs 25.05，避免依赖冲突
     };
   };
-
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      # nixvim,
-      myNixpkgs,
-      # nixpkgs-stable,
-      chaotic,
-      # niri-flake,
-      stylix,
-      minecraft-plymouth-theme,
-      # winapps,
-      ...
-    }@inputs:
+    { self, nixpkgs, ... }@inputs:
+    let
+      userName = "binigo";
+    in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -88,14 +77,14 @@
           #   inherit system;
           #   config.allowUnfree = true; # 允许非自由软件（如Chrome）
           # };
-          my-pkgs = myNixpkgs.packages.${system};
-          inherit self inputs;
+          my-pkgs = inputs.myNixpkgs.packages.${system};
+          inherit self inputs userName;
         };
         modules = [
           ./host/configuration.nix
 
-          chaotic.nixosModules.default
-          home-manager.nixosModules.default
+          inputs.chaotic.nixosModules.default
+          inputs.home-manager.nixosModules.default
 
           # stylix.nixosModules.stylix
           inputs.minecraft-plymouth-theme.nixosModules.default

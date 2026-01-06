@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  userName,
   ...
 }:
 {
@@ -11,7 +12,7 @@
     # ./noctalia/default.nix
     ./overlays.nix
   ];
-  home-manager.users."binigo" = {
+  home-manager.users."${userName}" = {
     imports = [
       ./niri-config/default.nix
       ./swayidle/default.nix

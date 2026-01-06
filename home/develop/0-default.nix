@@ -5,14 +5,14 @@
     ./uv.nix
     # ./pixi.nix
     # ./zed/0-default.nix
-    ./helix.nix
+    # ./helix.nix
     ./environments.nix
     ./direnv/default.nix
     ./vscodium.nix
     #   ./claude-code.nix
     ./yazi.nix
     # ./stm32.nix
-    # ./nixvim/default.nix
+    ./nixvim/default.nix
   ];
 
 }

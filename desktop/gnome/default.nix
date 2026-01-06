@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, userName, ... }:
 {
-  home-manager.users."binigo" = {
+  home-manager.users."${userName}" = {
     imports = [
       ./binds.nix
       ./dotfiles.nix

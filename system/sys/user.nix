@@ -1,6 +1,6 @@
-{ ... }:
+{ userName, ... }:
 {
-  users.users.binigo = {
+  users.users."${userName}" = {
     isNormalUser = true;
     description = "binigo";
     extraGroups = [

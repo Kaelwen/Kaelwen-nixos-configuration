@@ -22,7 +22,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
-    # image = "/home/binigo/图片/壁纸/bizhihui_com_202512231766460076868820.jpg";
+    # image = ../../assets/waypapers/【哲风壁纸】动漫-动漫美少女.png;
 
     polarity = "dark";
 

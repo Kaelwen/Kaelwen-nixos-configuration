@@ -1,20 +1,23 @@
 {
   lib,
+  userName,
   ...
 }:
 
 {
   imports = [
-    ../home/apps/0-default.nix
     ../home/develop/0-default.nix
     ../home/setting/0-default.nix
     ../home/terminal/0-default.nix
+    ../home/game/0-default.nix
+    ../home/tools/0-default.nix
+    ../home/browser/0-default.nix
+    ../home/daily/0-default.nix
   ];
   programs.home-manager.enable = true;
-
   home = {
-    username = "binigo";
-    homeDirectory = "/home/binigo";
+    username = "${userName}";
+    homeDirectory = "/home/${userName}";
 
     shell.enableFishIntegration = true;
     preferXdgDirectories = true;

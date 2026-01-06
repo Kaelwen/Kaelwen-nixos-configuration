@@ -35,7 +35,8 @@
     "network",
     "bluetooth",
     "custom/right_div#3",
-    "custom/screenshot",
+    // "custom/screenshot",
+    "custom/wfrec",
     "custom/colorpicker",
     "idle_inhibitor",
     "custom/right_div#4"

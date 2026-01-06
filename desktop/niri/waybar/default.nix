@@ -19,6 +19,7 @@
     "waybar/config.jsonc".source = ./dotfiles/config.jsonc;
     "waybar/modules.jsonc".source = ./dotfiles/modules.jsonc;
     "waybar/modules-dividers.jsonc".source = ./dotfiles/modules-dividers.jsonc;
+    "waybar/scripts".source = ./dotfiles/scripts;
   };
 
   home.file = {
@@ -104,7 +105,9 @@
                #bluetooth,
                #idle_inhibitor,
                #custom-screenshot,
-               #custom-colorpicker {
+               #custom-wfrec,
+               #custom-colorpicker
+                {
                  padding: 0px 0.7em;
                }
 
@@ -124,6 +127,7 @@
                #battery,
                #idle_inhibitor,
                #custom-screenshot,
+               #custom-wfrec,
                #custom-colorpicker {
                  background-color: #${config.lib.stylix.colors.base00};
                }

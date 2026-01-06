@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userName, ... }:
 {
   virtualisation.docker = {
     enable = true;
@@ -9,7 +9,10 @@
       ];
     };
   };
-  users.users.binigo.extraGroups = [ "docker" ];
-  environment.systemPackages = [ pkgs.docker-compose ];
+  users.users."${userName}".extraGroups = [ "docker" ];
+  environment.systemPackages = with pkgs; [
+    docker-compose
+    lazydocker
+  ];
 
 }

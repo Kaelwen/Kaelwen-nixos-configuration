@@ -6,6 +6,7 @@
   stylix.targets.zen-browser.profileNames = [ "default" ];
   programs.zen-browser = {
     enable = true;
+    languagePacks = [ "zh-CN" ];
     policies = {
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;
@@ -23,6 +24,11 @@
         Cryptomining = true;
         Fingerprinting = true;
       };
+      RequestedLocales = [ "zh-CN" ];
+      SearchEngines_Default = "Bing";
+    };
+    profiles.default = {
+      isDefault = true;
     };
   };
 }

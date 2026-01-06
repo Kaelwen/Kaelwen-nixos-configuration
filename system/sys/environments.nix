@@ -16,6 +16,7 @@
     # catppuccin-cursors
     intel-vaapi-driver
     bibata-cursors
+    ffmpeg
   ];
   # ++ (with my-pkgs; [
   #   # qq
@@ -27,7 +28,7 @@
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";
-    EDITOR = "hx";
+    EDITOR = "nvim";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     MOZ_ENABLE_WAYLAND = "1";
     # XDG_CURRENT_DESKTOP = "GNOME";

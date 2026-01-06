@@ -16,6 +16,7 @@
     ./pipewire.nix
     ./services.nix
     ./plymouth.nix
+    ./nix.nix
     ./user.nix
   ];
 }
