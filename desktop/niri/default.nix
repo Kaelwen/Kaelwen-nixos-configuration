@@ -26,6 +26,9 @@
     xresources.properties = {
       "Xft.dpi" = 144;
     };
+    xsession.initExtra = ''
+      xrdb -merge ~/.Xresources
+    '';
   };
   environment.systemPackages = with pkgs; [
     xwayland-satellite

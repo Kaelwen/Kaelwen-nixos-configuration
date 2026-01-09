@@ -41,7 +41,7 @@
     #   inputs.flake-utils.follows = "flake-utils";
     # };
 
-    nixvim.url = "github:nix-community/nixvim";
+    # nixvim.url = "github:nix-community/nixvim";
     minecraft-plymouth-theme = {
       url = "github:nikp123/minecraft-plymouth-theme";
       inputs = {

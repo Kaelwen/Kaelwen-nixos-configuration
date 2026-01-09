@@ -1,6 +1,7 @@
 {
   inputs,
   userName,
+  my-pkgs,
   ...
 }:
 {
@@ -18,7 +19,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs userName; };
+    extraSpecialArgs = { inherit inputs userName my-pkgs; };
     users = {
       "${userName}" = import ./home.nix;
     };

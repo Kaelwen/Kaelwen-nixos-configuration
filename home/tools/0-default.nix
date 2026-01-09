@@ -3,18 +3,17 @@
   imports = [
     ./zathura.nix
     ./obs-studio.nix
+    ./wpsoffice/default.nix
+
   ];
   home.packages = with pkgs; [
-    libreoffice
-    onlyoffice-desktopeditors
-
+    postman
     filezilla
     localsend
     # kdePackages.kdenlive
     gimp3-with-plugins
     evince
     gthumb
-    # shotcut
     flowblade
   ];
 }
