@@ -52,8 +52,6 @@
       extraPortals = with pkgs; [
         xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
-        # lxqt.xdg-desktop-portal-lxqt
-        # xdg-desktop-portal-shana
       ];
       config.common = {
         default = [

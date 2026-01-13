@@ -1,8 +1,6 @@
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
-// spawn-at-startup "xrdb" "-merge" "~/.Xresources"
-spawn-at-startup "waybar"
 spawn-sh-at-startup "wl-paste -t text --watch clipman store"
 prefer-no-csd
 hotkey-overlay {
@@ -43,7 +41,7 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
 }
 layout {
-    gaps 8
+    gaps 4
     background-color "transparent"
     center-focused-column "on-overflow"
     always-center-single-column

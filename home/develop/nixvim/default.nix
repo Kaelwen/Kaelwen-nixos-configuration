@@ -31,7 +31,7 @@
         fg = base06;
       };
       Comment.italic = true;
-      Comment.fg = base07;
+      Comment.fg = base04;
       Boolean.italic = true;
       Boolean.fg = base0E;
       String.italic = true;
