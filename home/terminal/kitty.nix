@@ -1,4 +1,9 @@
-{ lib, ... }:
+{
+  pkgs,
+  lib,
+  # config,
+  ...
+}:
 {
   dconf = {
     settings = {

@@ -18,7 +18,7 @@
 
     power-profiles-daemon.enable = true;
 
-    # linyaps.enable = true;
+    linyaps.enable = true;
 
     # printing.enable = true;#打印机
 

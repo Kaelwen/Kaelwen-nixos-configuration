@@ -38,7 +38,7 @@
           go = [ "gopls" ];
         };
         formatters = {
-          nixfmt.command = lib.getExe pkgs.nixfmt-rfc-style;
+          nixfmt.command = lib.getExe pkgs.nixfmt;
           ruff = {
             command = lib.getExe pkgs.ruff;
             args = [

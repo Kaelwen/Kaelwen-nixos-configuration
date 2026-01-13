@@ -5,14 +5,26 @@
 
 {
   # qt.platformTheme.name = "qtct";
-
-  gtk = {
-    enable = true;
-  };
-  qt.enable = true;
-  home.sessionVariables = {
-    XDG_ICON_THEME = "Papirus-Dark";
-  };
+  # gtk = {
+  #   enable = true;
+  #   colorScheme = "dark";
+  #   theme = {
+  #     name = "Adwaita-dark";
+  #     package = pkgs.gnome-themes-extra;
+  #   };
+  #   iconTheme = {
+  #     name = "Papirus-Dark";
+  #     package = pkgs.papirus-icon-theme;
+  #   };
+  # };
+  # home.packages = with pkgs; [
+  #   adwaita-qt
+  #   qt6Packages.qt6ct
+  # ];
+  # qt.enable = true;
+  # home.sessionVariables = {
+  #   XDG_ICON_THEME = "Papirus-Dark";
+  # };
 
   home.pointerCursor = {
     enable = true;

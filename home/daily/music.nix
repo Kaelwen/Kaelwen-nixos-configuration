@@ -6,7 +6,7 @@
 {
   home.packages = with pkgs; [
     go-musicfox
-    # fum
+
   ];
   xdg.configFile."go-musicfox/config.toml".text =
     # ini

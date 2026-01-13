@@ -8,7 +8,7 @@
 
     plymouth = {
       enable = true;
-      plymouth-minecraft-theme.enable = true;
+      # plymouth-minecraft-theme.enable = true;
     };
 
     # Enable "Silent Boot"

@@ -5,6 +5,9 @@
       toggleterm = {
         # 终端
         enable = true;
+        # settings = {
+        #   size = 20;
+        # };
       };
     };
     keymaps = [

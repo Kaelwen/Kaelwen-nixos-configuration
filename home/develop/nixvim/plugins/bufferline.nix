@@ -25,10 +25,8 @@
       {
         mode = "n";
         key = "<leader>bd";
-        action = "<cmd>bdelete<cr>";
-        options = {
-          desc = "删除当前标签页";
-        };
+        action = "<cmd>bp | bd #<cr>";
+        options.desc = "删除当前 buffer 并切换到上一个";
       }
       {
         mode = "n";

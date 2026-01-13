@@ -41,15 +41,15 @@
     #   inputs.flake-utils.follows = "flake-utils";
     # };
 
-    # nixvim.url = "github:nix-community/nixvim";
-    minecraft-plymouth-theme = {
-      url = "github:nikp123/minecraft-plymouth-theme";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
+    nixvim.url = "github:nix-community/nixvim";
+    # minecraft-plymouth-theme = {
+    #   url = "github:nikp123/minecraft-plymouth-theme";
+    #   inputs = {
+    #     flake-parts.follows = "flake-parts";
+    #     nixpkgs.follows = "nixpkgs";
+    #   };
 
-    };
+    # };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -85,9 +85,8 @@
 
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
-
-          # stylix.nixosModules.stylix
-          inputs.minecraft-plymouth-theme.nixosModules.default
+          # inputs.minecraft-plymouth-theme.nixosModules.default
+          inputs.stylix.nixosModules.stylix
           # {
           # environment.systemPackages = [
           # winapps.packages."${system}".winapps

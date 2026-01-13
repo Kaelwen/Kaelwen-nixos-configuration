@@ -17,6 +17,7 @@
       show_all=false
       width=800
       	'';
+
     ".config/wofi/style.css".text = ''
       window {
         font-family: "Maple Mono NF CN";
@@ -56,12 +57,12 @@
       }
       /* 选中项：使用强调色作为背景 */
       #entry:selected {
-        background-color: #${config.lib.stylix.colors.base03}; /* 蓝紫色背景突显选择状态 */
+        background-color: #${config.lib.stylix.colors.base02}; /* 蓝紫色背景突显选择状态 */
       }
       #entry:selected #text {
         color: #${config.lib.stylix.colors.base07}; /* 白色文字在选中状态下更加醒目 */
         font-weight: bold; /* 加粗字体增强视觉效果 */
-      } 
+      }
     '';
   };
 

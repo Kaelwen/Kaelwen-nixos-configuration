@@ -10,4 +10,5 @@
     waypaper
     socat
   ];
+  # xdg.configFile."waypaper".source = ./dotfiles;
 }

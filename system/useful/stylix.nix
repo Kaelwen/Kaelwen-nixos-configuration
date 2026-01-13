@@ -7,22 +7,19 @@
 
 {
   imports = [
-    inputs.stylix.homeModules.stylix
+
   ];
   stylix = {
     enable = true;
     overlays.enable = true;
-    # targets = {
-    # plymouth.enable = false;
-    # nixvim.enable = false;
-    # neovim.enable = false;
-    # };
-
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
-    # image = ../../assets/waypapers/【哲风壁纸】动漫-动漫美少女.png;
+
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/penumbra-dark.yaml";
+    override = {
+      base04 = "#676c71";
+    };
 
     polarity = "dark";
 

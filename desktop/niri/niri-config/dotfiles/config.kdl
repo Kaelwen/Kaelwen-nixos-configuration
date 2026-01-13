@@ -307,6 +307,9 @@ binds {
     Mod+E hotkey-overlay-title="打开文件管理器" repeat=false {
         spawn "thunar"
     }
+    Mod+W hotkey-overlay-title="打开waypaper" repeat=false {
+        spawn "waypaper"
+    }
     //   Mod+ hotkey-overlay-title="刷新waybar" repeat=false {
     //       spawn "pkill" "waybar" "&&" "waybar" "&"
     //   }

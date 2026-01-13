@@ -10,7 +10,7 @@
     ./gtklock/default.nix
 
     # ./noctalia/default.nix
-    ./overlays.nix
+    # ./overlays.nix
   ];
   home-manager.users."${userName}" = {
     imports = [
@@ -19,16 +19,13 @@
       ./waypaper/default.nix
       ./mako/default.nix
       ./waybar/default.nix
-      # ./fuzzel.nix
+
       ./wofi/default.nix
-      ./thunar/default.nix
+      # ./thunar/default.nix
+      ./pcmanfm-qt/default.nix
+      # ./FileChooser-shana/default.nix
     ];
-    xresources.properties = {
-      "Xft.dpi" = 144;
-    };
-    xsession.initExtra = ''
-      xrdb -merge ~/.Xresources
-    '';
+
   };
   environment.systemPackages = with pkgs; [
     xwayland-satellite
@@ -37,6 +34,7 @@
     wlogout
     wl-clipboard
     clipman
+    # niri
   ];
 
   programs.niri.enable = true;
@@ -51,11 +49,19 @@
     portal = {
       enable = true;
       xdgOpenUsePortal = true;
-      # configPackages = [ pkgs.niri ];
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-gnome
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+        # lxqt.xdg-desktop-portal-lxqt
+        # xdg-desktop-portal-shana
       ];
+      config.common = {
+        default = [
+          "gtk"
+          "wlr"
+        ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      };
     };
     autostart.enable = true;
     icons.fallbackCursorThemes = [ "Bibata-Modern-Classic" ];

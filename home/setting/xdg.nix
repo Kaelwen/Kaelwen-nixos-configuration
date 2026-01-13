@@ -7,6 +7,7 @@ let
   # photoViewer = "swayimg.desktop";
   # pdfViewer = "org.kde.okular.desktop";
   pdfViewer = "org.gnome.Evince.desktop";
+  zipViewer = "org.gnome.FileRoller.desktop";
 in
 {
   xdg = {
@@ -35,6 +36,14 @@ in
         "image/svg+xml" = [ photoViewer ]; # SVG 矢量图
         "image/heic" = [ photoViewer ]; # HEIC 格式（苹果常用)
         "application/pdf" = [ pdfViewer ];
+
+        "application/zip" = [ zipViewer ];
+        "application/vnd.rar" = [ zipViewer ];
+        "application/x-rar-compressed" = [ zipViewer ];
+        "application/x-7z-compressed" = [ zipViewer ];
+        "application/gzip" = [ zipViewer ];
+        "application/x-xz" = [ zipViewer ];
+        "application/x-tar" = [ zipViewer ];
 
       };
     };

@@ -3,7 +3,7 @@
   imports = [
     inputs.nixvim.homeModules.nixvim
     ./keymaps.nix
-    ./lsp.nix
+    # ./lsp.nix
     ./plugins/0-default.nix
   ];
   programs.nixvim = {
@@ -11,21 +11,27 @@
     defaultEditor = true;
     vimdiffAlias = true;
     wrapRc = false;
-    # colorschemes.catppuccin.enable = true;
-    # extraConfig = ''
-    #   colorscheme catppuccin
-    # '';
-    opts.number = true;
-    # 启用相对行号（常用于 Vim 风格高效移动）
-    opts.relativenumber = false;
-    opts.numberwidth = 3;
+    colorschemes.catppuccin.enable = true;
+    extraConfig = ''
+      colorscheme catppuccin
+    '';
+    opts = {
+      number = true;
+      relativenumber = false;
+      numberwidth = 3;
+
+      expandtab = true;
+      tabstop = 4;
+      shiftwidth = 4;
+      softtabstop = 4;
+    };
     highlightOverride = with config.lib.stylix.colors.withHashtag; {
       CursorLineNr = {
         bg = base01;
         fg = base06;
       };
       Comment.italic = true;
-      Comment.fg = base03;
+      Comment.fg = base07;
       Boolean.italic = true;
       Boolean.fg = base0E;
       String.italic = true;

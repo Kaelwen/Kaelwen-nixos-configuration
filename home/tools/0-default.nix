@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-    ./zathura.nix
+    # ./zathura.nix
     ./obs-studio.nix
-    ./wpsoffice/default.nix
+    # ./wpsoffice/default.nix
 
   ];
   home.packages = with pkgs; [
@@ -11,9 +11,9 @@
     filezilla
     localsend
     # kdePackages.kdenlive
-    gimp3-with-plugins
+    # gimp3-with-plugins
     evince
     gthumb
-    flowblade
+    wpsoffice-cn
   ];
 }

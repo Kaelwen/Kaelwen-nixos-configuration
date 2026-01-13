@@ -4,9 +4,9 @@
     ./dconf.nix
     ./git.nix
     ./xdg.nix
-    # ./theme.nix
+    ./theme.nix
     ./rime/default.nix
-    ./stylix.nix
+    # ./stylix.nix
     #  ./keepass.nix
     # ./bin.nix
   ];

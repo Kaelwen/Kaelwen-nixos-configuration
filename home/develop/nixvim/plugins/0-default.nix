@@ -12,5 +12,8 @@
     ./which-key.nix
     ./markview.nix
     ./treesitter.nix
+    ./lsp.nix
+    ./conform-nvim.nix
+    ./copilot-chat.nix
   ];
 }
