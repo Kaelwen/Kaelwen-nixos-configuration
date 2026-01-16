@@ -1,4 +1,5 @@
 { ... }:
+
 {
   programs.nixvim.plugins.lsp = {
     enable = true;
@@ -15,9 +16,7 @@
       gopls.enable = true;
       dockerls.enable = true;
       cssls.enable = true;
-      marksman.enable = true;
-      jsonls.enable = true;
-      ts_ls.enable = true;
+      #
     };
   };
 }

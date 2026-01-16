@@ -4,7 +4,6 @@
 }:
 
 {
-  programs.fish.shellInitLast = "pixi completion --shell fish | source";
 
   home.packages = with pkgs; [ pixi ];
 
@@ -45,4 +44,3 @@
     '';
   };
 }
-

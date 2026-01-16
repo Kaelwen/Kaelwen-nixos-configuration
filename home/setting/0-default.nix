@@ -4,7 +4,7 @@
     ./dconf.nix
     ./git.nix
     ./xdg.nix
-    ./theme.nix
+    # ./theme.nix
     ./rime/default.nix
     # ./stylix.nix
     #  ./keepass.nix

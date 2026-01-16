@@ -88,8 +88,8 @@
       centerEverything = false
       # 主题颜色
       # 随机
-      # primaryColor = "random"
-      primaryColor = "#${config.lib.stylix.colors.base07}" # 经典网易云音乐红
+      primaryColor = "random"
+
 
       # 进度条字符样式配置
       [theme.progress]

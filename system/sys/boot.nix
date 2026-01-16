@@ -5,6 +5,6 @@
     efi.canTouchEfiVariables = true;
     systemd-boot.configurationLimit = 10;
   };
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
-  # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 }

@@ -8,22 +8,19 @@
   imports = [
     ./sddm.nix
     ./gtklock/default.nix
-
-    # ./noctalia/default.nix
-    # ./overlays.nix
   ];
   home-manager.users."${userName}" = {
     imports = [
       ./niri-config/default.nix
+      # ./dms/default.nix
       ./swayidle/default.nix
       ./waypaper/default.nix
       ./mako/default.nix
       ./waybar/default.nix
 
       ./wofi/default.nix
-      # ./thunar/default.nix
-      ./pcmanfm-qt/default.nix
-      # ./FileChooser-shana/default.nix
+      ./thunar/default.nix
+      ./rofi/default.nix
     ];
 
   };
@@ -34,6 +31,7 @@
     wlogout
     wl-clipboard
     clipman
+    labwc
     # niri
   ];
 

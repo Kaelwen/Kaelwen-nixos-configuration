@@ -11,7 +11,6 @@
     unzip
     nix-output-monitor
     unrar
-    btop
     mesa
     # catppuccin-cursors
     intel-vaapi-driver

@@ -7,20 +7,22 @@
 
 {
   imports = [
-
+    # inputs.stylix.homeModules.stylix
   ];
   stylix = {
     enable = true;
     overlays.enable = true;
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/penumbra-dark.yaml";
-    override = {
-      base04 = "#676c71";
-    };
 
+    targets = {
+      # kitty.enable = false;
+      # neovim.enable = false;
+      # nixvim.enable = false;
+    };
     polarity = "dark";
 
     fonts = {

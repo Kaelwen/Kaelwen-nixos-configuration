@@ -3,6 +3,7 @@
   imports = [
     # ./zathura.nix
     ./obs-studio.nix
+    ./btop.nix
     # ./wpsoffice/default.nix
 
   ];
@@ -10,11 +11,11 @@
     postman
     filezilla
     localsend
-    libreoffice
-    # kdePackages.kdenlive
+    # libreoffice
+    kdePackages.kdenlive
     # gimp3-with-plugins
     evince
     gthumb
-    # wpsoffice-cn
+    wpsoffice-cn
   ];
 }

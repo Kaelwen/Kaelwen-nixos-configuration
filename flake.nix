@@ -5,15 +5,11 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    # nur = {
-    #   url = "github:nix-community/NUR";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # quickshell = {
     #   url = "github:outfoxxed/quickshell";
@@ -24,32 +20,34 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     #   inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     # };
-
+    # dms = {
+    #   url = "github:AvengeMedia/DankMaterialShell/stable";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     home-manager = {
-      # url = "github:nix-community/home-manager/release-25.11";
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      # url = "github:nix-community/stylix/release-25.11";
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # winapps = {
-    #   url = "github:winapps-org/winapps";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.flake-utils.follows = "flake-utils";
-    # };
 
-    nixvim.url = "github:nix-community/nixvim";
-    # minecraft-plymouth-theme = {
-    #   url = "github:nikp123/minecraft-plymouth-theme";
-    #   inputs = {
-    #     flake-parts.follows = "flake-parts";
-    #     nixpkgs.follows = "nixpkgs";
-    #   };
-
-    # };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    minecraft-plymouth-theme = {
+      url = "github:nikp123/minecraft-plymouth-theme";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -60,7 +58,7 @@
 
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
-      inputs.nixpkgs.follows = "nixpkgs"; # 🔴 关键：让 myNixpkgs 复用系统的 nixpkgs 25.05，避免依赖冲突
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =
@@ -85,17 +83,9 @@
 
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
-          # inputs.minecraft-plymouth-theme.nixosModules.default
           inputs.stylix.nixosModules.stylix
-          # {
-          # environment.systemPackages = [
-          # winapps.packages."${system}".winapps
-          # ];
-          # }
+          inputs.minecraft-plymouth-theme.nixosModules.default
 
-          #inputs.noctalia.packages.${system}.default
-          # nur.modules.nixos.default
-          # nur.legacyPackages."${system}".repos.iopq.modules.xraya
         ];
       };
     };

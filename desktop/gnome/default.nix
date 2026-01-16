@@ -20,7 +20,6 @@
     gnome-online-accounts.enable = false;
     gnome-settings-daemon.enable = true;
   };
-
   # services.udev.packages = [ pkgs.gnome-settings-daemon ];
 
   environment.systemPackages = with pkgs; [
