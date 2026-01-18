@@ -16,6 +16,7 @@
       gopls.enable = true;
       dockerls.enable = true;
       cssls.enable = true;
+      marksman.enable = true;
       #
     };
   };

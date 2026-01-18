@@ -15,6 +15,17 @@
           desc = "保存文本";
         };
       }
+      {
+        mode = "t";
+        key = "<Esc>";
+        action = "<C-\\><C-n>"; # 退出终端模式
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "退出终端模式";
+        };
+      }
+
     ];
   };
 }

@@ -27,7 +27,7 @@ in
     timeouts = [
       {
         timeout = 560; # in seconds
-        command = "${pkgs.libnotify}/bin/notify-send '1分钟后进入锁屏";
+        command = "${pkgs.libnotify}/bin/notify-send '1分钟后进入锁屏'";
       }
       {
         timeout = 600;

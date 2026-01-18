@@ -16,6 +16,7 @@
         nix = [ "nixfmt" ];
         python = [ "ruff" ];
         go = [ "gofmt" ];
+        markdown = [ "prettier" ];
       };
       formatters = {
         nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
@@ -28,6 +29,7 @@
             "-"
           ];
         };
+        prettier.command = "${pkgs.prettier}/bin/prettier";
 
       };
     };

@@ -7,6 +7,19 @@
     border-radius: 1.2em;
     text-color: #cdd6f4;
 }
+configuration {
+    modi: "filebrowser";
+    filebrowser {
+        directory-hover-bg: #3b4252;
+        directory-hover-fg: #88c0d0;
+        file-hover-bg: #434c5e;
+        file-hover-fg: #d8dee9;
+        directory-bg: #2e3440;
+        directory-fg: #8fbcbb;
+        file-bg: #2e3440;
+        file-fg: #d8dee9;
+    }
+}
 
 window {
     width: 80%;

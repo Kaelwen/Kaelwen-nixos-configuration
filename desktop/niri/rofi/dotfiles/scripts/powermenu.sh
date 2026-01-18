@@ -13,10 +13,10 @@
 theme="$HOME/.config/rofi/themes/powermenu.rasi"
 
 # CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
+hibernate=''
 shutdown=''
 reboot=''
 lock=''
@@ -47,7 +47,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$reboot\n$shutdown\n$suspend\n$logout" | rofi_cmd
+	echo -e "$lock\n$reboot\n$shutdown\n$suspend\n$logout\n$hibernate" | rofi_cmd
 }
 
 # Execute Command
@@ -61,9 +61,13 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
 			amixer set Master mute
+            gtklock
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
             niri msg action quit
+        elif [[ $1 == '--hibernate' ]]; then
+            gtklock
+            systemctl hibernate
 		fi
 	# else
 	# 	exit 0
@@ -87,5 +91,8 @@ case ${chosen} in
         ;;
     $logout)
 		run_cmd --logout
+        ;;
+    $hibernate)
+        run_cmd --hibernate
         ;;
 esac

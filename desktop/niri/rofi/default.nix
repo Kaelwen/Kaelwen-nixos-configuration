@@ -7,13 +7,10 @@
   ];
 
   xdg.configFile."rofi/config.rasi".source = ./dotfiles/config.rasi;
-  xdg.configFile."rofi/themes/launcher.rasi".source = ./dotfiles/themes/launcher.rasi;
-  xdg.configFile."rofi/themes/powermenu.rasi".source = ./dotfiles/themes/powermenu.rasi;
-  xdg.configFile."rofi/themes/clip.rasi".source = ./dotfiles/themes/clip.rasi;
-  xdg.configFile."rofi/themes/wallpaper.rasi".source = ./dotfiles/themes/wallpaper.rasi;
+  xdg.configFile."rofi/themes".source = ./dotfiles/themes;
   xdg.configFile."rofi/images".source = ./dotfiles/images;
   xdg.configFile."rofi/scripts".source = ./dotfiles/scripts;
-  home.file.".config/rofi/themes/colors.rasi".text = ''
+  home.file.".config/rofi/colors.rasi".text = ''
     * {
         font:                        "Maple Mono NF CN 10";
         background:                  #${config.lib.stylix.colors.base00};

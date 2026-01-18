@@ -48,9 +48,9 @@
       enable = true;
       xdgOpenUsePortal = true;
       wlr.enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-      ];
+      # extraPortals = with pkgs; [
+      #   xdg-desktop-portal-gtk
+      # ];
     };
     autostart.enable = true;
     icons.fallbackCursorThemes = [ "Bibata-Modern-Classic" ];

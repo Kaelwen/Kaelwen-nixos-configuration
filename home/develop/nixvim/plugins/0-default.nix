@@ -15,6 +15,6 @@
     ./lsp.nix
     ./conform-nvim.nix
     ./remote.nix
-
+    ./opencode.nix
   ];
 }
