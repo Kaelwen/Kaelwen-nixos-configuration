@@ -12,6 +12,11 @@
             group = "标签页操作";
             icon = "󰓩 ";
           }
+          {
+            __unkeyed-1 = "<leader>r";
+            group = "ssh连接";
+            icon = "אַ";
+          }
         ];
       };
     };

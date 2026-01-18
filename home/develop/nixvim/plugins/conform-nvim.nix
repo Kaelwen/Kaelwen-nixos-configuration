@@ -15,7 +15,7 @@
         rust = [ "rustfmt" ];
         nix = [ "nixfmt" ];
         python = [ "ruff" ];
-        go = [ "gopls" ];
+        go = [ "gofmt" ];
       };
       formatters = {
         nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
@@ -28,6 +28,7 @@
             "-"
           ];
         };
+
       };
     };
   };

@@ -14,6 +14,7 @@
     ./treesitter.nix
     ./lsp.nix
     ./conform-nvim.nix
-    ./copilot-chat.nix
+    ./remote.nix
+
   ];
 }

@@ -20,6 +20,8 @@
 
     linyaps.enable = true;
 
+    dbus.enable = true;
+
     # printing.enable = true;#打印机
 
     usbguard.dbus.enable = true;

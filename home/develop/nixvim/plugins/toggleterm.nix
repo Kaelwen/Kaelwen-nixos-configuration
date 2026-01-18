@@ -1,13 +1,16 @@
+# 终端
 { ... }:
 {
   programs.nixvim = {
     plugins = {
       toggleterm = {
-        # 终端
         enable = true;
-        # settings = {
-        #   size = 20;
-        # };
+        settings = {
+          direction = "float";
+          float_opts = {
+            winblend = 0;
+          };
+        };
       };
     };
     keymaps = [

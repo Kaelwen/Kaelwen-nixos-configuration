@@ -8,20 +8,19 @@
 # in
 {
   home.packages = with pkgs; [
-    # wechat-wrapper
     (qq.override {
       commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
     })
     telegram-desktop
-    wechat
+    # wechat
   ];
-  # xdg.desktopEntries.wechat = {
-  #   name = "WeChat";
-  #   exec = "env QT_IM_MODULE=fcitx ${pkgs.wechat}/bin/wechat";
-  #   icon = "wechat";
-  #   categories = [
-  #     "Network"
-  #     "InstantMessaging"
-  #   ];
-  # };
+  xdg.desktopEntries.wechat = {
+    name = "WeChat";
+    exec = "env QT_IM_MODULE=fcitx ${pkgs.wechat}/bin/wechat";
+    icon = "wechat";
+    categories = [
+      "Network"
+      "InstantMessaging"
+    ];
+  };
 }

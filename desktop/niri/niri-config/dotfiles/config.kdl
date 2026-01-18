@@ -1,8 +1,10 @@
 spawn-at-startup "waypaper" "--restore"
 // spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
-spawn-sh-at-startup "wl-paste -t text --watch clipman store"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+// spawn-sh-at-startup "wl-paste -t text --watch clipman store"
 // spawn-sh-at-startup "waybar"
+spawn-at-startup "~/.config/rofi/scripts/bg-setup.sh"
 prefer-no-csd
 hotkey-overlay {
     skip-at-startup
@@ -293,13 +295,14 @@ binds {
     //     spawn "copyq" "show"
     // }
     Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-        spawn "clipman" "pick" "--tool" "wofi" "-T'--prompt=clipboard-history -i'"
+        // spawn "clipman" "pick" "--tool" "wofi" "-T'--prompt=clipboard-history -i'"
+        spawn "~/.config/rofi/scripts/clip.sh"
     }
     // Mod+D hotkey-overlay-title="打开搜索" repeat=false {
     //     spawn "vicinae" "toggle"
     // }
     Mod+D hotkey-overlay-title="打开搜索" repeat=false {
-        spawn "rofi" "-show" "drun" "-theme" ".config/rofi/themes/theme.rasi"
+        spawn "~/.config/rofi/scripts/launcher.sh"
     }
     Mod+T hotkey-overlay-title="打开终端" repeat=false {
         spawn "kitty"

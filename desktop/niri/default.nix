@@ -29,9 +29,9 @@
     mpv # 视频播放器
     file-roller # 文件解压
     wlogout
-    wl-clipboard
-    clipman
-    labwc
+    # wl-clipboard
+    # clipman
+    # labwc
     # niri
   ];
 
@@ -47,17 +47,10 @@
     portal = {
       enable = true;
       xdgOpenUsePortal = true;
+      wlr.enable = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
       ];
-      config.common = {
-        default = [
-          "gtk"
-          "wlr"
-        ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-      };
     };
     autostart.enable = true;
     icons.fallbackCursorThemes = [ "Bibata-Modern-Classic" ];

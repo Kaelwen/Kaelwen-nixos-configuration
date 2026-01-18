@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 {
   home.packages = with pkgs; [
-    # waybar
     hyprpicker
     grim
     slurp
@@ -128,8 +127,8 @@
             ];
             ethernet = "󰈀";
           };
-          "on-click" = "nmgui";
-          "on-click-right" = "nm-connection-editor";
+          on-click = "nmgui";
+          on-click-right = "nm-connection-editor";
         };
         "network#data" = {
           format-wifi = "{essid}";
@@ -170,7 +169,7 @@
           format = "{percent:2}%";
         };
 
-        "pulseaudio" = {
+        pulseaudio = {
           format = "{icon}";
           format-muted = "";
           tooltip = false;
@@ -183,9 +182,9 @@
               ""
             ];
           };
-          "on-click" = "pavucontrol";
-          "on-scroll-up" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
-          "on-scroll-down" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+          on-click = "pavucontrol";
+          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
         };
         "pulseaudio#data" = {
           format = "{volume}%";
@@ -222,12 +221,12 @@
         "custom/wlogout" = {
           format = "󱄅";
           tooltip = false;
-          "on-click" = "wlogout";
+          on-click = "~/.config/rofi/scripts/powermenu.sh";
         };
         "custom/apps" = {
           format = "";
           tooltip = false;
-          on-click = "wofi";
+          on-click = "~/.config/rofi/scripts/launcher.sh";
         };
       };
     };
@@ -265,7 +264,7 @@
         color: #${config.lib.stylix.colors.base07};
       }
       #workspaces {
-        background: #${config.lib.stylix.colors.base02};
+        background: #${config.lib.stylix.colors.base03};
         border-radius: 0.5em;
         margin: 0.25em 0.5em;
       }
@@ -286,7 +285,7 @@
         color: #${config.lib.stylix.colors.base00};
         border-radius: 0.5em 0 0 0.5em;
         margin:0.25em 0px 0.25em 0.25em;
-        padding: 0px 0.5em;
+        padding: 0px 0.7em;
       }
 
       #network.data,
@@ -298,7 +297,7 @@
       #memory.data,
       #clock.data,
       #tray {
-        background: #${config.lib.stylix.colors.base02};
+        background: #${config.lib.stylix.colors.base03};
         border-radius: 0 0.5em 0.5em 0;
         margin:0.25em  0.25em 0.25em 0;
         padding: 0px 0.5em;
