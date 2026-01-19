@@ -6,18 +6,26 @@
     luasnip.enable = true; # 代码片段
     web-devicons.enable = true; # 文件图标
 
-    transparent = {
-      enable = true;
-      settings = {
-        # 包含行号相关的所有高亮组
-        extra_groups = [
-          "LineNr"
-          "LineNrAbove"
-          "LineNrBelow"
-          "CursorLineNr"
-          "SignColumn"
-        ];
-      };
-    };
+    # scrollview.enable = true;
+    # cursorline.enable = true;
+    # cursorline.settings.cursorword.enable = true;
+    # fidget.enable = true;
+    # indent-blankline.enable = true;
+    # gitsigns.enable = true;
+    # navbuddy.enable = true;
+    # smartcolumn.enable = true;
+    # fastaction.enable = true;
+    # colorizer = {
+    #   enable = true;
+    #   settings.user_default_options = {
+    #     mode = "virtualtext";
+    #     css = true;
+    #     css_fn = true;
+    #     names = false;
+    #     virtualtext = "■";
+    #     virtualtext_inline = true;
+    #     virtualtext_mode = "foreground";
+    #   };
+    # };
   };
 }

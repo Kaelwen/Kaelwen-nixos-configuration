@@ -14,7 +14,7 @@
       ./niri-config/default.nix
       # ./dms/default.nix
       ./swayidle/default.nix
-      ./waypaper/default.nix
+      # ./waypaper/default.nix
       ./mako/default.nix
       ./waybar/default.nix
 

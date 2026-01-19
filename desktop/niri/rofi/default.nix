@@ -4,6 +4,7 @@
     rofi
     cliphist
     wl-clipboard
+    swww
   ];
 
   xdg.configFile."rofi/config.rasi".source = ./dotfiles/config.rasi;

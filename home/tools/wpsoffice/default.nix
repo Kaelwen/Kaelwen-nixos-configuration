@@ -15,3 +15,16 @@ in
     terminal = false;
   };
 }
+# { pkgs, ... }:
+# {
+#   home.packages = with pkgs; [
+#     (wpsoffice-cn.overrideAttrs (old: {
+#       postInstall = old.postInstall or "" + ''
+#         wrapProgram \
+#         export QT_IM_MODULE=fcitx \
+#         export FCITX_QT_GUI_STYLE=fusion \
+#         $out/bin/wps \
+#       '';
+#     }))
+#   ];
+# }

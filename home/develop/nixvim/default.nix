@@ -21,7 +21,6 @@
       number = true;
       relativenumber = false;
       numberwidth = 3;
-
       expandtab = true;
       tabstop = 4;
       shiftwidth = 4;
@@ -40,7 +39,6 @@
       String.fg = base0B;
       StatusLine.bg = base00;
     };
-
     clipboard = {
       # 剪贴板
       providers = {

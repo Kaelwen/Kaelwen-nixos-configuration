@@ -5,7 +5,7 @@
     ./obs-studio.nix
     ./btop.nix
     ./opencode.nix
-    # ./wpsoffice/default.nix
+    ./wpsoffice/default.nix
 
   ];
   home.packages = with pkgs; [
@@ -17,6 +17,6 @@
     gimp3-with-plugins
     evince
     gthumb
-    wpsoffice-cn
+    # wpsoffice-cn
   ];
 }

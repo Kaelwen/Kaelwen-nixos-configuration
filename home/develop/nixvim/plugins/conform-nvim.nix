@@ -16,7 +16,17 @@
         nix = [ "nixfmt" ];
         python = [ "ruff" ];
         go = [ "gofmt" ];
+        javascript = [ "prettier" ];
+        typescript = [ "prettier" ];
         markdown = [ "prettier" ];
+        json = [ "prettier" ];
+        yaml = [ "prettier" ];
+        toml = [ "prettier" ];
+        html = [ "prettier" ];
+        css = [ "prettier" ];
+        vue = [ "prettier" ];
+        kdl = [ "kdlfmt" ];
+
       };
       formatters = {
         nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
@@ -30,7 +40,7 @@
           ];
         };
         prettier.command = "${pkgs.prettier}/bin/prettier";
-
+        kdlfmt.command = "${pkgs.kdlfmt}/bin/kdlfmt";
       };
     };
   };

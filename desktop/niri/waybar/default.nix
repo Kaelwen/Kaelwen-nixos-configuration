@@ -15,7 +15,10 @@
   ];
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    systemd = {
+      target = config.wayland.systemd.target;
+      enable = true;
+    };
     settings = {
       mainBar = {
         layer = "top";

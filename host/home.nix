@@ -13,6 +13,7 @@
     ../home/tools/0-default.nix
     ../home/browser/0-default.nix
     ../home/daily/0-default.nix
+
   ];
   programs.home-manager.enable = true;
   home = {
