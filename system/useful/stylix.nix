@@ -18,11 +18,6 @@
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/penumbra-dark.yaml";
 
-    targets = {
-      # kitty.enable = false;
-      # neovim.enable = false;
-      # nixvim.enable = false;
-    };
     polarity = "dark";
 
     fonts = {

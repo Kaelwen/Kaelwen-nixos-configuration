@@ -6,22 +6,21 @@
 }:
 {
   imports = [
-    ../system/init.nix
-    ../desktop/init.nix
-    inputs.home-manager.nixosModules.default
+    ../system
+    ../desktop
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowBroken = false;
-  };
-
+  # nixpkgs.config = {
+  #   allowUnfree = true;
+  #   allowBroken = false;
+  # };
+  #
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs userName my-pkgs; };
     users = {
-      "${userName}" = import ./home.nix;
+      "${userName}" = import ../home;
     };
     backupFileExtension = "backup";
   };

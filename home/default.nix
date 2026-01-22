@@ -6,13 +6,13 @@
 
 {
   imports = [
-    ../home/develop/0-default.nix
-    ../home/setting/0-default.nix
-    ../home/terminal/0-default.nix
-    ../home/game/0-default.nix
-    ../home/tools/0-default.nix
-    ../home/browser/0-default.nix
-    ../home/daily/0-default.nix
+    ./develop
+    ./setting
+    ./terminal
+    ./game
+    ./tools
+    ./browser
+    ./daily
 
   ];
   programs.home-manager.enable = true;

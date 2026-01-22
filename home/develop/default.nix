@@ -1,16 +1,15 @@
-{ ... }:
 {
   imports = [
-    ./distrobox/default.nix
+    ./distrobox
     # ./uv.nix
     ./pixi.nix
     # ./helix.nix
     ./environments.nix
-    ./direnv/default.nix
+    ./direnv
     ./vscodium.nix
     ./yazi.nix
     # ./stm32.nix
-    ./nixvim/default.nix
+    ./nixvim
     # ./zed.nix
   ];
 

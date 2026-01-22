@@ -286,7 +286,7 @@ binds {
     //     spawn "noctalia-shell" "ipc" "call" "wallpaper" "random"
     // }
     Mod+Alt+L hotkey-overlay-title="锁屏" repeat=false {
-        spawn "gtklock"
+        spawn "swaylock"
     }
     // Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
     //     spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"

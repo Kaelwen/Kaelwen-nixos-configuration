@@ -17,10 +17,7 @@
     bibata-cursors
     ffmpeg
   ];
-  # ++ (with my-pkgs; [
-  #   # qq
-  #   wpsoffice
-  # ]);
+
   programs.nix-ld.enable = true;
 
   environment.localBinInPath = true;

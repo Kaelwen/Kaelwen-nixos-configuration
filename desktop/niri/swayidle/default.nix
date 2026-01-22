@@ -3,7 +3,7 @@
   ...
 }:
 let
-  lock = "${pkgs.gtklock}/bin/gtklock -d";
+  lock = "swaylock";
   display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
 in
 

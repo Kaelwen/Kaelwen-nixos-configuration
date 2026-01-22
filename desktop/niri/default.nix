@@ -7,20 +7,20 @@
 {
   imports = [
     ./sddm.nix
-    ./gtklock/default.nix
   ];
   home-manager.users."${userName}" = {
     imports = [
-      ./niri-config/default.nix
+      ./niri-config
       # ./dms/default.nix
-      ./swayidle/default.nix
+      ./swayidle
       # ./waypaper/default.nix
-      ./mako/default.nix
-      ./waybar/default.nix
+      ./mako
+      ./waybar
 
-      ./wofi/default.nix
-      ./thunar/default.nix
-      ./rofi/default.nix
+      ./wofi
+      ./thunar
+      ./rofi
+      ./swaylock
     ];
 
   };
@@ -28,11 +28,6 @@
     xwayland-satellite
     mpv # 视频播放器
     file-roller # 文件解压
-    wlogout
-    # wl-clipboard
-    # clipman
-    # labwc
-    # niri
   ];
 
   programs.niri.enable = true;
