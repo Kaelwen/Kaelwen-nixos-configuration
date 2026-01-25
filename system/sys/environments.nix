@@ -6,13 +6,11 @@
   environment.systemPackages = with pkgs; [
     wget
     git
-    fastfetch
     zip
     unzip
     nix-output-monitor
     unrar
     mesa
-    # catppuccin-cursors
     intel-vaapi-driver
     bibata-cursors
     ffmpeg
@@ -27,8 +25,7 @@
     EDITOR = "hx";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     MOZ_ENABLE_WAYLAND = "1";
-    # XDG_CURRENT_DESKTOP = "GNOME";
-    # DESKTOP_SESSION = "gnome";
+
   };
   xdg.terminal-exec = {
     enable = true;

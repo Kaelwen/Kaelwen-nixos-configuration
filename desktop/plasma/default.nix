@@ -1,4 +1,5 @@
-{pkgs,...}:{
+{ pkgs, ... }:
+{
   services.desktopManager.plasma6.enable = true;
 
   services.displayManager.sddm = {
@@ -14,14 +15,15 @@
       };
     };
   };
-    environment.systemPackages = [
-      (pkgs.sddm-astronaut.override {
-        embeddedTheme = "astronaut";
-        themeConfig = {
-          General = ''
-            HeaderText="请使用指纹或密码解锁"
-          '';
-        };
-      })
-    ];
+  environment.systemPackages = [
+    (pkgs.sddm-astronaut.override {
+      embeddedTheme = "astronaut";
+      themeConfig = {
+        General = ''
+          HeaderText="请使用指纹或密码解锁"
+        '';
+      };
+    })
+  ];
 }
+

@@ -12,7 +12,6 @@
     ./hardware.nix
     ./i18n.nix
     ./networking.nix
-    ./openssh.nix
     ./pipewire.nix
     ./services.nix
     ./plymouth.nix

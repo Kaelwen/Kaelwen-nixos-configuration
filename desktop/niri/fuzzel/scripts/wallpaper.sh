@@ -1,10 +1,4 @@
-set -euo pipefail
-
-# 配置
-WALLPAPER_DIR="${WALLPAPER_DIR:-$HOME/Pictures/wallpapers}/"
-ROFI_THEME="${ROFI_THEME:-$HOME/.config/rofi/themes/wallpaper.rasi}"
-# ROFI_THEME="${ROFI_THEME:-$HOME/nixos-configuration/desktop/niri/rofi/dotfiles/themes/wallpaper.rasi}"
-
+WALLPAPER_DIR="${WALLPAPER_DIR:-$HOME/Pictures/wallpapers}/" 
 # 启动 swww 守护进程
 if ! pgrep -x "swww-daemon" >/dev/null 2>&1; then
     swww-daemon >/dev/null 2>&1 &
@@ -23,7 +17,7 @@ for wp in "${WALLS[@]}"; do
 done
 
 # 显示 rofi 菜单
-ROFI_CMD=(rofi -dmenu -p "选择壁纸" -show-icons)
+ROFI_CMD=(fuzzel -d)
 
 if [ -n "$ROFI_THEME" ]; then
     ROFI_CMD+=(-theme "$ROFI_THEME")

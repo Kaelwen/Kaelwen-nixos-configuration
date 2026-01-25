@@ -1,5 +1,0 @@
-{
-  "nix.formatterPath": "nixfmt",
-  "nix.serverSettings": {},
-  "cmake.configureSettings": {}
-}

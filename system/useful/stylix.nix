@@ -6,9 +6,7 @@
 }:
 
 {
-  imports = [
-    # inputs.stylix.homeModules.stylix
-  ];
+
   stylix = {
     enable = true;
     overlays.enable = true;
@@ -19,6 +17,11 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/penumbra-dark.yaml";
 
     polarity = "dark";
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 26;
+    };
 
     fonts = {
       serif = config.stylix.fonts.sansSerif;

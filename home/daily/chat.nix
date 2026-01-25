@@ -14,13 +14,13 @@
     telegram-desktop
     # wechat
   ];
-  # xdg.desktopEntries.wechat = {
-  #   name = "WeChat";
-  #   exec = "env QT_IM_MODULE=fcitx ${pkgs.wechat}/bin/wechat";
-  #   icon = "wechat";
-  #   categories = [
-  #     "Network"
-  #     "InstantMessaging"
-  #   ];
-  # };
+  xdg.desktopEntries.wechat = {
+    name = "WeChat";
+    exec = "env QT_IM_MODULE=fcitx ${pkgs.wechat}/bin/wechat";
+    icon = "wechat";
+    categories = [
+      "Network"
+      "InstantMessaging"
+    ];
+  };
 }

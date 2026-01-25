@@ -10,11 +10,6 @@
     ../desktop
   ];
 
-  # nixpkgs.config = {
-  #   allowUnfree = true;
-  #   allowBroken = false;
-  # };
-  #
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

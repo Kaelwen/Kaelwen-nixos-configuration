@@ -1,24 +1,24 @@
 { lib, pkgs, ... }:
 {
-  # home.packages = with pkgs; [ swaylock-effects ];
-  # programs.swaylock = {
-  #   enable = true;
-  #   package = pkgs.swaylock-effects;
-  #   settings = {
-  #     effect-blur = "10x5";
-  #     indicator-radius = 200;
-  #     indicator-thickness = 15;
-  #   };
-  # };
-  # # xdg.configFile."swaylock/config".text = ''
-  #   screenshots
-  #   clock
-  #   indicator
-  #   indicator-radius=200
-  #   indicator-thickness=15
-  #   effect-blur=10x5
-  #   font=Maple Mono NF CN
-  # '';
+
+  programs.swaylock = {
+    enable = true;
+    package = pkgs.swaylock-effects;
+    settings = {
+      effect-blur = "10x5";
+      indicator-radius = 200;
+      indicator-thickness = 15;
+    };
+  };
+  xdg.configFile."swaylock/config".text = ''
+    screenshots
+    clock
+    indicator
+    indicator-radius=200
+    indicator-thickness=15
+    effect-blur=10x5
+    font=Maple Mono NF CN
+  '';
   # programs.gtklock = {
   #   enable = true;
   #   config = {

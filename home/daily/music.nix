@@ -9,7 +9,7 @@
 
   ];
   xdg.configFile."go-musicfox/config.toml".text =
-    # ini
+    # toml
     ''
       # ---------------------------------------------------------------- #
       #                  Go-Musicfox Configuration File                  #

@@ -3,7 +3,7 @@
   ...
 }:
 let
-  lock = "swaylock";
+  lock = "${pkgs.swaylock-effects}/bin/swaylock";
   display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
 in
 
@@ -13,7 +13,7 @@ in
     events = [
       {
         event = "lock";
-        command = (display "off") + "; " + lock;
+        command = (display "off") + ";" + lock;
       }
       {
         event = "unlock";
@@ -31,7 +31,7 @@ in
       }
       {
         timeout = 600;
-        command = (display "off") + "; " + lock;
+        command = (display "off") + ";" + lock;
       }
     ];
   };

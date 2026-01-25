@@ -15,14 +15,14 @@ in
     userDirs = {
       enable = true;
       # 设置各个用户目录的路径
-      desktop = "${config.home.homeDirectory}/桌面";
-      documents = "${config.home.homeDirectory}/文档";
-      download = "${config.home.homeDirectory}/下载";
-      music = "${config.home.homeDirectory}/音乐";
-      pictures = "${config.home.homeDirectory}/图片";
-      publicShare = "${config.home.homeDirectory}/公共";
-      templates = "${config.home.homeDirectory}/模板";
-      videos = "${config.home.homeDirectory}/视频";
+      desktop = "${config.home.homeDirectory}/Desktop";
+      documents = "${config.home.homeDirectory}/Documents";
+      download = "${config.home.homeDirectory}/Downloads";
+      music = "${config.home.homeDirectory}/Music";
+      pictures = "${config.home.homeDirectory}/Pictures";
+      publicShare = "${config.home.homeDirectory}/Public";
+      templates = "${config.home.homeDirectory}/Templates";
+      videos = "${config.home.homeDirectory}/Videos";
     };
     mimeApps = {
       enable = true;

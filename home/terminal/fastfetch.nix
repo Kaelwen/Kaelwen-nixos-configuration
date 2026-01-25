@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       logo = {
-        source = "~/nixos/assets/icons/Emilia_logo.webp";
+        source = "${../..}/assets/icons/Emilia_logo.webp";
         # source = "~/nixos/assets/icons/duck.txt";
         padding = {
           top = 2;

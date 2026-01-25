@@ -1,15 +1,17 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   home.packages = with pkgs; [
-    hyprpicker
+    # hyprpicker
     grim
     slurp
     swappy
     wf-recorder
     cava
-    blueberry
-    # wlogout
-    nmgui
     pavucontrol
     brightnessctl
   ];
@@ -130,10 +132,10 @@
             ];
             ethernet = "󰈀";
           };
-          on-click = "nmgui";
-          on-click-right = "nm-connection-editor";
+          on-click = "${pkgs.nmgui}/bin/nmgui";
         };
         "network#data" = {
+          on-click = "${pkgs.nmgui}/bin/nmgui";
           format-wifi = "{essid}";
           format-ethernet = "{ifname}";
           format-disconnected = "{Disconnected}";
@@ -142,9 +144,10 @@
           format-disabled = "󰂲";
           format = "󰂯";
           format-connected = "󰂱";
-          on-click = "blueberry";
+          on-click = "${pkgs.blueberry}/bin/blueberry";
         };
         "bluetooth#data" = {
+          on-click = "${pkgs.blueberry}/bin/blueberry";
           format-disabled = "off";
           format = "on";
           format-connected = "on";
@@ -174,7 +177,8 @@
 
         pulseaudio = {
           format = "{icon}";
-          format-muted = "";
+          format-muted = " ";
+          format-bluetooth = "";
           tooltip = false;
           format-icons = {
             headphone = "";
@@ -241,9 +245,9 @@
           font-size: 14px;
         }
         window#waybar {
-          background: alpha(#${config.lib.stylix.colors.base00},0.8);
+          background: alpha(#${config.lib.stylix.colors.base00},0.9);
           color: #${config.lib.stylix.colors.base05};
-          border-radius: 0.8em;
+
         }
         tooltip {
           background: #${config.lib.stylix.colors.base02};
@@ -269,7 +273,7 @@
           color: #${config.lib.stylix.colors.base07};
         }
         #workspaces {
-          background: #${config.lib.stylix.colors.base03};
+          background: #${config.lib.stylix.colors.base02};
           border-radius: 0.5em;
           margin: 0.25em 0.5em;
         }
@@ -302,7 +306,7 @@
         #memory.data,
         #clock.data,
         #tray {
-          background: #${config.lib.stylix.colors.base03};
+          background: #${config.lib.stylix.colors.base02};
           border-radius: 0 0.5em 0.5em 0;
           margin:0.25em  0.25em 0.25em 0;
           padding: 0px 0.5em;
@@ -343,6 +347,17 @@
           padding: 0px 0.5em;
           color: #${config.lib.stylix.colors.base07};
         }
+
+        #power-profiles-daemon.performance {
+            color: #${config.lib.stylix.colors.base08};
+        }
+        #power-profiles-daemon.balanced {
+            color: #${config.lib.stylix.colors.base0D};
+        }
+        #power-profiles-daemon.power-saver {
+            color: #${config.lib.stylix.colors.base0B}
+        }
+
       '';
   };
 }

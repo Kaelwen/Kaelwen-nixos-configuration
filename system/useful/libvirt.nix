@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, userName, ... }:
 {
   programs.virt-manager.enable = true;
-  users.users.binigo = {
+  users.users.${userName} = {
     isNormalUser = true;
     extraGroups = [
       "libvirtd"

@@ -11,16 +11,18 @@
   home-manager.users."${userName}" = {
     imports = [
       ./niri-config
-      # ./dms/default.nix
       ./swayidle
-      # ./waypaper/default.nix
       ./mako
       ./waybar
-
-      ./wofi
+      # ./wofi
       ./thunar
       ./rofi
       ./swaylock
+      # ./tofi
+      # ./fuzzel
+      #
+      # ./noctalia
+      # ./dms
     ];
 
   };
@@ -34,21 +36,21 @@
   services = {
     xserver.desktopManager.runXdgAutostartIfNone = true;
     gnome.gnome-keyring.enable = lib.mkForce false;
-    gvfs.enable = true;
-    seatd.enable = true;
+
   };
 
   xdg = {
     portal = {
       enable = true;
       xdgOpenUsePortal = true;
-      wlr.enable = true;
-      # extraPortals = with pkgs; [
-      #   xdg-desktop-portal-gtk
-      # ];
+      # wlr.enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
     };
     autostart.enable = true;
-    icons.fallbackCursorThemes = [ "Bibata-Modern-Classic" ];
+    # icons.fallbackCursorThemes = [ "Bibata-Modern-Classic" ];
   };
-  services.acpid.enable = true;
+
 }

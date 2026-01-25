@@ -1,5 +1,5 @@
-spawn-at-startup "waypaper" "--restore"
-// spawn-at-startup "fcitx5" "-d"
+// spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "bash" "-c" "echo 'Xft.dpi: 144' | xrdb -merge"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 // spawn-sh-at-startup "wl-paste -t text --watch clipman store"
@@ -19,10 +19,10 @@ gestures {
         off
     }
 }
-cursor {
-    xcursor-theme "Bibata-Modern-Classic"
-    xcursor-size 26
-}
+// cursor {
+//     xcursor-theme "Bibata-Modern-Classic"
+//     xcursor-size 26
+// }
 input {
     keyboard {
         xkb {
@@ -63,7 +63,7 @@ layout {
         inactive-color "#505050"
     }
 }
-screenshot-path "~/图片/Screenshots/%Y-%m-%d_%H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
 layer-rule {
     match namespace="waybar"
     shadow {
@@ -76,7 +76,7 @@ layer-rule {
 }
 layer-rule {
     match namespace="^swww*"
-    // match namespace="^noctalia-wallpaper*"
+    match namespace="^noctalia-wallpaper*"
     place-within-backdrop true
 }
 overview {
@@ -261,9 +261,6 @@ binds {
     // Mod+D hotkey-overlay-title="打开搜索" repeat=false {
     //     spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"
     // }
-    // Mod+T hotkey-overlay-title="打开终端" repeat=false {
-    //     spawn "kitty"
-    // }
     // XF86AudioLowerVolume allow-when-locked=true {
     //     spawn "noctalia-shell" "ipc" "call" "volume" "decrease"
     // }
@@ -288,34 +285,15 @@ binds {
     Mod+Alt+L hotkey-overlay-title="锁屏" repeat=false {
         spawn "swaylock"
     }
-    // Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-    //     spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"
-    // }
-    // Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-    //     spawn "copyq" "show"
-    // }
     Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-        // spawn "clipman" "pick" "--tool" "wofi" "-T'--prompt=clipboard-history -i'"
         spawn "~/.config/rofi/scripts/clip.sh"
     }
-    // Mod+D hotkey-overlay-title="打开搜索" repeat=false {
-    //     spawn "vicinae" "toggle"
-    // }
     Mod+D hotkey-overlay-title="打开搜索" repeat=false {
         spawn "~/.config/rofi/scripts/launcher.sh"
-    }
-    Mod+T hotkey-overlay-title="打开终端" repeat=false {
-        spawn "kitty"
-    }
-    Mod+E hotkey-overlay-title="打开文件管理器" repeat=false {
-        spawn "kitty" "yazi"
     }
     Mod+W hotkey-overlay-title="打开壁纸选择器" repeat=false {
         spawn "~/.config/rofi/scripts/wallpaper.sh"
     }
-    //   Mod+ hotkey-overlay-title="刷新waybar" repeat=false {
-    //       spawn "pkill" "waybar" "&&" "waybar" "&"
-    //   }
     XF86AudioLowerVolume allow-when-locked=true {
         spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"
     }
@@ -336,6 +314,12 @@ binds {
     }
     Mod+Ctrl+R hotkey-overlay-title="随机壁纸" {
         spawn "waypaper" "--random"
+    }
+    Mod+T hotkey-overlay-title="打开终端" repeat=false {
+        spawn "kitty"
+    }
+    Mod+E hotkey-overlay-title="打开文件管理器" repeat=false {
+        spawn "kitty" "yazi"
     }
     Mod+Ctrl+C hotkey-overlay-title="将窗口移至中央" {
         center-column

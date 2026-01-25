@@ -18,7 +18,7 @@
 
     power-profiles-daemon.enable = true;
 
-    linyaps.enable = true;
+    # linyaps.enable = true;
 
     dbus.enable = true;
 
@@ -31,6 +31,14 @@
     upower.enable = true;
 
     envfs.enable = false;
+
+    gvfs.enable = true;
+
+    seatd.enable = true;
+
+    openssh.enable = false;
+
+    acpid.enable = true;
 
     speechd.enable = lib.mkForce false;
 

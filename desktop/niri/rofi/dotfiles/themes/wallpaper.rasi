@@ -1,24 +1,14 @@
- * {
-    /* 柔和粉紫基调 */
-    base-bg: rgba(30, 30, 46, 0.85);      
-    selected-bg: #6c7086;
 
+
+@import "~/.config/rofi/colors.rasi"
+* {
     background-color:transparent;
     border-radius: 1.2em;
-    text-color: #cdd6f4;
+    text-color: @foreground;
 }
 configuration {
     modi: "filebrowser";
-    filebrowser {
-        directory-hover-bg: #3b4252;
-        directory-hover-fg: #88c0d0;
-        file-hover-bg: #434c5e;
-        file-hover-fg: #d8dee9;
-        directory-bg: #2e3440;
-        directory-fg: #8fbcbb;
-        file-bg: #2e3440;
-        file-fg: #d8dee9;
-    }
+
 }
 
 window {
@@ -26,10 +16,10 @@ window {
     height: 60%;
     border: 2px;
     border-radius: 1.2em;
-    border-color: #f4b8e4;   /* #F4B8E4 */
+    border-color: @selected;   /* #F4B8E4 */
     location:center;
     children:[listbox];
-    background-color:@base-bg;
+    background-color:@background;
 }
 
 listbox {
@@ -55,15 +45,19 @@ element {
 element-text {
     vertical-align: 0.5;
     horizontal-align: 0.5;
-    font:"FiraCode Nerd Font Mono 16";
+    // font:"FiraCode Nerd Font Mono 16";
 }
 
 element-icon {
-    vertical-align: 0.8;
-    horizontal-align: 0.5;
+    // vertical-align: 0.5;
+    // horizontal-align: 0.5;
     size: 25%;
 }
 
 element selected {
-    background-color: @selected-bg;
+    background-color: @background-alt;
+    
+}
+element-text selected {
+    text-color: @selected;
 }

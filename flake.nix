@@ -15,19 +15,18 @@
     #   url = "github:outfoxxed/quickshell";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    # noctalia = {
-    #   url = "github:noctalia-dev/noctalia-shell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.quickshell.follows = "quickshell"; # Use same quickshell version
-    # };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # dms = {
     #   url = "github:AvengeMedia/DankMaterialShell/stable";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    # niri = {
-    #   url = "github:sodiboo/niri-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +47,10 @@
     #     nixpkgs.follows = "nixpkgs";
     #   };
     # };
+    nix-cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -65,9 +68,10 @@
     { self, nixpkgs, ... }@inputs:
     let
       userName = "binigo";
+      hostName = "nixos";
     in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
+      nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = {
           # pkgs-stable = import nixpkgs-stable {
@@ -75,13 +79,19 @@
           #   config.allowUnfree = true; # 允许非自由软件（如Chrome）
           # };
           my-pkgs = inputs.myNixpkgs.packages.${system};
-          inherit self inputs userName;
+          inherit
+            self
+            inputs
+            userName
+            hostName
+            ;
         };
         modules = [
           ./host/configuration.nix
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
+
         ];
       };
     };

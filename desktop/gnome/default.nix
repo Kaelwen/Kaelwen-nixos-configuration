@@ -25,7 +25,7 @@
   environment.systemPackages = with pkgs; [
     nautilus # 文件管理器
     # nemo-with-extensions
-    loupe # 图片查看器
+    # loupe # 图片查看器
     # gnome-text-editor # 文本编辑器
     showtime
     # papers
