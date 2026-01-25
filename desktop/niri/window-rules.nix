@@ -27,6 +27,17 @@
         ];
         open-fullscreen = true;
       }
+      {
+        matches = [
+          { app-id = "firefox"; }
+          { app-id = "librewolf"; }
+          { app-id = "zen-browser"; }
+          { app-id = "chromium-browser"; }
+          { app-id = "io.github.ungoogled_software.ungoogled_chromium"; }
+        ];
+        open-on-workspace = "Browser";
+        open-maximized = true;
+      }
     ];
   };
 }

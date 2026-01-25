@@ -14,14 +14,14 @@
   imports = [
     inputs.niri.nixosModules.niri
     ./sddm.nix
-    ./settings.nix
-    ./window-rules.nix
-    ./binds.nix
   ];
 
   home-manager.users."${userName}" = {
     imports = [
       ./component
+      ./settings.nix
+      ./window-rules.nix
+      ./binds.nix
     ];
   };
 

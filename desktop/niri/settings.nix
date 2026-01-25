@@ -6,7 +6,6 @@
 {
   programs.niri.settings = {
     spawn-at-startup = [
-      { command = [ "waybar" ]; }
       {
         command = [
           "wl-paste"
@@ -30,9 +29,9 @@
       skip-at-startup = true;
       hide-not-bound = true;
     };
-    gestures = {
-      hot-corners = false;
-    };
+    # gestures = {
+    #   hot-corners = false;
+    # };
     input = {
       focus-follows-mouse = {
         enable = true;
