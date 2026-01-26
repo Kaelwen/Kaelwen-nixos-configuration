@@ -1,9 +1,10 @@
 {
   pkgs,
+  lib,
   ...
 }:
 let
-  lock = "${pkgs.swaylock-effects}/bin/swaylock";
+  lock = lib.getExe pkgs.swaylock-effects;
   display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
 in
 

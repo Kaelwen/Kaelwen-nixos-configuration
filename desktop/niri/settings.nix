@@ -14,7 +14,6 @@
           "store"
         ];
       }
-      { command = [ "${lib.getExe pkgs.xwayland-satellite}" ]; }
       {
         command = [
           "bash"
@@ -22,6 +21,7 @@
           "echo 'Xft.dpi: 144' | xrdb -merge"
         ];
       }
+      { command = [ "swww-daemon" ]; }
     ];
     prefer-no-csd = true;
 
@@ -29,15 +29,36 @@
       skip-at-startup = true;
       hide-not-bound = true;
     };
-    # gestures = {
-    #   hot-corners = false;
-    # };
+    xwayland-satellite = {
+      enable = true;
+      path = lib.getExe pkgs.xwayland-satellite;
+    };
+    gestures.hot-corners.enable = false;
+
+    layout = {
+      gaps = 4;
+      background-color = "transparent";
+      center-focused-column = "on-overflow";
+      always-center-single-column = true;
+      preset-column-widths = [
+        { proportion = 0.5; }
+        { proportion = 0.7; }
+        { proportion = 1.0; }
+      ];
+      default-column-width = {
+        proportion = 0.7;
+      };
+      focus-ring.enable = false;
+      border.enable = false;
+    };
+
     input = {
       focus-follows-mouse = {
         enable = true;
         max-scroll-amount = "10%";
       };
-
+      touchpad.natural-scroll = true;
+      keyboard.xkb.options = "caps:escape";
     };
   };
 }

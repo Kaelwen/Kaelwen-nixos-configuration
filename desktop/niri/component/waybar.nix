@@ -132,10 +132,10 @@
             ];
             ethernet = "󰈀";
           };
-          on-click = "${pkgs.nmgui}/bin/nmgui";
+          on-click = lib.getExe pkgs.nmgui;
         };
         "network#data" = {
-          on-click = "${pkgs.nmgui}/bin/nmgui";
+          on-click = lib.getExe pkgs.nmgui;
           format-wifi = "{essid}";
           format-ethernet = "{ifname}";
           format-disconnected = "{Disconnected}";

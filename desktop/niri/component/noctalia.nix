@@ -10,6 +10,42 @@
   imports = [
     inputs.noctalia.homeModules.default
   ];
+  programs.niri.settings.binds = {
+    "Mod+D" = {
+      hotkey-overlay.title = "打开搜索";
+      repeat = false;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "launcher"
+        "toggle"
+      ];
+    };
+    "Mod+C" = {
+      hotkey-overlay.title = "打开剪切板";
+      repeat = false;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "launcher"
+        "clipboard"
+      ];
+    };
+
+    "Mod+Alt+L" = {
+      hotkey-overlay.title = "锁屏";
+      repeat = false;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "lockScreen"
+        "lock"
+      ];
+    };
+  };
 
   home.packages = with pkgs; [
     cliphist

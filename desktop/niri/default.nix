@@ -20,7 +20,7 @@
     imports = [
       ./component
       ./settings.nix
-      ./window-rules.nix
+      ./rules.nix
       ./binds.nix
     ];
   };
