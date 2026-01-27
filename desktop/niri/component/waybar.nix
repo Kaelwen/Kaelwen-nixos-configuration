@@ -6,14 +6,11 @@
 }:
 {
   home.packages = with pkgs; [
-    # hyprpicker
-    grim
-    slurp
+
     swappy
     wf-recorder
     cava
-    pavucontrol
-    brightnessctl
+
   ];
   programs.waybar = {
     enable = true;
@@ -27,6 +24,7 @@
         position = "top";
         orientation = "horizontal";
         fixed-center = true;
+
         # margin = "2 4 2 4";
         modules-left = [
           "custom/wlogout"
@@ -189,12 +187,12 @@
               ""
             ];
           };
-          on-click = "pavucontrol";
-          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
-          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+          on-click = lib.getExe pkgs.pavucontrol;
+
         };
         "pulseaudio#data" = {
-          format = "{volume}%";
+          on-click = lib.getExe pkgs.pavucontrol;
+          format = "{volume:2}%";
         };
 
         clock = {
@@ -245,9 +243,10 @@
           font-size: 14px;
         }
         window#waybar {
-          background: alpha(#${config.lib.stylix.colors.base00},0.9);
-          color: #${config.lib.stylix.colors.base05};
-
+            background: #${config.lib.stylix.colors.base00};
+            color: #${config.lib.stylix.colors.base05};
+            padding: 0.3em 0;           /* 上下内边距 */
+            min-height: 1.8em;          /* 确保有足够高度 */
         }
         tooltip {
           background: #${config.lib.stylix.colors.base02};
@@ -259,6 +258,7 @@
           color: #${config.lib.stylix.colors.base05};
           font-size: 0.89em;
         }
+
         #workspaces button {
           padding: 0px 0.56em;
           border-radius: 0.8em;
@@ -273,9 +273,9 @@
           color: #${config.lib.stylix.colors.base07};
         }
         #workspaces {
-          background: #${config.lib.stylix.colors.base02};
+          background: #${config.lib.stylix.colors.base01};
           border-radius: 0.5em;
-          margin: 0.25em 0.5em;
+          margin: 0 0.5em;
         }
 
         #clock {
@@ -291,10 +291,10 @@
         #memory,
         #clock,
         #custom-apps {
-          color: #${config.lib.stylix.colors.base00};
-          border-radius: 0.5em 0 0 0.5em;
-          margin:0.25em 0px 0.25em 0.25em;
-          padding: 0px 0.7em;
+            color: #${config.lib.stylix.colors.base00};
+            border-radius: 0.5em 0 0 0.5em;
+            margin: 0 0 0 0.25em;
+            padding: 0 0.7em;
         }
 
         #network.data,
@@ -306,10 +306,10 @@
         #memory.data,
         #clock.data,
         #tray {
-          background: #${config.lib.stylix.colors.base02};
+          background: #${config.lib.stylix.colors.base01};
           border-radius: 0 0.5em 0.5em 0;
-          margin:0.25em  0.25em 0.25em 0;
-          padding: 0px 0.5em;
+          margin: 0 0.25em 0 0;
+          padding: 0 0.5em;
         }
 
         #network {background: #${config.lib.stylix.colors.base0C};}
@@ -338,12 +338,12 @@
           border-radius: 0.3em;
           font-size: 1.39em;
           padding: 0px 0.5em;
-          margin:0.25em;
+          margin:0 0.25em;
         }
 
         #power-profiles-daemon,
         #idle_inhibitor {
-          margin:0.25em;
+          margin:0.4em;
           padding: 0px 0.5em;
           color: #${config.lib.stylix.colors.base07};
         }

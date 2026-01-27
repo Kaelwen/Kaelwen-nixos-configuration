@@ -18,5 +18,6 @@
     evince
     gthumb
     wpsoffice-cn
+    openvpn
   ];
 }

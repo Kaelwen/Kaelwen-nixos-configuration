@@ -5,8 +5,8 @@
     ./docker.nix
     # ./podman.nix
     ./environments.nix
-    ./fcitx.nix
-    ./firewall.nix
+    # ./fcitx.nix
+
     ./fonts.nix
     ./hardware-configuration.nix
     ./hardware.nix

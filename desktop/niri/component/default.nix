@@ -1,10 +1,14 @@
 { ... }:
 {
   imports = [
-    ./mako.nix
+    # ./mako.nix
     ./waybar.nix
     ./swayidle.nix
     ./swaylock.nix
-    ./rofi
+    ./screenshot.nix
+    # ./rofi
+    ./fuzzel
+    ./swayosd.nix
+    ./swaync.nix
   ];
 }

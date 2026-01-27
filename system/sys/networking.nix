@@ -1,7 +1,7 @@
-{ ... }:
+{ hostName, ... }:
 {
   networking = {
-    hostName = "nixos";
+    hostName = "${hostName}";
 
     modemmanager.enable = false;
     networkmanager = {

@@ -45,6 +45,66 @@
         "lock"
       ];
     };
+    XF86AudioLowerVolume = {
+      allow-when-locked = true;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "volume"
+        "decrease"
+      ];
+    };
+    XF86AudioMicMute = {
+      allow-when-locked = true;
+      action.spawn = [
+        "wpctl"
+        "set-mute"
+        "@DEFAULT_AUDIO_SOURCE@"
+        "toggle"
+      ];
+    };
+    XF86AudioMute = {
+      allow-when-locked = true;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "volume"
+        "muteOutput"
+      ];
+    };
+    XF86AudioRaiseVolume = {
+      allow-when-locked = true;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "volume"
+        "increase"
+      ];
+    };
+    XF86MonBrightnessDown = {
+      allow-when-locked = true;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "brightness"
+        "decrease"
+      ];
+    };
+    XF86MonBrightnessUp = {
+      allow-when-locked = true;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "brightness"
+        "increase"
+      ];
+    };
+
   };
 
   home.packages = with pkgs; [

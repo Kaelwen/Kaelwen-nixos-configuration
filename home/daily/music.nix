@@ -9,7 +9,7 @@
 
   ];
   xdg.configFile."go-musicfox/config.toml".text =
-    # toml
+    #toml
     ''
       # ---------------------------------------------------------------- #
       #                  Go-Musicfox Configuration File                  #
@@ -88,7 +88,8 @@
       centerEverything = false
       # 主题颜色
       # 随机
-      primaryColor = "random"
+      # primaryColor = "random"
+        primaryColor = "#${config.lib.stylix.colors.base07}"
 
 
       # 进度条字符样式配置

@@ -8,6 +8,7 @@
     go
     nodejs
     rustup
+    jdk21
   ];
   home.sessionVariables = {
     RUSTUP_DIST_SERVER = "https://mirrors.ustc.edu.cn/rust-static";

@@ -19,59 +19,6 @@
             "yazi"
           ];
         };
-        XF86AudioLowerVolume = {
-          allow-when-locked = true;
-          action.spawn = [
-            "wpctl"
-            "set-volume"
-            "@DEFAULT_AUDIO_SINK@"
-            "0.05-"
-          ];
-        };
-        XF86AudioRaiseVolume = {
-          allow-when-locked = true;
-          action.spawn = [
-            "wpctl"
-            "set-volume"
-            "@DEFAULT_AUDIO_SINK@"
-            "0.05+"
-          ];
-        };
-        XF86AudioMicMute = {
-          allow-when-locked = true;
-          action.spawn = [
-            "wpctl"
-            "set-mute"
-            "@DEFAULT_AUDIO_SOURCE@"
-            "toggle"
-          ];
-        };
-        XF86AudioMute = {
-          allow-when-locked = true;
-          action.spawn = [
-            "wpctl"
-            "set-mute"
-            "@DEFAULT_AUDIO_SINK@"
-            "toggle"
-          ];
-        };
-
-        XF86MonBrightnessDown = {
-          allow-when-locked = true;
-          action.spawn = [
-            "brightnessctl"
-            "set"
-            "5%-"
-          ];
-        };
-        XF86MonBrightnessUp = {
-          allow-when-locked = true;
-          action.spawn = [
-            "brightnessctl"
-            "set"
-            "5%+"
-          ];
-        };
 
         # 工作区切换
         "${mod}+0".action = focus-workspace 0;
@@ -84,6 +31,9 @@
         "${mod}+7".action = focus-workspace 7;
         "${mod}+8".action = focus-workspace 8;
         "${mod}+9".action = focus-workspace 9;
+
+        # "Print".action = screenshot;
+        # "Alt+Print".action = screenshot-window;
 
         # 窗口布局控制
         "${mod}+Ctrl+C" = {
@@ -275,10 +225,6 @@
           hotkey-overlay.title = "窗口全屏";
           action = fullscreen-window;
         };
-        # "${mod}+Shift+S" = {
-        #   hotkey-overlay.title = "截图";
-        #   action = screenshot;
-        # };
 
         # 使用方向键在显示器之间切换焦点
         "${mod}+Shift+Down" = {

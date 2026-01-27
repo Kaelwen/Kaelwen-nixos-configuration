@@ -35,6 +35,5 @@
   };
   programs.nh = {
     enable = true;
-
   };
 }

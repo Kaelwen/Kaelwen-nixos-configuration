@@ -33,5 +33,24 @@ in
       };
     };
   };
-  xdg.configFile."fuzzel/scripts".source = ./scripts;
+  programs.niri.settings = {
+    binds = {
+      "Mod+D" = {
+        hotkey-overlay.title = "打开搜索";
+        repeat = false;
+        action.spawn = [ "fuzzel" ];
+      };
+      "Mod+C" = {
+        hotkey-overlay.title = "打开剪切板";
+        repeat = false;
+        action.spawn = [ "${./scripts/clip.sh}" ];
+      };
+      "Mod+W" = {
+        hotkey-overlay.title = "打开壁纸选择器";
+        repeat = false;
+        action.spawn = [ "${./scripts/wallpaper.sh}" ];
+      };
+    };
+  };
+
 }

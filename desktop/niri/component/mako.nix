@@ -5,7 +5,6 @@
 
 {
   home.packages = with pkgs; [
-    # notify
     libnotify
   ];
   services.mako = {
