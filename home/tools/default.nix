@@ -18,6 +18,7 @@
     evince
     gthumb
     wpsoffice-cn
-    openvpn
+    # openvpn
+    obsidian
   ];
 }

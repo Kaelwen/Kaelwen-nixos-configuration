@@ -4,7 +4,8 @@
   ...
 }:
 let
-  lock = lib.getExe pkgs.swaylock-effects;
+  # lock = lib.getExe pkgs.swaylock-effects;
+  lock = "noctalia-shell ipc call lockScreen lock";
   display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
 in
 

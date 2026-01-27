@@ -5,15 +5,15 @@
   #   wl-clipboard
   # ];
   imports = [
-    # ./mako.nix
-    ./waybar
+    # ./mako
+    # ./waybar
     ./swayidle
-    ./swaylock
+    # ./swaylock
     ./screenshot.nix
-    ./rofi
+    # ./rofi
     # ./fuzzel
-    ./swayosd
-    ./swaync
-    # ./noctalia.nix
+    # ./swayosd
+    # ./swaync
+    ./noctalia
   ];
 }

@@ -3,7 +3,6 @@
   services.swayosd = {
     enable = true;
   };
-
   programs.niri.settings.binds = {
     XF86AudioLowerVolume = {
       allow-when-locked = true;

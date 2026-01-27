@@ -152,8 +152,8 @@
         showOutline = false;
         showCapsule = true;
         capsuleOpacity = lib.mkForce 1;
-        backgroundOpacity = lib.mkForce 0.9;
-        useSeparateOpacity = false;
+        backgroundOpacity = lib.mkForce 0;
+        useSeparateOpacity = true;
         floating = false;
         marginVertical = 4;
         marginHorizontal = 4;
@@ -170,6 +170,7 @@
             }
             {
               id = "SystemMonitor";
+              compactMode = false;
             }
             {
               id = "ActiveWindow";
@@ -186,18 +187,26 @@
           right = [
             {
               id = "Tray";
+              colorizeIcons = false;
+              drawerEnabled = false;
+              hidePassive = false;
             }
             {
               id = "NotificationHistory";
+
             }
             {
               id = "Battery";
+              hideWhenZero = false;
+              hideWhenZeroUnread = false;
             }
             {
               id = "Volume";
+              displayMode = "alwaysShow";
             }
             {
               id = "Brightness";
+              displayMode = "alwaysShow";
             }
             {
               id = "ControlCenter";
@@ -207,7 +216,7 @@
         screenOverrides = [ ];
       };
       general = {
-        avatarImage = "${../../../assets/head/Frieren.png}";
+        avatarImage = "${../../../../assets/head/Frieren.png}";
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
@@ -239,7 +248,7 @@
         fontDefaultScale = 1;
         fontFixedScale = 1;
         tooltipsEnabled = true;
-        panelBackgroundOpacity = lib.mkForce 0.8;
+        panelBackgroundOpacity = lib.mkForce 0.9;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         wifiDetailsViewMode = "grid";
@@ -406,7 +415,7 @@
         cpuPollingInterval = 3000;
         tempPollingInterval = 3000;
         gpuPollingInterval = 3000;
-        enableDgpuMonitoring = false;
+        enableDgpuMonitoring = true;
         memPollingInterval = 3000;
         diskPollingInterval = 30000;
         networkPollingInterval = 3000;

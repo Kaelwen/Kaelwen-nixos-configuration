@@ -6,14 +6,14 @@
 {
   programs.niri.settings = {
     spawn-at-startup = [
-      # {
-      #   command = [
-      #     "wl-paste"
-      #     "--watch"
-      #     "cliphist"
-      #     "store"
-      #   ];
-      # }
+      {
+        command = [
+          "wl-paste"
+          "--watch"
+          "cliphist"
+          "store"
+        ];
+      }
       {
         command = [
           "bash"
