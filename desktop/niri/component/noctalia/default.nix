@@ -45,6 +45,16 @@
         "lock"
       ];
     };
+    "Mod+W" = {
+      repeat = false;
+      action.spawn = [
+        "noctalia-shell"
+        "ipc"
+        "call"
+        "wallpaper"
+        "toggle"
+      ];
+    };
     XF86AudioLowerVolume = {
       allow-when-locked = true;
       action.spawn = [
@@ -106,11 +116,11 @@
     };
 
   };
-
-  home.packages = with pkgs; [
-    cliphist
-    cava
-  ];
+  #
+  # home.packages = with pkgs; [
+  #   cliphist
+  #   cava
+  # ];
 
   programs.noctalia-shell = {
     enable = true;
@@ -197,7 +207,7 @@
         screenOverrides = [ ];
       };
       general = {
-        avatarImage = "";
+        avatarImage = "${../../../assets/head/Frieren.png}";
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
@@ -229,7 +239,7 @@
         fontDefaultScale = 1;
         fontFixedScale = 1;
         tooltipsEnabled = true;
-        panelBackgroundOpacity = lib.mkForce 0.9;
+        panelBackgroundOpacity = lib.mkForce 0.8;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         wifiDetailsViewMode = "grid";
@@ -302,15 +312,15 @@
         wallhavenResolutionHeight = "";
       };
       appLauncher = {
-        enableClipboardHistory = false;
-        autoPasteClipboard = false;
+        enableClipboardHistory = true;
+        autoPasteClipboard = true;
         enableClipPreview = true;
         clipboardWrapText = true;
         position = "center";
         pinnedApps = [ ];
         useApp2Unit = false;
         sortByMostUsed = true;
-        terminalCommand = "xterm -e";
+        terminalCommand = "kitty";
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
         viewMode = "list";

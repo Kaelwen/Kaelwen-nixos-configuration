@@ -6,11 +6,9 @@
 }:
 {
   home.packages = with pkgs; [
-
     swappy
     wf-recorder
     cava
-
   ];
   programs.waybar = {
     enable = true;
