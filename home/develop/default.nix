@@ -6,11 +6,11 @@
     # ./helix.nix
     ./environments.nix
     ./direnv
-    # ./vscodium.nix
+    ./vscodium.nix
     ./yazi.nix
     # ./stm32.nix
     ./nixvim
-    ./zed.nix
+    # ./zed.nix
   ];
 
 }
