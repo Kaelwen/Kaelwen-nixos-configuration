@@ -37,17 +37,24 @@
     window-rules = [
       {
         matches = [
-          { app-id = "authentication-agent-1|pwvucontrol"; }
-          { app-id = "com.network.manager"; }
-          { app-id = "connman-gtk"; }
+          { app-id = "org.pulseaudio.pavucontrol"; }
+
           { app-id = "fcitx"; }
           { app-id = "mpv"; }
           { app-id = "org.gnome.FileRoller"; }
           { app-id = "org.kde.polkit-kde-authentication-agent-1"; }
           { app-id = "org.keepassxc.KeePassXC"; }
           { app-id = "blueberry"; }
-          { app-id = "copyq"; }
+          # { app-id = "copyq"; }
           { app-id = "waypaper"; }
+          {
+            app-id = "QQ";
+            title = "图片查看器";
+          }
+          {
+            app-id = "wechat";
+            title = "图片和视频";
+          }
         ];
         open-floating = true;
       }
@@ -64,7 +71,7 @@
         matches = [
           { app-id = "firefox"; }
           { app-id = "librewolf"; }
-          { app-id = "zen-browser"; }
+          { app-id = "zen-twilight"; }
           { app-id = "chromium-browser"; }
           { app-id = "io.github.ungoogled_software.ungoogled_chromium"; }
         ];

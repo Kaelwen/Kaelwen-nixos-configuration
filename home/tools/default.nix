@@ -20,5 +20,7 @@
     wpsoffice-cn
     # openvpn
     obsidian
+
+    wlrctl
   ];
 }
