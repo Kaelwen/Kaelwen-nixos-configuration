@@ -46,7 +46,7 @@
         { proportion = 1.0; }
       ];
       default-column-width = {
-        proportion = 0.7;
+        proportion = 0.5;
       };
       focus-ring.enable = false;
       border.enable = false;

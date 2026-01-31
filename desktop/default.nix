@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    # ./gnome/default.nix
+    # ./gnome
     # ./dms-niri/default.nix
     ./niri
     # ./cinnamon/cinnamon.nix

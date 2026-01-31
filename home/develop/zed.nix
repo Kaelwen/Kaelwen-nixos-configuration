@@ -41,7 +41,6 @@
     ];
 
     userSettings = {
-
       agent = {
         play_sound_when_agent_done = true;
         always_allow_tool_actions = true;

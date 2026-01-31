@@ -8,6 +8,10 @@
         timeoutMs = 500;
       };
       notify_on_error = true;
+      lazyLoad = {
+        enable = true;
+        event = [ "FileType" ];
+      };
 
       formatters_by_ft = {
         c = [ "clang-format" ];
@@ -16,6 +20,7 @@
         nix = [ "nixfmt" ];
         python = [ "ruff" ];
         go = [ "gofmt" ];
+        qml = [ "qmlformat" ];
         javascript = [ "prettier" ];
         typescript = [ "prettier" ];
         markdown = [ "prettier" ];
@@ -26,7 +31,6 @@
         css = [ "prettier" ];
         vue = [ "prettier" ];
         kdl = [ "kdlfmt" ];
-
       };
       formatters = {
         nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
@@ -41,6 +45,7 @@
         };
         prettier.command = "${pkgs.prettier}/bin/prettier";
         kdlfmt.command = "${pkgs.kdlfmt}/bin/kdlfmt";
+        qmlformat.command = "${pkgs.qt6.qtdeclarative}/bin/qmlformat";
       };
     };
   };

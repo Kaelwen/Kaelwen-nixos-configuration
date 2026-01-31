@@ -17,6 +17,7 @@
   ];
 
   home-manager.users."${userName}" = {
+    home.packages = with pkgs; [ nautilus ];
     imports = [
       ./component
       ./settings.nix

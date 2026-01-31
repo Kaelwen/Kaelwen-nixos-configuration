@@ -3,6 +3,7 @@
   programs.nixvim.plugins = {
     which-key = {
       enable = true;
+      preset = "helix";
       settings = {
         delay = 0;
         expand = 1;

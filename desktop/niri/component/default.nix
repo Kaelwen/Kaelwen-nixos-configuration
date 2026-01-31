@@ -1,19 +1,19 @@
 { pkgs, ... }:
 {
-  # home.packages = with pkgs; [
-  #   libnotify
-  #   wl-clipboard
-  # ];
+  home.packages = with pkgs; [
+    libnotify
+    wl-clipboard
+  ];
   imports = [
-    # ./mako
-    # ./waybar
+    ./mako
+    ./waybar
     ./swayidle
-    # ./swaylock
-    ./screenshot.nix
+    ./swaylock
+    # ./quickshell
     # ./rofi
-    # ./fuzzel
-    # ./swayosd
+    ./fuzzel
+    ./swayosd
     # ./swaync
-    ./noctalia
+    # ./noctalia
   ];
 }

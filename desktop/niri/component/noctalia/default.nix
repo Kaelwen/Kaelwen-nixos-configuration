@@ -152,8 +152,8 @@
         showOutline = false;
         showCapsule = true;
         capsuleOpacity = lib.mkForce 1;
-        backgroundOpacity = lib.mkForce 0;
-        useSeparateOpacity = true;
+        # backgroundOpacity = lib.mkForce 0;
+        useSeparateOpacity = false;
         floating = false;
         marginVertical = 4;
         marginHorizontal = 4;

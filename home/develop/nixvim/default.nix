@@ -5,7 +5,7 @@
     inputs.nixvim.homeModules.nixvim
     ./keymaps.nix
     # ./lsp.nix
-    ./plugins/0-default.nix
+    ./plugins
     # ./highlight.nix
   ];
   programs.nixvim = {

@@ -1,7 +1,7 @@
 {
   imports = [
     ./mc.nix
-    ./lutris.nix
+    # ./lutris.nix
     ./bottles.nix
   ];
 }

@@ -32,7 +32,7 @@
         "${mod}+8".action = focus-workspace 8;
         "${mod}+9".action = focus-workspace 9;
 
-        # "Print".action = screenshot;
+        "Print".action.screenshot = [ ];
         # "Alt+Print".action = screenshot-window;
 
         # 窗口布局控制
