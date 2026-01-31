@@ -45,7 +45,7 @@
           { app-id = "org.kde.polkit-kde-authentication-agent-1"; }
           { app-id = "org.keepassxc.KeePassXC"; }
           { app-id = "blueberry"; }
-          # { app-id = "copyq"; }
+          { app-id = "com.network.manager"; }
           { app-id = "waypaper"; }
           {
             app-id = "QQ";
