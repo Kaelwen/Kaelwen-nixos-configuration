@@ -8,7 +8,7 @@
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    package = pkgs.niri;
   };
   services.dbus.packages = [ pkgs.nautilus ];
   imports = [
@@ -18,6 +18,8 @@
 
   home-manager.users."${userName}" = {
     home.packages = with pkgs; [ nautilus ];
+    services.polkit-gnome.enable = true;
+
     imports = [
       ./component
       ./settings.nix

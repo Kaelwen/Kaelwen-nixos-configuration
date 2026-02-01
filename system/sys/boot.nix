@@ -7,6 +7,9 @@
       systemd-boot.configurationLimit = 10;
     };
     kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    # kernelPackages = pkgs.linuxPackages_cachyos;
+
     # kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
   };
 

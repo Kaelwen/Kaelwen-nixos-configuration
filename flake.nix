@@ -3,6 +3,7 @@
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-25.05 分支
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    # nixpkgs.url = "nixpkgs/nixos-25.11";
     # flake-utils.url = "github:numtide/flake-utils";
     # flake-parts.url = "github:hercules-ci/flake-parts";
 
@@ -47,13 +48,13 @@
     #   url = "github:xddxdd/nix-cachyos-kernel";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    # zen-browser = {
-    #   url = "github:0xc000022070/zen-browser-flake";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #     # home-manager.follows = "home-manager";
-    #   };
-    # };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
 
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";

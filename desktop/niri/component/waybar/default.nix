@@ -174,10 +174,9 @@
               ""
             ];
           };
-          on-click = lib.getExe pkgs.pavucontrol;
+          on-click = "${lib.getExe pkgs.pavucontrol} -t 3";
           on-scroll-up = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
           on-scroll-down = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
-
         };
 
         clock = {
@@ -254,7 +253,7 @@
             color: #${config.lib.stylix.colors.base06};
           }
           #workspaces button.active {
-            color: #${config.lib.stylix.colors.base07};
+            color: #${config.lib.stylix.colors.base06};
           }
           /* #workspaces { */
           /*   background: #${config.lib.stylix.colors.base02}; */

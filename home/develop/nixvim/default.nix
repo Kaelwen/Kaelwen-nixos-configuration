@@ -9,6 +9,7 @@
     # ./highlight.nix
   ];
   programs.nixvim = {
+    enableNixpkgsReleaseCheck = false;
     enable = true;
     defaultEditor = true;
     vimdiffAlias = true;

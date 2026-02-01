@@ -35,6 +35,7 @@ in
         "image/webp" = [ photoViewer ]; # WebP 格式
         "image/svg+xml" = [ photoViewer ]; # SVG 矢量图
         "image/heic" = [ photoViewer ]; # HEIC 格式（苹果常用)
+        "image/avif" = [ photoViewer ];
         "application/pdf" = [ pdfViewer ];
 
         "application/zip" = [ zipViewer ];
