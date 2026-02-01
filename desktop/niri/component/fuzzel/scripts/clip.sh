@@ -2,7 +2,7 @@ history=$(cliphist list)
 
 # 如果历史为空，则退出
 if [ -z "$history" ]; then
-    echo "剪贴板历史为空。" >&2
+    notify-send "剪贴板历史为空"
     exit 1
 fi
 

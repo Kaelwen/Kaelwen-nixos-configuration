@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 {
@@ -36,7 +37,7 @@
     gestures.hot-corners.enable = false;
 
     layout = {
-      gaps = 4;
+      gaps = 6;
       background-color = "transparent";
       center-focused-column = "on-overflow";
       always-center-single-column = true;
@@ -46,9 +47,19 @@
         { proportion = 1.0; }
       ];
       default-column-width = {
-        proportion = 0.5;
+        proportion = 0.7;
       };
-      focus-ring.enable = false;
+      focus-ring = {
+        enable = true;
+        width = 3;
+        active.gradient = {
+          angle = 45;
+          from = "#${config.lib.stylix.colors.base06}";
+          relative-to = "window";
+          to = "#${config.lib.stylix.colors.base07}";
+        };
+        inactive.color = "#${config.lib.stylix.colors.base03}";
+      };
       border.enable = false;
     };
 

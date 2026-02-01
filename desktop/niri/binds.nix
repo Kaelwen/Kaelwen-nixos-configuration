@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.niri.settings = {
     binds =
@@ -15,8 +20,61 @@
         "${mod}+E" = {
           hotkey-overlay.title = "打开文件管理器";
           action.spawn = [
-            "kitty"
-            "yazi"
+            (lib.getExe pkgs.nautilus)
+            # "kitty"
+            # "yazi"
+          ];
+        };
+        XF86AudioLowerVolume = lib.mkDefault {
+          allow-when-locked = true;
+          action.spawn = [
+            "wpctl"
+            "set-volume"
+            "@DEFAULT_AUDIO_SINK@"
+            "0.05-"
+          ];
+        };
+        XF86AudioMicMute = lib.mkDefault {
+          allow-when-locked = true;
+          action.spawn = [
+            "wpctl"
+            "set-mute"
+            "@DEFAULT_AUDIO_SOURCE@"
+            "toggle"
+          ];
+        };
+        XF86AudioMute = lib.mkDefault {
+          allow-when-locked = true;
+          action.spawn = [
+            "wpctl"
+            "set-mute"
+            "@DEFAULT_AUDIO_SINK@"
+            "toggle"
+          ];
+        };
+        XF86AudioRaiseVolume = lib.mkDefault {
+          allow-when-locked = true;
+          action.spawn = [
+            "wpctl"
+            "set-volume"
+            "@DEFAULT_AUDIO_SINK@"
+            "0.05+"
+          ];
+        };
+        XF86MonBrightnessDown = lib.mkDefault {
+          allow-when-locked = true;
+          action.spawn = [
+            (lib.getExe pkgs.brightnessctl)
+            "set"
+            "5%-"
+          ];
+        };
+        XF86MonBrightnessUp = lib.mkDefault {
+          allow-when-locked = true;
+          action.spawn = [
+            (lib.getExe pkgs.brightnessctl)
+            "set"
+            "5%+"
           ];
         };
 

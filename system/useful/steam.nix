@@ -15,9 +15,9 @@
 
     extraCompatPackages = with pkgs; [
       # proton-cachyos_x86_64_v3
-      proton-cachyos_x86_64_v4
+      # proton-cachyos_x86_64_v4
       # proton-ge-custom
-      # proton-ge-bin
+      proton-ge-bin
       # luxtorpeda
     ];
   };

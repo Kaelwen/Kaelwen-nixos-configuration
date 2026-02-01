@@ -9,10 +9,10 @@
     ./waybar
     ./swayidle
     ./swaylock
-    # ./quickshell
+    ./quickshell
     # ./rofi
     ./fuzzel
-    ./swayosd
+    # ./swayosd
     # ./swaync
     # ./noctalia
   ];

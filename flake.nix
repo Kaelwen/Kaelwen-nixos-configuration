@@ -6,15 +6,15 @@
     # flake-utils.url = "github:numtide/flake-utils";
     # flake-parts.url = "github:hercules-ci/flake-parts";
 
-    chaotic = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # chaotic = {
+    #   url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # dms = {
     #   url = "github:AvengeMedia/DankMaterialShell/stable";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -43,17 +43,17 @@
     #     nixpkgs.follows = "nixpkgs";
     #   };
     # };
-    nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-    };
+    # nix-cachyos-kernel = {
+    #   url = "github:xddxdd/nix-cachyos-kernel";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # zen-browser = {
+    #   url = "github:0xc000022070/zen-browser-flake";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #     # home-manager.follows = "home-manager";
+    #   };
+    # };
 
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
@@ -72,7 +72,7 @@
         specialArgs = {
           # pkgs-stable = import nixpkgs-stable {
           #   inherit system;
-          #   config.allowUnfree = true; # 允许非自由软件（如Chrome）
+          #   config.allowUnfree = true;
           # };
           my-pkgs = inputs.myNixpkgs.packages.${system};
           inherit
@@ -84,10 +84,9 @@
         };
         modules = [
           ./host/configuration.nix
-          inputs.chaotic.nixosModules.default
+          # inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
-
         ];
       };
     };

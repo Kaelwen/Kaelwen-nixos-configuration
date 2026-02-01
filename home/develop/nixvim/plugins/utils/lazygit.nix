@@ -1,6 +1,17 @@
 {
-  programs.nixvim.plugins.lazygit = {
-    enable = true;
-
+  programs.nixvim = {
+    plugins.lazygit = {
+      enable = true;
+    };
+    keymaps = [
+      {
+        mode = "n"; # normal 模式
+        key = "<leader>g";
+        action = "<cmd>LazyGit<cr>";
+        options = {
+          desc = "打开LazyGit";
+        };
+      }
+    ];
   };
 }

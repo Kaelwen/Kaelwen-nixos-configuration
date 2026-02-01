@@ -12,15 +12,14 @@
     postman
     filezilla
     localsend
-    # libreoffice
-    kdePackages.kdenlive
+    libreoffice
+    # kdePackages.kdenlive
     gimp3-with-plugins
     evince
     gthumb
-    wpsoffice-cn
-    # openvpn
+    mpv
+    nautilus
     obsidian
-
     wlrctl
   ];
 }

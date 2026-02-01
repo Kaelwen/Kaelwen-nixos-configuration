@@ -53,9 +53,9 @@
 
     icons = {
       enable = true;
-      package = pkgs.papirus-icon-theme;
-      dark = "Papirus-Dark";
-      light = "Papirus-Light";
+      package = pkgs.whitesur-icon-theme;
+      dark = "WhiteSur";
+      light = "WhiteSur";
     };
 
     opacity = {

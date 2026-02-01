@@ -6,7 +6,7 @@
 {
   stylix.targets.firefox.profileNames = [ "default" ];
 
-  programs.firefox = {
+  programs.librewolf = {
     enable = true;
     # package = pkgs.librewolf;
     languagePacks = [ "zh-CN" ];

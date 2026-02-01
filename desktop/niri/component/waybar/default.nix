@@ -5,12 +5,12 @@
   ...
 }:
 {
-  home.packages = with pkgs; [
-    swappy
-    wf-recorder
-    cava
-  ];
-
+  # home.packages = with pkgs; [
+  #   swappy
+  #   wf-recorder
+  #   cava
+  # ];
+  #
   programs.waybar = {
     enable = true;
     systemd = {
@@ -72,9 +72,7 @@
           ];
           tooltip = false;
         };
-        # "battery#data" = {
-        #   format = "{capacity:2}%";
-        # };
+
         power-profiles-daemon = {
           format = "{icon}";
           tooltip-format = "Power profile: {profile}\nDriver: {driver}";
@@ -133,24 +131,13 @@
           };
           on-click = lib.getExe pkgs.nmgui;
         };
-        # "network#data" = {
-        #   on-click = lib.getExe pkgs.nmgui;
-        #   format-wifi = "{essid}";
-        #   format-ethernet = "{ifname}";
-        #   format-disconnected = "{Disconnected}";
-        # };
+
         bluetooth = {
           format-disabled = "󰂲";
           format = "󰂯";
           format-connected = "󰂱";
           on-click = "${pkgs.blueberry}/bin/blueberry";
         };
-        # "bluetooth#data" = {
-        #   on-click = "${pkgs.blueberry}/bin/blueberry";
-        #   format-disabled = "off";
-        #   format = "on";
-        #   format-connected = "on";
-        # };
 
         backlight = {
           scroll-step = 5;
@@ -169,11 +156,10 @@
             "󱩖"
             "󰛨"
           ];
-        };
-        # "backlight#data" = {
-        #   format = "{percent:2}%";
-        # };
+          on-scroll-up = lib.mkDefault "${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
+          on-scroll-down = lib.mkDefault "${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
 
+        };
         pulseaudio = {
           format = "{icon} {volume:2}%";
           format-muted = " ";
@@ -189,12 +175,10 @@
             ];
           };
           on-click = lib.getExe pkgs.pavucontrol;
+          on-scroll-up = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
+          on-scroll-down = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
 
         };
-        # "pulseaudio#data" = {
-        #   on-click = lib.getExe pkgs.pavucontrol;
-        #   format = "{volume:2}%";
-        # };
 
         clock = {
           interval = 60;
@@ -202,18 +186,14 @@
           tooltip = true;
           tooltip-format = " {:%Y-%m-%d}";
         };
-        # "clock#data" = {
-        #   format = "{:%H:%M}";
-        # };
+
         cpu = {
           interval = 2;
           format = " {usage:2}%";
           tooltip = true;
           on-click = "kitty btop";
         };
-        # "cpu#data" = {
-        #   format = "{usage:2}%";
-        # };
+
         memory = {
           interval = 2;
           format = " {:2}%";
@@ -221,9 +201,7 @@
           tooltip-format = "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G";
           on-click = "kitty btop";
         };
-        # "memory#data" = {
-        #   format = "{:2}%";
-        # };
+
         "custom/wlogout" = {
           format = "󱄅";
           tooltip = false;
