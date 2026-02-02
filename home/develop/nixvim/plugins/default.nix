@@ -6,6 +6,7 @@
     ./utils
     ./editors
     ./languages
+    ./git
     ./mini.nix
   ];
 }

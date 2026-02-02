@@ -11,9 +11,11 @@
     nix-output-monitor
     unrar
     mesa
-    intel-vaapi-driver
-    bibata-cursors
+    # intel-vaapi-driver
+    # bibata-cursors
     ffmpeg
+    kdePackages.ksshaskpass
+
   ];
 
   programs.nix-ld.enable = true;
@@ -22,7 +24,7 @@
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";
-    EDITOR = "hx";
+    EDITOR = "nvim";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     MOZ_ENABLE_WAYLAND = "1";
   };

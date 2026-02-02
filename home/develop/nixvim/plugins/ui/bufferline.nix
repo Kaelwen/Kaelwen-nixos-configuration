@@ -25,7 +25,8 @@
       {
         mode = "n";
         key = "<leader>bd";
-        action = "<cmd>bp | bd #<cr>";
+        # action = "<cmd>bp | bd #<cr>";
+        action = "<cmd>bdelete<cr>";
         options.desc = "删除当前 buffer 并切换到上一个";
       }
       {

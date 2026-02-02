@@ -5,21 +5,6 @@
     plugins.lsp = {
       enable = true;
       inlayHints = true;
-      # keymaps = {
-      #   diagnostic = {
-      #     "<leader>lE" = "open_float";
-      #     "[" = "goto_prev";
-      #     "]" = "goto_next";
-      #   };
-      #   lspBuf = {
-      #     "gD" = "declaration";
-      #     "gd" = "definition";
-      #     "gr" = "references";
-      #     "gI" = "implementation";
-      #     "gy" = "type_definition";
-      #   };
-      # };
-
       servers = {
         rust_analyzer = {
           enable = true;
@@ -35,8 +20,8 @@
         qmlls.enable = true;
         tailwindcss.enable = true;
         marksman.enable = true;
-
       };
+
     };
     keymaps = [
       {
@@ -144,6 +129,34 @@
         options.desc = "跳转到类型定义";
       }
     ];
+    extraConfigLua = ''
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function()
+          local _border = "rounded"
+          vim.diagnostic.config({
+            -- virtual_lines = true, -- 诊断提示虚拟行
+            virtual_text = true, -- 诊断提示内行提示
+
+            signs = {
+              active = true,
+                text = {
+                  [vim.diagnostic.severity.ERROR] = "";
+                  [vim.diagnostic.severity.WARN] = "",
+                  [vim.diagnostic.severity.INFO] = "",
+                  [vim.diagnostic.severity.HINT] = "💡",
+                },
+              },
+              update_in_insert = true,
+              -- update_in_insert = false,
+              underline = true,
+              severity_sort = true,
+              float = {
+                border = _border,
+              },
+            })
+          end,
+        })
+    '';
   };
 
 }

@@ -8,10 +8,6 @@
         timeoutMs = 500;
       };
       notify_on_error = true;
-      lazyLoad = {
-        enable = true;
-        event = [ "FileType" ];
-      };
 
       formatters_by_ft = {
         c = [ "clang-format" ];

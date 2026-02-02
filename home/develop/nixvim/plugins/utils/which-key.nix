@@ -19,6 +19,14 @@
             group = "ssh连接";
             icon = "אַ";
           }
+          {
+            __unkeyed-1 = "<leader>f";
+            group = "文件查找相关";
+          }
+          {
+            __unkeyed-1 = "<leader>c";
+            group = "lsp相关";
+          }
         ];
       };
     };
