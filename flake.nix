@@ -87,7 +87,7 @@
           ./host/configuration.nix
           # inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
-          inputs.stylix.nixosModules.stylix
+
         ];
       };
     };

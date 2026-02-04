@@ -99,7 +99,7 @@
           tooltip = true;
         };
         tray = {
-          icon-size = 16;
+          icon-size = 14;
           spacing = 12;
         };
 

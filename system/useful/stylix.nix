@@ -6,7 +6,9 @@
 }:
 
 {
-
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
   stylix = {
     enable = true;
     overlays.enable = true;
