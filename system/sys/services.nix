@@ -11,7 +11,6 @@
     layout = "cn";
     variant = "";
   };
-  # hardware.bluetooth.enable = true;
 
   services = {
     flatpak.enable = true; # 软件包
