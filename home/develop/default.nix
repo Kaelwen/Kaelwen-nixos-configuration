@@ -6,7 +6,7 @@
     # ./helix.nix
     ./environments.nix
     ./direnv
-    # ./vscodium.nix
+    ./vscode
     ./yazi.nix
     # ./stm32.nix
     ./nixvim

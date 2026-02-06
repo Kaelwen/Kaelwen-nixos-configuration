@@ -12,7 +12,7 @@
     settings = {
       anchor = "top-right";
       sort = "-time";
-      layer = "overlay";
+      # layer = "overlay";
       width = 300;
       height = 500;
       padding = 10;

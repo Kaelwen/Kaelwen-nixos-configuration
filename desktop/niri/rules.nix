@@ -68,7 +68,7 @@
           }
           {
             app-id = "org.telegram.desktop";
-            title = "Media viewer";
+            title = "Media^";
           }
         ];
         open-floating = true;

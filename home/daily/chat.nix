@@ -14,7 +14,7 @@
     telegram-desktop
     wechat
 
-    # animeko
+    animeko
   ];
   # xdg.desktopEntries.wechat = {
   #   name = "WeChat";

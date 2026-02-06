@@ -133,7 +133,7 @@
       mOnSecondary = lib.mkForce base01;
       mOnSurface = lib.mkForce base05;
       mOnSurfaceVariant = lib.mkForce base07;
-      mOnTeritiary = lib.mkForce base00;
+      mOnTeritiary = lib.mkForce base02;
       mOutline = lib.mkForce base02;
       mPrimary = lib.mkForce base07;
       mSecondary = lib.mkForce base06;
@@ -248,7 +248,7 @@
         fontDefaultScale = 1;
         fontFixedScale = 1;
         tooltipsEnabled = true;
-        panelBackgroundOpacity = lib.mkForce 0.9;
+        panelBackgroundOpacity = lib.mkForce 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         wifiDetailsViewMode = "grid";

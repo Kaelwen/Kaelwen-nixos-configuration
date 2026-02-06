@@ -19,28 +19,34 @@
         orientation = "horizontal";
         fixed-center = true;
 
-        margin = "2 4 2 4";
+        # margin = "2 4 2 4";
         modules-left = [
-          # "custom/wlogout"
+          "custom/wlogout"
           "niri/workspaces"
           "cpu"
+          "cpu#data"
           "memory"
-          "custom/temperature"
+          "memory#data"
         ];
         modules-center = [
           "power-profiles-daemon"
           "clock"
+          "clock#data"
           "idle_inhibitor"
         ];
         modules-right = [
-          # "custom/apps"
+          "custom/apps"
           "tray"
           "battery"
+          "battery#data"
           "network"
+          "network#data"
           "bluetooth"
+          "bluetooth#data"
           "pulseaudio"
+          "pulseaudio#data"
           "backlight"
-          "custom/swaync"
+          "backlight#data"
         ];
         battery = {
           interval = 5;
@@ -48,9 +54,9 @@
             warning = 30;
             critical = 10;
           };
-          format = "{icon} {capacity:2}%";
-          format-charging = " {capacity:2}%";
-          format-plugged = " {capacity:2}%";
+          format = "{icon}";
+          format-charging = "";
+          format-plugged = "";
           format-alt = "{icon}";
           format-icons = [
             ""
@@ -61,7 +67,9 @@
           ];
           tooltip = false;
         };
-
+        "battery#data" = {
+          format = "{capacity:2}%";
+        };
         power-profiles-daemon = {
           format = "{icon}";
           tooltip-format = "Power profile: {profile}\nDriver: {driver}";
@@ -88,7 +96,7 @@
           tooltip = true;
         };
         tray = {
-          icon-size = 14;
+          icon-size = 16;
           spacing = 12;
         };
 
@@ -102,13 +110,11 @@
           tooltip-format-deactivated = "idle Enabled";
         };
         network = {
-          format-disabled = "{icon} 开门!";
-          format-disconnected = "{icon} {Disconnected}";
-          format-wifi = "{icon} {essid}";
-          format-ethernet = "{icon} {ifname}";
+          format-disconnected = "{icon}";
+          format-wifi = "{icon}";
+          format-ethernet = "{icon}";
           format-icons = {
             disconnected = "󰤮";
-            disabled = "󰤮";
             wifi = [
               "󰤯"
               "󰤟"
@@ -120,18 +126,29 @@
           };
           on-click = lib.getExe pkgs.nmgui;
         };
-
+        "network#data" = {
+          on-click = lib.getExe pkgs.nmgui;
+          format-wifi = "{essid}";
+          format-ethernet = "{ifname}";
+          format-disconnected = "{Disconnected}";
+        };
         bluetooth = {
           format-disabled = "󰂲";
           format = "󰂯";
           format-connected = "󰂱";
           on-click = "${pkgs.blueberry}/bin/blueberry";
         };
+        "bluetooth#data" = {
+          on-click = "${pkgs.blueberry}/bin/blueberry";
+          format-disabled = "off";
+          format = "on";
+          format-connected = "on";
+        };
 
         backlight = {
           scroll-step = 5;
           tooltip = false;
-          format = "{icon} {percent:2}%";
+          format = "{icon}";
           format-icons = [
             "󰛩"
             "󱩎"
@@ -145,13 +162,14 @@
             "󱩖"
             "󰛨"
           ];
-          on-scroll-up = lib.mkDefault "${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
-          on-scroll-down = lib.mkDefault "${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
-
         };
+        "backlight#data" = {
+          format = "{percent:2}%";
+        };
+
         pulseaudio = {
-          format = "{icon} {volume:2}%";
-          format-muted = " ";
+          format = "{icon}";
+          format-muted = "";
           format-bluetooth = "";
           tooltip = false;
           format-icons = {
@@ -163,42 +181,51 @@
               ""
             ];
           };
-          on-click = "${lib.getExe pkgs.pavucontrol} -t 3";
-          on-scroll-up = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
-          on-scroll-down = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+          on-click = lib.getExe pkgs.pavucontrol;
+
+        };
+        "pulseaudio#data" = {
+          on-click = lib.getExe pkgs.pavucontrol;
+          format = "{volume:2}%";
         };
 
         clock = {
           interval = 60;
-          format = " {:%H:%M}";
+          format = "";
           tooltip = true;
           tooltip-format = " {:%Y-%m-%d}";
         };
-
+        "clock#data" = {
+          format = "{:%H:%M}";
+        };
         cpu = {
-          interval = 3;
-          format = " {usage:2}%";
+          interval = 5;
+          format = "";
           tooltip = true;
           on-click = "kitty btop";
         };
-
+        "cpu#data" = {
+          format = "{usage:2}%";
+        };
         memory = {
-          interval = 3;
-          format = " {:2}%";
+          interval = 5;
+          format = "";
           tooltip = true;
           tooltip-format = "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G";
           on-click = "kitty btop";
         };
-        "custom/temperature" = {
-          interval = 5;
-          format = "󰈸 {:2}°C";
-          exec = "cat /sys/class/thermal/thermal_zone5/temp | awk '{print int($1/1000)}'";
+        "memory#data" = {
+          format = "{:2}%";
         };
-
-        "custom/swaync" = {
+        "custom/wlogout" = {
           format = "󱄅";
           tooltip = false;
-          on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t";
+          on-click = "~/.config/rofi/scripts/powermenu.sh";
+        };
+        "custom/apps" = {
+          format = "";
+          tooltip = false;
+          on-click = "~/.config/rofi/scripts/launcher.sh";
         };
       };
     };
@@ -211,14 +238,19 @@
             font-size: 14px;
           }
           window#waybar {
-              background: transparent;
+              background: #${config.lib.stylix.colors.base01};
+              /* background:transparent; */
               color: #${config.lib.stylix.colors.base05};
           }
-
+          .modules-left,
+          .modules-center,
+          .modules-right {
+              margin:0.3em 0;
+          }
           tooltip {
-            background: alpha(#${config.lib.stylix.colors.base00},0.8);
+            background: #${config.lib.stylix.colors.base02};
             border: 0.17em solid #${config.lib.stylix.colors.base07};
-            border-radius: 0.4em;
+            border-radius: 0.17em;
             opacity: 0.8;
           }
           tooltip label {
@@ -230,15 +262,21 @@
             padding: 0px 0.56em;
             border-radius: 0.8em;
             transition: all 0.3s ease;
-            color: #${config.lib.stylix.colors.base03};
+            color: #${config.lib.stylix.colors.base06};
 
           }
           #workspaces button:hover {
-            color: #${config.lib.stylix.colors.base06};
+            background: #${config.lib.stylix.colors.base0E};
           }
           #workspaces button.active {
-            color: #${config.lib.stylix.colors.base06};
+            color: #${config.lib.stylix.colors.base07};
           }
+          #workspaces {
+            background: #${config.lib.stylix.colors.base02};
+            border-radius: 0.5em;
+            margin: 0 0.5em;
+          }
+
           #clock {
             color: #${config.lib.stylix.colors.base06};
           }
@@ -250,33 +288,62 @@
           #bluetooth,
           #cpu,
           #memory,
-          #custom-temperature,
           #clock,
-          #tray,
-          #power-profiles-daemon,
-          #idle_inhibitor,
-          #custom-swaync,
-          #workspaces {
-              background: #${config.lib.stylix.colors.base00};
-              border-radius: 1em;
-              margin: 0 0.25em;
+          #custom-apps {
+              color: #${config.lib.stylix.colors.base00};
+              border-radius: 0.5em 0 0 0.5em;
+              margin: 0 0 0 0.25em;
               padding: 0 0.7em;
           }
 
-          #network {color: #${config.lib.stylix.colors.base0C};}
-          #battery {color: #${config.lib.stylix.colors.base0B};}
-          #pulseaudio {color: #${config.lib.stylix.colors.base0A};}
-          #backlight {color: #${config.lib.stylix.colors.base09};}
-          #bluetooth {color: #${config.lib.stylix.colors.base0D};}
-          #cpu {color: #${config.lib.stylix.colors.base0A}}
-          #memory {color: #${config.lib.stylix.colors.base09}}
-          #clock {color: #${config.lib.stylix.colors.base07}}
+          #network.data,
+          #battery.data,
+          #pulseaudio.data,
+          #backlight.data,
+          #bluetooth.data,
+          #cpu.data,
+          #memory.data,
+          #clock.data,
+          #tray {
+            background: #${config.lib.stylix.colors.base02};
+            border-radius: 0 0.5em 0.5em 0;
+            margin: 0 0.25em 0 0;
+            padding: 0 0.5em;
+          }
+
+          #network {background: #${config.lib.stylix.colors.base0C};}
+          #network.data {color: #${config.lib.stylix.colors.base0C};}
+          #battery {background: #${config.lib.stylix.colors.base0B};}
+          #battery.data {color: #${config.lib.stylix.colors.base0B};}
+          #pulseaudio {background: #${config.lib.stylix.colors.base0A};}
+          #pulseaudio.data {color: #${config.lib.stylix.colors.base0A};}
+          #backlight {background: #${config.lib.stylix.colors.base09};}
+          #backlight.data {color: #${config.lib.stylix.colors.base09};}
+          #bluetooth {background: #${config.lib.stylix.colors.base0D};}
+          #bluetooth.data {color: #${config.lib.stylix.colors.base0D};}
+          #cpu {background: #${config.lib.stylix.colors.base08}}
+          #cpu.data {color: #${config.lib.stylix.colors.base08}}
+          #memory {background: #${config.lib.stylix.colors.base0E}}
+          #memory.data {color: #${config.lib.stylix.colors.base0E}}
+          #clock {background: #${config.lib.stylix.colors.base07}}
+          #clock.data {color: #${config.lib.stylix.colors.base07}}
+
+          #custom-apps {background: #${config.lib.stylix.colors.base06};}
           #tray {color: #${config.lib.stylix.colors.base06};}
-          #custom-swaync{color: #${config.lib.stylix.colors.base07};}
-          #custom-temperature{color: #${config.lib.stylix.colors.base08};}
+
+          #custom-wlogout {
+            color: #${config.lib.stylix.colors.base00};
+            background: #${config.lib.stylix.colors.base07};
+            border-radius: 0.3em;
+            font-size: 1.39em;
+            padding: 0px 0.5em;
+            margin:0 0.25em;
+          }
 
           #power-profiles-daemon,
           #idle_inhibitor {
+            margin:0.4em;
+            padding: 0px 0.5em;
             color: #${config.lib.stylix.colors.base07};
           }
 
@@ -289,7 +356,7 @@
           #power-profiles-daemon.power-saver {
               color: #${config.lib.stylix.colors.base0B}
           }
+
         '';
   };
-
 }

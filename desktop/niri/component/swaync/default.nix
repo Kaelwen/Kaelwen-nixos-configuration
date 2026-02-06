@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     libnotify
-    # swaynotificationcenter
+
   ];
   services.swaync = {
     enable = true;
@@ -27,7 +27,7 @@
       timeout-critical = 6;
 
       widgets = [
-        "label"
+        # "label"
         "buttons-grid"
         "mpris"
         "title"
@@ -44,10 +44,10 @@
         dnd = {
           text = "Do not disturb";
         };
-        label = {
-          max-lines = 1;
-          text = "awa";
-        };
+        # label = {
+        #   max-lines = 1;
+        #   text = "awa";
+        # };
         mpris = {
           image-size = 96;
           image-radius = 12;

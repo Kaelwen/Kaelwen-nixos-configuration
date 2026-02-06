@@ -3,72 +3,67 @@
   lib,
   ...
 }:
-
+let
+  vspkgs = {
+    vscode-qt-for-python = pkgs.callPackage ./extensions/vscode-qt-for-python.nix { };
+    opencode = pkgs.callPackage ./extensions/opencode.nix { };
+  };
+in
 {
-  home.packages = [ pkgs.nixd ];
-
   programs.vscode = {
     enable = true;
-    # package = pkgs.vscodium;
+    package = pkgs.vscodium;
 
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
-      extensions = with pkgs.vscode-extensions; [
+      extensions =
+        with pkgs.vscode-extensions;
+        [
+          # ms-vscode-remote.remote-ssh
+          # ms-vscode.remote-explorer
+          ms-ceintl.vscode-language-pack-zh-hans
+          adpyke.codesnap
+          #python
+          ms-python.python
+          ms-pyright.pyright
+          charliermarsh.ruff
+          ms-python.debugpy
+          #c/c++
+          # ms-vscode.cmake-tools
+          # ms-vscode.makefile-tools
+          xaver.clang-format
+          llvm-vs-code-extensions.vscode-clangd
+          #go
+          golang.go
+          #rust
+          rust-lang.rust-analyzer
+          #nix
+          bbenoist.nix
+          brettm12345.nixfmt-vscode
+          jnoortheen.nix-ide
+          #docker
+          ms-azuretools.vscode-docker
+          ms-azuretools.vscode-containers
+          #前端
+          bradlc.vscode-tailwindcss
+          vue.volar
+          # stylelint.vscode-stylelint
+          skyapps.fish-vscode
+          #配置文件格式
+          tamasfe.even-better-toml
+          # zainchen.json
+          redhat.vscode-yaml
+          tekumara.typos-vscode
+          yzhang.markdown-all-in-one
+          yzhang.dictionary-completion
 
-        ms-vscode-remote.remote-ssh
-        ms-vscode.remote-explorer
-        ms-ceintl.vscode-language-pack-zh-hans
-        adpyke.codesnap
-        # saoudrizwan.claude-dev
-
-        #python
-        ms-python.python
-        ms-pyright.pyright
-        charliermarsh.ruff
-        ms-python.debugpy
-
-        #c/c++
-        ms-vscode.cmake-tools
-        ms-vscode.makefile-tools
-        xaver.clang-format
-        llvm-vs-code-extensions.vscode-clangd
-
-        #go
-        golang.go
-
-        #rust
-        rust-lang.rust-analyzer
-
-        #nix
-        bbenoist.nix
-        brettm12345.nixfmt-vscode
-        jnoortheen.nix-ide
-
-        #docker
-        ms-azuretools.vscode-docker
-        # formulahendry.docker-extension-pack
-        ms-azuretools.vscode-containers
-
-        #前端
-        bradlc.vscode-tailwindcss
-        vue.volar
-
-        # stylelint.vscode-stylelint
-        skyapps.fish-vscode
-
-        #配置文件格式
-        tamasfe.even-better-toml
-        zainchen.json
-        redhat.vscode-yaml
-
-        tekumara.typos-vscode
-
-        yzhang.markdown-all-in-one
-
-        yzhang.dictionary-completion
-
-      ];
+        ]
+        ++ (with vspkgs; [
+          vscode-qt-for-python
+          # opencode
+          # trae
+        ]);
 
       userSettings = {
         "files.autoSave" = "onFocusChange";

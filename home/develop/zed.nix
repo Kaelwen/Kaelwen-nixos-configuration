@@ -138,30 +138,6 @@
       vim_mode = false;
 
       languages = {
-        JSON = {
-          formatter = {
-            external = {
-              command = "prettier";
-              arguments = [
-                "--stdin-filepath"
-                "{buffer_path}"
-              ];
-            };
-          };
-        };
-
-        JSONC = {
-          soft_wrap = "prefer_line";
-          formatter = {
-            external = {
-              command = "prettier";
-              arguments = [
-                "--stdin-filepath"
-                "{buffer_path}"
-              ];
-            };
-          };
-        };
 
         Nix = {
           formatter = {
@@ -202,53 +178,8 @@
 
       lsp = {
         pyright = {
-          initialization_options = {
-            pyright = {
-              disableLanguageServices = false;
-              disableOrganizeImports = false;
-            };
-          };
-          settings = {
-            python = {
-              analysis = {
-                typeCheckingMode = "basic";
-                diagnosticMode = "openFilesOnly";
-                autoImportCompletions = true;
-                useLibraryCodeForTypes = true;
-              };
-              reportMissingImports = "warning";
-              reportUnusedImport = "warning";
-              reportUnusedVariable = "warning";
-              reportUnusedFunction = "warning";
-            };
-          };
-        };
-
-        ruff = {
-          initialization_options = {
-            settings = {
-              lineLength = 88;
-              select = [
-                "E"
-                "W"
-                "F"
-                "I"
-              ];
-              ignore = [
-                "ANN"
-                "D"
-                "COM"
-                "ISC"
-                "PL"
-                "ARG"
-                "ERA"
-                "PGH"
-                "RUF"
-              ];
-              isort = {
-                knownFirstParty = [ ];
-              };
-            };
+          binary = {
+            path = "${pkgs.pyright}/bin/pyright-langserver";
           };
         };
 
