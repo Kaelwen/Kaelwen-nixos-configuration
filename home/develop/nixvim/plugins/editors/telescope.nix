@@ -12,11 +12,6 @@
     };
 
     keymaps = [
-      # "<leader>f" = {
-      #   action = "git_files";
-      #   options = {
-      #     desc = "查询文件
-
       {
         action = "<CMD>Telescope projects layout_config={height=0.6,width=0.6}<CR>";
         key = "<leader>fp";

@@ -9,9 +9,9 @@
     # scrollview.enable = true;
     # cursorline.enable = true;
     # cursorline.settings.cursorword.enable = true;
-    # fidget.enable = true;
+    fidget.enable = true;
     # indent-blankline.enable = true;
-    # gitsigns.enable = true;
+
     # navbuddy.enable = true;
     # smartcolumn.enable = true;
     # fastaction.enable = true;

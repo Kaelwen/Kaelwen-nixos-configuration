@@ -9,7 +9,7 @@
 - swayidle
 - swaylock
 - swayosd
-- mako
+- swaync
 
 ![alt text](assets/images/image-1.png)
 
@@ -78,7 +78,7 @@ in
         ...
         }
     }
-}
+}z
 ```
 
 - 当你需要qt之类的依赖路径的时候

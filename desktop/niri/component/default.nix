@@ -14,6 +14,7 @@
     ./fuzzel
     ./swayosd
     ./swaync
+    ./wlsunset
     # ./noctalia
   ];
 }

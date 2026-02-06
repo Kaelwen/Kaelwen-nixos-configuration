@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 {
-
-  lsp = {
+  programs.zed-editor.userSettings.lsp = {
     pyright = {
       binary = {
         path = "${pkgs.pyright}/bin/pyright-langserver";
@@ -9,7 +8,7 @@
       };
     };
 
-    nix = {
+    nixd = {
       binary = {
         path = lib.getExe pkgs.nixd;
         path_lookup = true;
@@ -22,6 +21,11 @@
         path_lookup = true;
       };
     };
+    gopls = {
+      binary = {
+        path = lib.getExe pkgs.gopls;
+        path_lookup = true;
+      };
+    };
   };
-
 }

@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 {
-  languages = {
+  programs.zed-editor.userSettings.languages = {
     Nix = {
       language_servers = [ "nixd" ];
       formatter = {
@@ -12,7 +12,6 @@
           command = lib.getExe pkgs.nixfmt;
         };
       };
-
     };
     Python = {
       language_servers = [
@@ -23,13 +22,18 @@
           command = lib.getExe pkgs.ruff;
           arguments = [
             "format"
-            "--stdin-filename"
-            "{buffer_path}"
             "-"
           ];
         };
       };
     };
+    Rust = {
+      language_servers = [ "rust-analyzer" ];
+      formatter = {
+        external = {
+          command = lib.getExe pkgs.rustfmt;
+        };
+      };
+    };
   };
-
 }
