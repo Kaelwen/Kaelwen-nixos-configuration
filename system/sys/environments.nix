@@ -14,7 +14,7 @@
     # intel-vaapi-driver
     # bibata-cursors
     ffmpeg
-    kdePackages.ksshaskpass
+    # kdePackages.ksshaskpass
 
   ];
 

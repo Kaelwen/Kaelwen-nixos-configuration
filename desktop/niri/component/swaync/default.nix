@@ -64,11 +64,11 @@
             }
             {
               label = " ";
-              command = lib.getExe pkgs.nmgui;
+              command = "${pkgs.swaynotificationcenter}/bin/swaync-client -t | ${pkgs.nmgui}/bin/nmgui";
             }
             {
               label = "󰂯";
-              command = "${pkgs.blueberry}/bin/blueberry";
+              command = "${pkgs.swaynotificationcenter}/bin/swaync-client -t | ${pkgs.blueberry}/bin/blueberry";
             }
             {
               label = "󰏘";

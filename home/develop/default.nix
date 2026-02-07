@@ -3,13 +3,13 @@
     ./distrobox
     # ./uv.nix
     ./pixi.nix
-    # ./helix.nix
+    ./helix.nix
     ./environments.nix
     ./direnv
-    ./vscode
+    # ./vscode
     ./yazi.nix
     # ./stm32.nix
-    ./nixvim
-    # ./zed
+    # ./nixvim
+    ./zed
   ];
 }

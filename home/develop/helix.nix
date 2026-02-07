@@ -6,9 +6,7 @@
 
 {
   home.packages = with pkgs; [
-    # nixd
     lldb
-    # llvmPackages.clang-tools
   ];
 
   programs.helix = {
@@ -20,7 +18,50 @@
           insert = "bar";
           select = "underline";
         };
-        bufferline = "multiple";
+        lsp = {
+          display-inlay-hints = true;
+          display-messages = true;
+        };
+        file-picker = {
+          hidden = false;
+          ignore = false;
+        };
+        auto-save = {
+          focus-lost = true;
+          after-delay.enable = true;
+        };
+        statusline = {
+          left = [
+            "mode"
+            "spinner"
+          ];
+          center = [ "file-name" ];
+          right = [
+            "diagnostics"
+            "selections"
+            "position"
+            "file-encoding"
+            "file-line-ending"
+            "file-type"
+          ];
+          separator = "|";
+        };
+        # line-number = "relative";
+        # cursorline = true;
+        indent-guides = {
+          character = "┊";
+          render = true;
+          skip-levels = 1;
+        };
+        bufferline = "always";
+        completion-trigger-len = 1;
+        color-modes = true;
+        gutters = [
+          "diff"
+          "diagnostics"
+          "line-numbers"
+          "spacer"
+        ];
       };
     };
     languages = {
@@ -35,13 +76,13 @@
           name = "c";
           auto-format = true;
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
-          language-servers = [ "clang-dc" ];
+          language-servers = [ "clangd" ];
         }
         {
           name = "cpp";
           auto-format = true;
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
-          language-servers = [ "clangd-cpp" ];
+          language-servers = [ "clangd" ];
         }
         {
           name = "python";
@@ -58,12 +99,13 @@
         {
           name = "rust";
           auto-format = true;
-          formatter.command = "rustfmt";
+          formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
           language-servers = [ "rust-analyzer" ];
         }
         {
           name = "go";
           auto-format = true;
+          formatter.command = "${pkgs.go}/bin/gofmt";
           language-servers = [ "gopls" ];
         }
         {
@@ -112,33 +154,14 @@
         }
       ];
       language-server = {
-        nixd.command = lib.getExe pkgs.nixd;
+        nixd = {
+          command = lib.getExe pkgs.nixd;
+        };
         pyright = {
           command = "${pkgs.pyright}/bin/pyright-langserver";
-          config = {
-            python.analysis.venvPath = ".";
-            python.analysis.venv = ".venv";
-          };
+          args = [ "--stdio" ];
         };
-        clangd-cpp = {
-          command = "${pkgs.clang-tools}/bin/clangd";
-          config = {
-            fallbackFlags = [
-              "-std=c++20"
-              "-Wall"
-              "-Wextra"
-            ];
-          };
-        };
-        clangd-c = {
-          command = "${pkgs.clang-tools}/bin/clangd";
-          config = {
-            fallbackFlags = [
-              "-std=c17"
-              "-Wall"
-            ];
-          };
-        };
+        clangd.command = "${pkgs.clang-tools}/bin/clangd";
         gopls.command = lib.getExe pkgs.gopls;
         typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
         tailwindcss-language-server.command = lib.getExe pkgs.tailwindcss-language-server;

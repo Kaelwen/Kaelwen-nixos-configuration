@@ -258,9 +258,26 @@
           #custom-swaync,
           #workspaces {
               background: #${config.lib.stylix.colors.base00};
+              transition: all 0.3s ease;
               border-radius: 1em;
               margin: 0 0.25em;
               padding: 0 0.7em;
+          }
+
+          #network:hover,
+          #battery:hover,
+          #pulseaudio:hover,
+          #backlight:hover,
+          #bluetooth:hover,
+          #cpu:hover,
+          #memory:hover,
+          #custom-temperature:hover,
+          #clock:hover,
+          #tray:hover,
+          #power-profiles-daemon:hover,
+          #idle_inhibitor:hover,
+          #custom-swaync:hover {
+              background: #${config.lib.stylix.colors.base02}; 
           }
 
           #network {color: #${config.lib.stylix.colors.base0C};}
