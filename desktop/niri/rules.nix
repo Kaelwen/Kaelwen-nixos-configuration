@@ -6,6 +6,7 @@
       {
         matches = [
           { namespace = "^swww*"; }
+          { namespace = "^overlay-mask*"; }
           { namespace = "^noctalia-wallpaper*"; }
         ];
         place-within-backdrop = true;

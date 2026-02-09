@@ -152,6 +152,14 @@
           name = "yaml";
           language-servers = [ "yaml-language-server" ];
         }
+        {
+          name = "markdown";
+          language-servers = [ "markman" ];
+          formatter = {
+            command = lib.getExe pkgs.prettier;
+            args = [ "--write" ];
+          };
+        }
       ];
       language-server = {
         nixd = {
@@ -171,6 +179,7 @@
         yaml-language-server.command = lib.getExe pkgs.yaml-language-server;
         docker-langserver.command = lib.getExe pkgs.dockerfile-language-server;
         docker-compose-langserver.command = lib.getExe pkgs.docker-compose-language-service;
+        markman.command = lib.getExe pkgs.marksman;
       };
     };
   };

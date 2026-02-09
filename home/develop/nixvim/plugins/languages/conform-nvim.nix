@@ -27,6 +27,7 @@
         css = [ "prettier" ];
         vue = [ "prettier" ];
         kdl = [ "kdlfmt" ];
+        sh = [ "shfmt" ];
       };
       formatters = {
         nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
@@ -42,8 +43,8 @@
         prettier.command = "${pkgs.prettier}/bin/prettier";
         kdlfmt.command = "${pkgs.kdlfmt}/bin/kdlfmt";
         qmlformat.command = "${pkgs.qt6.qtdeclarative}/bin/qmlformat";
+        shfmt.command = "${pkgs.shfmt}/bin/shfmt";
       };
     };
   };
-
 }

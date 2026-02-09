@@ -19,6 +19,7 @@
         cssls.enable = true;
         qmlls.enable = true;
         tailwindcss.enable = true;
+        bashls.enable = true;
         marksman.enable = true;
       };
 

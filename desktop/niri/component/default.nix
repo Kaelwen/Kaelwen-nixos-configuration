@@ -6,15 +6,15 @@
   ];
   imports = [
     # ./mako
-    ./waybar
-    ./swayidle
+    # ./waybar
+    # ./swayidle
     ./swaylock
     ./quickshell
     # ./rofi
     ./fuzzel
-    ./swayosd
-    ./swaync
-    ./wlsunset
-    # ./noctalia
+    # ./swayosd
+    # ./swaync
+    # ./wlsunset
+    # # ./noctalia
   ];
 }

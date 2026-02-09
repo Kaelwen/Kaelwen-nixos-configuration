@@ -23,14 +23,17 @@
       relativenumber = false;
       numberwidth = 3;
       expandtab = true;
-      tabstop = 4;
+      tabstop = 2;
       shiftwidth = 4;
       softtabstop = 4;
     };
     highlightOverride = with config.lib.stylix.colors.withHashtag; {
       CursorLineNr = {
-        bg = base01;
+        bg = "none";
         fg = base06;
+      };
+      LineNr = {
+        bg = "none";
       };
       Comment.italic = true;
       Comment.fg = base04;

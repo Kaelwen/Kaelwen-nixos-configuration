@@ -74,7 +74,6 @@ in
         "files.associations" = {
           "*.css" = "tailwindcss";
         };
-
         "[python]" = {
           "editor.formatOnSave" = true;
           "editor.defaultFormatter" = "charliermarsh.ruff";

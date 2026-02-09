@@ -32,5 +32,22 @@
         path_lookup = true;
       };
     };
+    qmlls = {
+      binary = {
+        path = "${pkgs.qt6.qtdeclarative}/bin/qmlls";
+        path_lookup = true;
+      };
+    };
+    markman = {
+      binary = {
+        path = lib.getExe pkgs.marksman;
+        path_lookup = true;
+      };
+    };
+    vue-language-serve = {
+      binary = {
+        path = lib.getExe pkgs.vue-language-server;
+      };
+    };
   };
 }

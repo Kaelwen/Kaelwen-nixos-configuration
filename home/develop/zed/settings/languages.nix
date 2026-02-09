@@ -15,14 +15,12 @@
     };
     Python = {
       language_servers = [ "pyright" ];
-      formatter = {
-        external = {
-          command = lib.getExe pkgs.ruff;
-          arguments = [
-            "format"
-            "-"
-          ];
-        };
+      formatter.external = {
+        command = lib.getExe pkgs.ruff;
+        arguments = [
+          "format"
+          "-"
+        ];
       };
     };
     Rust = {
@@ -51,6 +49,23 @@
         external = {
           command = "${pkgs.go}/bin/gofmt";
         };
+      };
+    };
+    Qml = {
+      language_servers = [ "qmlls" ];
+      formatter = {
+        external = {
+          command = "${pkgs.qt6.qtdeclarative}/bin/qmlformat";
+        };
+      };
+    };
+    Markdown = {
+      format_on_save = "on";
+    };
+    Vue = {
+      language_servers = [ "vue-language-serve" ];
+      formatter = {
+        command = "${pkgs.prettier}/bin/prettier";
       };
     };
   };
