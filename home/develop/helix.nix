@@ -118,6 +118,15 @@
           language-servers = [ "vuels" ];
         }
         {
+          name = "qml";
+          language-servers = [ "qmlls" ];
+          auto-format = true;
+          formatter = {
+            command = "${pkgs.qt6.qtdeclarative}/bin/qmlformat";
+            args = [ "-" ];
+          };
+        }
+        {
           name = "dockerfile";
           auto-format = true;
           language-servers = [ "docker-langserver" ];
@@ -152,14 +161,14 @@
           name = "yaml";
           language-servers = [ "yaml-language-server" ];
         }
-        {
-          name = "markdown";
-          language-servers = [ "markman" ];
-          formatter = {
-            command = lib.getExe pkgs.prettier;
-            args = [ "--write" ];
-          };
-        }
+        # {
+        #   name = "markdown";
+        #   language-servers = [ "markman" ];
+        #   formatter = {
+        #     command = lib.getExe pkgs.prettier;
+        #     args = [ "--write" ];
+        #   };
+        # }
       ];
       language-server = {
         nixd = {
@@ -174,7 +183,11 @@
         typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
         tailwindcss-language-server.command = lib.getExe pkgs.tailwindcss-language-server;
         rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
-        vuels.command = lib.getExe pkgs.vue-language-server;
+        vuels = {
+          command = lib.getExe pkgs.vue-language-server;
+          args = [ "--stdio" ];
+        };
+        qmlls.command = "${pkgs.qt6.qtdeclarative}/bin/qmlls";
         vscode-json-languageserver.command = lib.getExe pkgs.vscode-json-languageserver;
         yaml-language-server.command = lib.getExe pkgs.yaml-language-server;
         docker-langserver.command = lib.getExe pkgs.dockerfile-language-server;

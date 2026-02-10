@@ -6,7 +6,7 @@
   ];
   programs.quickshell = {
     enable = true;
-    systemd.enable = true;
+    # systemd.enable = true;
   };
   # programs.niri.settings = {
   #   binds = {

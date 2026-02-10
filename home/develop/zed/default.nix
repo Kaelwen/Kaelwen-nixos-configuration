@@ -27,6 +27,7 @@
       "sinppets"
       "toml"
       "vue"
+      "qml"
     ];
   };
 }
