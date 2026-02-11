@@ -29,6 +29,19 @@
             	<startup-notify/>
             	<directories/>
             </action>
+            <action>
+            	<icon>utilities-terminal</icon>
+            	<name>用zed打开当前文件夹</name>
+            	<submenu></submenu>
+            	<unique-id>1770791249778812-1</unique-id>
+            	<command>zeditor %f</command>
+            	<description>Example for a custom action</description>
+            	<range></range>
+            	<patterns>*</patterns>
+            	<startup-notify/>
+            	<directories/>
+            </action>
+
             </actions>
 
       '';

@@ -26,6 +26,7 @@
       tabstop = 2;
       shiftwidth = 4;
       softtabstop = 4;
+      fillchars = "eob: ";
     };
     highlightOverride = with config.lib.stylix.colors.withHashtag; {
       CursorLineNr = {
