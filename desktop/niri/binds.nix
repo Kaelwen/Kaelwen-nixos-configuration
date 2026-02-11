@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  tty = config.programs.terminal.tty;
+in
 {
   programs.niri.settings = {
     binds =
@@ -15,7 +18,7 @@
         # 应用启动
         "${mod}+T" = {
           hotkey-overlay.title = "打开终端";
-          action.spawn = [ "kitty" ];
+          action.spawn = [ tty ];
         };
         "${mod}+E" = {
           hotkey-overlay.title = "打开文件管理器";

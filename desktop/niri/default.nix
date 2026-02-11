@@ -25,7 +25,6 @@
       ./settings.nix
       ./rules.nix
       ./binds.nix
-
       ./scripts/screenshot
     ];
   };

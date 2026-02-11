@@ -6,6 +6,9 @@
   userName,
   ...
 }:
+let
+  tty = config.programs.terminal.tty;
+in
 {
   imports = [
     inputs.noctalia.homeModules.default
@@ -329,7 +332,7 @@
         pinnedApps = [ ];
         useApp2Unit = false;
         sortByMostUsed = true;
-        terminalCommand = "kitty";
+        terminalCommand = tty;
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
         viewMode = "list";

@@ -16,7 +16,6 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/penumbra-dark.yaml";
 
     polarity = "dark";
@@ -63,7 +62,7 @@
     opacity = {
       desktop = 0.9;
       popups = 0.95;
-      terminal = 0.8;
+      terminal = 0.9;
     };
   };
 }

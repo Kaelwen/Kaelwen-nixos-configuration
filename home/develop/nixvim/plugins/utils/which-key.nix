@@ -24,7 +24,7 @@
             group = "文件查找相关";
           }
           {
-            __unkeyed-1 = "<leader>c";
+            __unkeyed-1 = "<leader>l";
             group = "lsp相关";
           }
         ];

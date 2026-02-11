@@ -5,6 +5,6 @@
     ./image.nix
     # ./img-clip.nix
     ./markview.nix
-    # ./toggleterm.nix
+    ./toggleterm.nix
   ];
 }

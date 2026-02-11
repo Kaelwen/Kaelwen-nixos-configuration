@@ -37,7 +37,7 @@
     gestures.hot-corners.enable = false;
 
     layout = {
-      gaps = 6;
+      gaps = 4;
       background-color = "transparent";
       center-focused-column = "on-overflow";
       always-center-single-column = true;
@@ -50,7 +50,7 @@
         proportion = 0.7;
       };
       focus-ring = {
-        enable = true;
+        enable = false;
         width = 3;
         active.gradient = {
           angle = 45;

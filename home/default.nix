@@ -16,6 +16,7 @@
     ./daily
 
   ];
+  programs.terminal.tty = "alacritty";
   programs.home-manager.enable = true;
   home = {
     username = "${userName}";

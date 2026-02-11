@@ -9,7 +9,7 @@
       # OpenCode 主要功能快捷键
       {
         mode = "n";
-        key = "<leader>cc";
+        key = "<leader>a";
         action = "<cmd>lua require('opencode').toggle()<cr>";
         options = {
           desc = "打开OpenCode";

@@ -7,6 +7,6 @@
     ./editors
     ./languages
     ./git
-    ./mini.nix
+    # ./mini.nix
   ];
 }

@@ -4,9 +4,9 @@
   imports = [
     inputs.nixvim.homeModules.nixvim
     ./keymaps.nix
-    # ./lsp.nix
+
     ./plugins
-    # ./highlight.nix
+
   ];
   programs.nixvim = {
     enableNixpkgsReleaseCheck = false;

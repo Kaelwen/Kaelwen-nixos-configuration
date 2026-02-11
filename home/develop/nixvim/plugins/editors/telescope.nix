@@ -21,7 +21,7 @@
         };
       }
       {
-        action = "<CMD>Telescope find_files theme=dropdown previewer=false layout_config={height=0.3}<CR>";
+        action = "<CMD>Telescope find_files<CR>";
         key = "<leader>ff";
         options = {
           silent = true;
@@ -29,7 +29,7 @@
         };
       }
       {
-        action = "<CMD>Telescope grep_string theme=ivy layout_config={height=0.4}<CR>";
+        action = "<CMD>Telescope grep_string theme=ivy<CR>";
         key = "<leader>fs";
         options = {
           silent = true;
@@ -37,23 +37,23 @@
         };
       }
       {
-        action = "<CMD>Telescope live_grep theme=ivy layout_config={height=0.4}<CR>";
+        action = "<CMD>Telescope live_grep theme=ivy<CR>";
         key = "<leader>fg";
         options = {
           silent = true;
           desc = "全局搜索";
         };
       }
+      # {
+      #   action = "<CMD>Telescope buffers<CR>";
+      #   key = "<leader>b";
+      #   options = {
+      #     silent = true;
+      #     desc = "查看缓冲区";
+      #   };
+      # }
       {
-        action = "<CMD>Telescope buffers layout_config={mirror=true,prompt_position=top,height=0.4,width=0.6} layout_strategy=vertical previewer=false<CR>";
-        key = "<leader>fb";
-        options = {
-          silent = true;
-          desc = "查看缓冲区";
-        };
-      }
-      {
-        action = "<CMD>Telescope oldfiles theme=dropdown previewer=false layout_config={height=0.3}<CR>";
+        action = "<CMD>Telescope oldfiles theme=dropdown<CR>";
         key = "<leader>fo";
         options = {
           silent = true;

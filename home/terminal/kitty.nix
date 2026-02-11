@@ -1,40 +1,37 @@
 {
   pkgs,
   lib,
-  # config,
+  config,
   ...
 }:
 {
-  dconf = {
-    settings = {
-      "org/gnome/desktop/applications/terminal" = {
-        exec = lib.mkForce "kitty";
-      };
-      "org/cinnamon/desktop/applications/terminal" = {
-        exec = lib.mkForce "kitty";
-      };
-    };
+  options.programs.terminal.kitty = {
+    enable = lib.mkEnableOption "kitty terminal";
   };
-
-  programs.kitty = {
-    enable = true;
-    enableGitIntegration = true;
-    shellIntegration = {
-      enableBashIntegration = true;
-      enableFishIntegration = true;
+  config = lib.mkIf config.programs.terminal.kitty.enable {
+    dconf = {
+      settings = {
+        "org/gnome/desktop/applications/terminal" = {
+          exec = lib.mkForce "kitty";
+        };
+        "org/cinnamon/desktop/applications/terminal" = {
+          exec = lib.mkForce "kitty";
+        };
+      };
     };
-    # font = {
-    #   package = pkgs.maple-mono.NF-CN;
-    #   name = "Maple Mono NF CN";
-    #   size = 11;
-    # };
-    # themeFile = "tokyo_night_night";
-    settings = {
-      cursor_shape = "beam";
-      # background_opacity = 0.8;
-      # background_blur = 10;
-      cursor_trail = 1;
-      cursor_trail_start_threshold = 0;
+
+    programs.kitty = {
+      enable = true;
+      enableGitIntegration = true;
+      shellIntegration = {
+        enableBashIntegration = true;
+        enableFishIntegration = true;
+      };
+      settings = {
+        cursor_shape = "beam";
+        cursor_trail = 1;
+        cursor_trail_start_threshold = 0;
+      };
     };
   };
 }
