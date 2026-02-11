@@ -1,6 +1,5 @@
 {
   lib,
-  inputs,
   userName,
   ...
 }:
@@ -14,9 +13,14 @@
     ./tools
     ./browser
     ./daily
+    ./essential
 
   ];
   programs.terminal.tty = "alacritty";
+  programs.essential = {
+    fileChoose = "thunar";
+  };
+
   programs.home-manager.enable = true;
   home = {
     username = "${userName}";

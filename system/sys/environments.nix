@@ -28,12 +28,7 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     MOZ_ENABLE_WAYLAND = "1";
   };
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = [ "kitty.desktop" ];
-    };
-  };
+
   documentation = {
     nixos.enable = false;
   };

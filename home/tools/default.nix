@@ -13,13 +13,11 @@
     filezilla
     localsend
     libreoffice
-    # kdePackages.kdenlive
     gimp3-with-plugins
     evince
     gthumb
     mpv
-    nautilus
     obsidian
-    wlrctl
+
   ];
 }

@@ -6,6 +6,7 @@
 }:
 let
   tty = config.programs.terminal.tty;
+  fileChoose = config.programs.essential.fileChoose;
 in
 {
   programs.niri.settings = {
@@ -23,9 +24,7 @@ in
         "${mod}+E" = {
           hotkey-overlay.title = "打开文件管理器";
           action.spawn = [
-            (lib.getExe pkgs.nautilus)
-            # "kitty"
-            # "yazi"
+            fileChoose
           ];
         };
         XF86AudioLowerVolume = lib.mkDefault {

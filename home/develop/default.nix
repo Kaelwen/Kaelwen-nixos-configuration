@@ -1,8 +1,8 @@
 {
   imports = [
     ./distrobox
-    # ./uv.nix
-    ./pixi.nix
+    ./uv.nix
+    # ./pixi.nix
     # ./helix.nix
     ./environments.nix
     ./direnv

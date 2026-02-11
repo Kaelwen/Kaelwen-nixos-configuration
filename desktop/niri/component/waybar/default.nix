@@ -4,6 +4,9 @@
   lib,
   ...
 }:
+let
+  tty = config.programs.terminal.tty;
+in
 {
 
   programs.waybar = {
@@ -179,7 +182,7 @@
           interval = 3;
           format = " {usage:2}%";
           tooltip = true;
-          on-click = "kitty btop";
+          on-click = "${tty} -e btop";
         };
 
         memory = {
@@ -187,7 +190,7 @@
           format = " {:2}%";
           tooltip = true;
           tooltip-format = "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G";
-          on-click = "kitty btop";
+          on-click = "${tty} -e btop";
         };
         "custom/temperature" = {
           interval = 5;

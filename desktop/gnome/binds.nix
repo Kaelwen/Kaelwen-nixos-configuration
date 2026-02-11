@@ -1,4 +1,7 @@
-{ ... }:
+{ config, ... }:
+let
+  tty = config.programs.terminal.tty;
+in
 {
   dconf = {
     enable = true;
@@ -10,7 +13,7 @@
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "启动kitty终端";
-        command = "kitty";
+        command = tty;
         binding = "<Primary><Alt>t";
       };
       "org/gnome/desktop/wm/keybindings" = {

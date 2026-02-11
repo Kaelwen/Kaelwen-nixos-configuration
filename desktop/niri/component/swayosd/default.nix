@@ -48,12 +48,12 @@
   programs.waybar.settings = {
     mainBar = {
       pulseaudio = {
-        on-scroll-up = "swayosd-client --output-volume raise";
-        on-scroll-down = "swayosd-client --output-volume lower";
+        on-scroll-up = "swayosd-client --output-volume +1";
+        on-scroll-down = "swayosd-client --output-volume -1";
       };
       backlight = {
-        on-scroll-up = "swayosd-client --brightness raise";
-        on-scroll-down = "swayosd-client --brightness lower";
+        on-scroll-up = "swayosd-client --brightness +1";
+        on-scroll-down = "swayosd-client --brightness -1";
       };
     };
   };

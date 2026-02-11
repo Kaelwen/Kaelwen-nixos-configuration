@@ -17,7 +17,7 @@
   ];
 
   home-manager.users."${userName}" = {
-    home.packages = with pkgs; [ nautilus ];
+
     services.polkit-gnome.enable = true;
 
     imports = [
