@@ -1,28 +1,29 @@
 { pkgs, ... }:
-# let
-# wechat-wrapper = pkgs.writeShellScriptBin "wechat" ''
-#   export QT_IM_MODULE=fcitx
-#   export FCITX_QT_GUI_STYLE=fusion
-#   exec ${pkgs.wechat}/bin/wechat --disable-gpu --enable-wayland-ime "$@"
-# '';
-# in
+
 {
   home.packages = with pkgs; [
-    (qq.override {
-      commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
-    })
+    # (qq.override {
+    #   commandLineArgs = "--disable-gpu --enable-wayland-ime --wayland-text-input-version=3";
+    # })
     telegram-desktop
     wechat
 
-    animeko
+    # animeko
   ];
-  # xdg.desktopEntries.wechat = {
-  #   name = "WeChat";
-  #   exec = "env QT_IM_MODULE=fcitx ${pkgs.wechat}/bin/wechat";
-  #   icon = "wechat";
-  #   categories = [
-  #     "Network"
-  #     "InstantMessaging"
-  #   ];
-  # };
+
+  #我这一步只是为了qq能吃到主题图标
+  #nixpkgs的打包的图标路径写死了
+  xdg.desktopEntries.qq = {
+    name = "QQ";
+    exec = "${pkgs.qq}/bin/qq --disable-gpu --enable-wayland-ime --wayland-text-input-version=3 %U";
+    icon = "qq";
+    terminal = false;
+    type = "Application";
+    categories = [
+      "Network"
+      # "InstantMessaging"
+    ];
+    comment = "QQ";
+  };
+
 }

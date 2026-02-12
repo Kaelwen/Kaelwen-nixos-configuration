@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 {
 
   programs.swaylock = {
@@ -13,7 +18,7 @@
     indicator-radius=200
     indicator-thickness=15
     effect-blur=10x5
-    font=Maple Mono NF CN
+    font=${config.stylix.fonts.monospace.name}
   '';
 
   programs.niri.settings.binds = {

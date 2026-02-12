@@ -15,6 +15,6 @@
     ./swayosd
     ./swaync
     ./wlsunset
-    # # ./noctalia
+    # ./noctalia
   ];
 }

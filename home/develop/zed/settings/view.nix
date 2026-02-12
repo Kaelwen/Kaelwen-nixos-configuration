@@ -21,8 +21,8 @@
     };
     theme = lib.mkForce {
       mode = "system";
-      light = "Tokyo Night Moon";
-      dark = "Tokyo Night Moon";
+      light = "Catppuccin Mocha";
+      dark = "Catppuccin Mocha";
     };
     icon_theme = lib.mkForce "Catppuccin Frappé";
     # ui_font_size = lib.mkForce 15;

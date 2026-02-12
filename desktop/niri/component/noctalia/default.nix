@@ -1,9 +1,9 @@
 {
-  pkgs,
+
   inputs,
   config,
   lib,
-  userName,
+
   ...
 }:
 let
@@ -149,7 +149,8 @@ in
     settings = {
       settingsVersion = 0;
       bar = {
-        position = "top";
+        barType = "framed";
+        position = "left";
         monitors = [ ];
         density = "default";
         showOutline = false;
@@ -293,7 +294,7 @@ in
       wallpaper = {
         enabled = true;
         overviewEnabled = false;
-        directory = "/home/${userName}/Pictures/wallpapers";
+        directory = ../../../../assets/wallpapers;
         monitorDirectories = [ ];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;

@@ -6,7 +6,13 @@
 }:
 let
   colors = config.lib.stylix.colors;
+
+  wallpaperDir = builtins.path {
+    name = "wallpapers";
+    path = ../../../../assets/wallpapers;
+  };
 in
+
 {
   home.packages = with pkgs; [
     cliphist
@@ -25,7 +31,7 @@ in
         line-height = 30;
       };
       colors = lib.mkForce {
-        background = "${colors.base00}cc"; # 背景颜色
+        background = "${colors.base00}dc"; # 背景颜色
         text = "${colors.base05}ff"; # 未选中项的文本颜色
         selection = "${colors.base07}ff"; # 选中项的背景颜色
         selection-text = "${colors.base00}ff"; # 选中项的文本颜色
@@ -48,7 +54,10 @@ in
       "Mod+W" = {
         hotkey-overlay.title = "打开壁纸选择器";
         repeat = false;
-        action.spawn = [ "${./scripts/wallpaper.sh}" ];
+        action.spawn = [
+          "${./scripts/wallpaper.sh}"
+          "${wallpaperDir}"
+        ];
       };
     };
   };

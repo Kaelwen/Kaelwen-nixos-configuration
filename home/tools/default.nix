@@ -12,7 +12,9 @@
     postman
     filezilla
     localsend
-    libreoffice
+    libreoffice-fresh
+    kdePackages.kdenlive
+    # wpsoffice-cn
     gimp3-with-plugins
     evince
     gthumb

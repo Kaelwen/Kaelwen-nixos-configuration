@@ -33,11 +33,14 @@
         package = pkgs.sarasa-gothic;
         name = "Sarasa Gothic SC";
       };
-
       monospace = {
         package = pkgs.maple-mono.NF-CN;
         name = "Maple Mono NF CN";
       };
+      # monospace = {
+      #   package = pkgs.jetbrains-mono;
+      #   name = "JetBrains Mono";
+      # };
 
       emoji = {
         package = pkgs.noto-fonts-color-emoji;

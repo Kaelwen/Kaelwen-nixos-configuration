@@ -40,6 +40,7 @@
       gaps = 4;
       background-color = "transparent";
       center-focused-column = "on-overflow";
+      # center-focused-column = "never";
       always-center-single-column = true;
       preset-column-widths = [
         { proportion = 0.5; }

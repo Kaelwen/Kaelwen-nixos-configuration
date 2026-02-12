@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    # ./fastfetch.nix
+    ./fastfetch.nix
     ./kitty.nix
     ./alacritty.nix
     ./starship/default.nix

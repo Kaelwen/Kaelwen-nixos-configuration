@@ -44,14 +44,14 @@
           desc = "全局搜索";
         };
       }
-      # {
-      #   action = "<CMD>Telescope buffers<CR>";
-      #   key = "<leader>b";
-      #   options = {
-      #     silent = true;
-      #     desc = "查看缓冲区";
-      #   };
-      # }
+      {
+        action = "<CMD>Telescope buffers<CR>";
+        key = "<leader>bb";
+        options = {
+          silent = true;
+          desc = "查看缓冲区";
+        };
+      }
       {
         action = "<CMD>Telescope oldfiles theme=dropdown<CR>";
         key = "<leader>fo";

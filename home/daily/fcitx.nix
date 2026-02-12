@@ -12,8 +12,7 @@
             rime-zhwiki
           ];
         })
-        # fcitx5-gtk
-        # fcitx5-inflex-themes
+
       ];
       # ignoreUserConfig = true;
       waylandFrontend = true;

@@ -1,4 +1,5 @@
-WALLPAPER_DIR="${WALLPAPER_DIR:-$HOME/Pictures/wallpapers}/" 
+WALLPAPER_DIR="$1"
+
 # 启动 swww 守护进程
 if ! pgrep -x "swww-daemon" >/dev/null 2>&1; then
     swww-daemon >/dev/null 2>&1 &
@@ -7,7 +8,10 @@ fi
 
 # 收集壁纸
 mapfile -t WALLS < <(find -L "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) | sort)
-[ ${#WALLS[@]} -eq 0 ] && { rofi -e "在 $WALLPAPER_DIR 中未找到壁纸"; exit 1; }
+[ ${#WALLS[@]} -eq 0 ] && {
+    rofi -e "在 $WALLPAPER_DIR 中未找到壁纸"
+    exit 1
+}
 
 # 构建 rofi 菜单 - 直接使用原始图片作为图标
 MENU_ITEMS=""

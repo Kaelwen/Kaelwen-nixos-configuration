@@ -5,8 +5,8 @@
 }:
 let
   vspkgs = {
-    vscode-qt-for-python = pkgs.callPackage ./extensions/vscode-qt-for-python.nix { };
-    opencode = pkgs.callPackage ./extensions/opencode.nix { };
+    # vscode-qt-for-python = pkgs.callPackage ./extensions/vscode-qt-for-python.nix { };
+    # opencode = pkgs.callPackage ./extensions/opencode.nix { };
   };
 in
 {
@@ -60,9 +60,8 @@ in
 
         ]
         ++ (with vspkgs; [
-          vscode-qt-for-python
-          # opencode
-          # trae
+          # vscode-qt-for-python
+
         ]);
 
       userSettings = {

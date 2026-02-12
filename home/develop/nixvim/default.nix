@@ -23,6 +23,7 @@
       relativenumber = false;
       numberwidth = 3;
       expandtab = true;
+      winblend = 20;
       tabstop = 2;
       shiftwidth = 4;
       softtabstop = 4;

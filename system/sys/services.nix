@@ -39,7 +39,7 @@
 
     acpid.enable = true;
 
-    speechd.enable = lib.mkForce false;
+    speechd.enable = true;
 
   };
 }

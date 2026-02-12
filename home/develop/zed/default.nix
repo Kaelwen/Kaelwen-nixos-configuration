@@ -11,8 +11,9 @@
     extensions = [
       "basher"
       "catppuccin-icons"
-      "Tokyo Night Themes"
-      "csharp"
+      "Catppuccin"
+      # "Tokyo Night Themes"
+      # "csharp"
       "colorizer"
       "git-firefly"
       "html"
@@ -28,6 +29,7 @@
       "toml"
       "vue"
       "qml"
+
     ];
   };
 }

@@ -210,7 +210,7 @@ in
         #css
         ''
           * {
-            font-family: "Maple Mono NF CN", monospace;
+            font-family: "${config.stylix.fonts.monospace.name}", monospace;
             font-size: 14px;
           }
           window#waybar {
