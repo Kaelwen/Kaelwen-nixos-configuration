@@ -15,13 +15,13 @@
           "store"
         ];
       }
-      {
-        command = [
-          "bash"
-          "-c"
-          "echo 'Xft.dpi: 144' | xrdb -merge"
-        ];
-      }
+      # {
+      # command = [
+      #   "bash"
+      #   "-c"
+      #   "echo 'Xft.dpi: 144' | xrdb -merge"
+      # ];
+      # }
       { command = [ "swww-daemon" ]; }
     ];
     prefer-no-csd = true;
@@ -37,7 +37,7 @@
     gestures.hot-corners.enable = false;
 
     layout = {
-      gaps = 4;
+      gaps = 8;
       background-color = "transparent";
       center-focused-column = "on-overflow";
       # center-focused-column = "never";
@@ -48,7 +48,7 @@
         { proportion = 1.0; }
       ];
       default-column-width = {
-        proportion = 0.7;
+        proportion = 0.5;
       };
       focus-ring = {
         enable = true;
@@ -71,6 +71,21 @@
       };
       touchpad.natural-scroll = true;
       keyboard.xkb.options = "caps:escape";
+    };
+    outputs = {
+      "HDMI-A-1" = {
+        focus-at-startup = true;
+        mode = {
+          width = 1920;
+          height = 1080;
+          refresh = 100.0;
+        };
+        scale = 1;
+      };
+      "eDP-1" = {
+        enable = false;
+        scale = 1.5;
+      };
     };
   };
 }

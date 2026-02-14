@@ -38,6 +38,7 @@
     window-rules = [
       {
         draw-border-with-background = false;
+        # opacity = 0.9;
         geometry-corner-radius = {
           top-left = 8.0;
           top-right = 8.0;

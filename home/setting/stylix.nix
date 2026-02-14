@@ -2,13 +2,19 @@
   pkgs,
   config,
   inputs,
+  lib,
   ...
 }:
 
 {
   imports = [
-    inputs.stylix.nixosModules.stylix
+    inputs.stylix.homeModules.stylix
   ];
+  specialisation = {
+    onedark.configuration = {
+      stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+    };
+  };
   stylix = {
     enable = true;
     overlays.enable = true;

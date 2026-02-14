@@ -4,7 +4,6 @@
     # NixOS 官方软件源，这里使用 nixos-25.05 分支
     nixpkgs.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "nixpkgs/nixos-25.11";
-    # flake-utils.url = "github:numtide/flake-utils";
     # flake-parts.url = "github:hercules-ci/flake-parts";
 
     # chaotic = {
