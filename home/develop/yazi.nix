@@ -11,5 +11,5 @@
       chmod = pkgs.yaziPlugins.chmod;
     };
   };
-  # programs.fzf.enable = true;
+  programs.fzf.enable = true;
 }

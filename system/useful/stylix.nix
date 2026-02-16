@@ -10,11 +10,11 @@
   imports = [
     inputs.stylix.nixosModules.stylix
   ];
-  specialisation = {
-    onedark.configuration = {
-      stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-    };
-  };
+  # specialisation = {
+  #   onedark.configuration = {
+  #     stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+  #   };
+  # };
   stylix = {
     enable = true;
     overlays.enable = true;
@@ -36,8 +36,8 @@
       serif = config.stylix.fonts.sansSerif;
 
       sansSerif = {
-        package = pkgs.sarasa-gothic;
-        name = "Sarasa Gothic SC";
+        package = pkgs.lxgw-wenkai;
+        name = "LXGW WenKai";
       };
       monospace = {
         package = pkgs.maple-mono.NF-CN;

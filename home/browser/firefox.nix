@@ -8,11 +8,11 @@
 
   programs.librewolf = {
     enable = true;
-    # package = pkgs.librewolf;
+
     languagePacks = [ "zh-CN" ];
-    nativeMessagingHosts = with pkgs; [
-      keepassxc
-    ];
+    # nativeMessagingHosts = with pkgs; [
+    #   keepassxc
+    # ];
 
     policies = {
       AutofillAddressEnabled = true;

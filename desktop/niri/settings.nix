@@ -37,7 +37,7 @@
     gestures.hot-corners.enable = false;
 
     layout = {
-      gaps = 8;
+      gaps = 4;
       background-color = "transparent";
       center-focused-column = "on-overflow";
       # center-focused-column = "never";

@@ -12,8 +12,6 @@
       ];
     })
 
-    # mangohud
-    # protonup-rs
   ];
 
 }

@@ -6,6 +6,7 @@
     ./btop.nix
     ./opencode.nix
     ./fileChoose
+    ./video
     # ./wpsoffice/default.nix
 
   ];
@@ -19,8 +20,6 @@
     gimp3-with-plugins
     evince
     gthumb
-    mpv
     obsidian
-
   ];
 }

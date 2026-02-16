@@ -47,13 +47,12 @@
     #   url = "github:xddxdd/nix-cachyos-kernel";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-    };
+    # zen-browser = {
+    #   url = "github:0xc000022070/zen-browser-flake";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #   };
+    # };
 
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
@@ -70,10 +69,6 @@
       nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = {
-          # pkgs-stable = import nixpkgs-stable {
-          #   inherit system;
-          #   config.allowUnfree = true;
-          # };
           my-pkgs = inputs.myNixpkgs.packages.${system};
           inherit
             self
@@ -84,7 +79,6 @@
         };
         modules = [
           ./host/laptop
-          # inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
 
         ];
