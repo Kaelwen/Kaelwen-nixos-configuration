@@ -6,8 +6,9 @@
 }:
 {
   imports = [
-    ../system
-    ../desktop
+    ../../system
+    ../../desktop
+    ./hardware-configuration.nix
   ];
 
   home-manager = {
@@ -15,7 +16,7 @@
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs userName my-pkgs; };
     users = {
-      "${userName}" = import ../home;
+      "${userName}" = import ../../home;
     };
     backupFileExtension = "backup";
   };

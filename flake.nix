@@ -83,7 +83,7 @@
             ;
         };
         modules = [
-          ./host/configuration.nix
+          ./host/laptop
           # inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
 

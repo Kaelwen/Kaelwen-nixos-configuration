@@ -5,7 +5,7 @@
     wl-clipboard
   ];
   imports = [
-    # ./mako
+    ./mako
     ./waybar
     ./swayidle
     ./swaylock
@@ -13,7 +13,7 @@
     # ./rofi
     ./fuzzel
     ./swayosd
-    ./swaync
+    # ./swaync
     ./wlsunset
     # ./noctalia
   ];

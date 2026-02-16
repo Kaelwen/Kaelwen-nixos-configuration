@@ -5,6 +5,7 @@
     ./obs-studio.nix
     ./btop.nix
     ./opencode.nix
+    ./fileChoose
     # ./wpsoffice/default.nix
 
   ];

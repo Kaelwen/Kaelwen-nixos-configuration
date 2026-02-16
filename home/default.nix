@@ -13,7 +13,6 @@
     ./tools
     ./browser
     ./daily
-    ./essential
 
   ];
   # programs.terminal.tty = "alacritty";

@@ -27,7 +27,7 @@ in
         prompt = "干嘛？"; # 输入提示符
         icons-enabled = "yes"; # 是否启用应用图标
         lines = 12; # 显示的匹配项数量
-        width = 56; # 窗口宽度（以字符为单位）
+        width = 60; # 窗口宽度（以字符为单位）
         line-height = 30;
       };
       colors = lib.mkForce {

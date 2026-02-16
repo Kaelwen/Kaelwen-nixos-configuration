@@ -1,14 +1,9 @@
-{ ... }:
 {
   imports = [
     ./boot.nix
     ./docker.nix
-    # ./podman.nix
     ./environments.nix
-    # ./fcitx.nix
-
     ./fonts.nix
-    ./hardware-configuration.nix
     ./hardware.nix
     ./i18n.nix
     ./networking.nix

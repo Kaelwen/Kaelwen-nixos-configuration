@@ -6,6 +6,6 @@
     ./xdg.nix
     # ./theme.nix
     ./rime
-    ./stylix.nix
+    # ./stylix.nix
   ];
 }

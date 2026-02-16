@@ -38,37 +38,37 @@
         misc.enable = true; # 杂项工具
       };
     };
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>e";
-        action = "<cmd>lua MiniFiles.open()<cr>";
-        options.desc = "文件树";
-      }
-      {
-        mode = "n";
-        key = "<leader>f";
-        action = "<cmd>lua MiniPick.builtin.files()<cr>";
-        options.desc = "查找文件";
-      }
-      {
-        mode = "n";
-        key = "<leader>b";
-        action = "<cmd>lua MiniPick.builtin.buffers()<cr>";
-        options.desc = "缓冲区列表";
-      }
-      {
-        mode = "n";
-        key = "<leader>h";
-        action = "<cmd>lua MiniPick.builtin.help()<cr>";
-        options.desc = "帮助文档";
-      }
-      {
-        mode = "n";
-        key = "<leader>g";
-        action = "<cmd>lua MiniPick.builtin.grep_live()<cr>";
-        options.desc = "全文搜索";
-      }
+    # keymaps = [
+    #   {
+    #     mode = "n";
+    #     key = "<leader>e";
+    #     action = "<cmd>lua MiniFiles.open()<cr>";
+    #     options.desc = "文件树";
+    #   }
+    #   {
+    #     mode = "n";
+    #     key = "<leader>f";
+    #     action = "<cmd>lua MiniPick.builtin.files()<cr>";
+    #     options.desc = "查找文件";
+    #   }
+    #   {
+    #     mode = "n";
+    #     key = "<leader>b";
+    #     action = "<cmd>lua MiniPick.builtin.buffers()<cr>";
+    #     options.desc = "缓冲区列表";
+    #   }
+    #   {
+    #     mode = "n";
+    #     key = "<leader>h";
+    #     action = "<cmd>lua MiniPick.builtin.help()<cr>";
+    #     options.desc = "帮助文档";
+    #   }
+    #   {
+    #     mode = "n";
+    #     key = "<leader>g";
+    #     action = "<cmd>lua MiniPick.builtin.grep_live()<cr>";
+    #     options.desc = "全文搜索";
+    #   }
       # {
       #   mode = "n";
       #   key = "<leader>/";

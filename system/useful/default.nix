@@ -6,7 +6,7 @@
     ./libvirt.nix
     ./steam.nix
     ./sudo.nix
-    # ./stylix.nix
-    # ./waydroid.nix
+    ./stylix.nix
+    ./waydroid.nix
   ];
 }

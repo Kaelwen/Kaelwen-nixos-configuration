@@ -8,7 +8,7 @@
 
 {
   imports = [
-    inputs.stylix.homeModules.stylix
+    inputs.stylix.nixosModules.stylix
   ];
   specialisation = {
     onedark.configuration = {
@@ -43,11 +43,6 @@
         package = pkgs.maple-mono.NF-CN;
         name = "Maple Mono NF CN";
       };
-      # monospace = {
-      #   package = pkgs.jetbrains-mono;
-      #   name = "JetBrains Mono";
-      # };
-
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
@@ -60,14 +55,12 @@
         terminal = 11;
       };
     };
-
     icons = {
       enable = true;
       package = pkgs.whitesur-icon-theme;
       dark = "WhiteSur";
       light = "WhiteSur";
     };
-
     opacity = {
       desktop = 0.9;
       popups = 0.95;

@@ -83,7 +83,7 @@
         scale = 1;
       };
       "eDP-1" = {
-        enable = false;
+        enable = true;
         scale = 1.5;
       };
     };
