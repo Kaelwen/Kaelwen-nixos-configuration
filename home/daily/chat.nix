@@ -21,7 +21,6 @@
     type = "Application";
     categories = [
       "Network"
-      # "InstantMessaging"
     ];
     comment = "QQ";
   };

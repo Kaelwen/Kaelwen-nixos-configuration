@@ -260,7 +260,7 @@ in
           #idle_inhibitor,
           #custom-swaync,
           #workspaces {
-              background: #${config.lib.stylix.colors.base00};
+              background: alpha(#${config.lib.stylix.colors.base00},0.8);
               transition: all 0.3s ease;
               border-radius: 1em;
               margin: 0 0.25em;
@@ -280,7 +280,7 @@ in
           #power-profiles-daemon:hover,
           #idle_inhibitor:hover,
           #custom-swaync:hover {
-              background: #${config.lib.stylix.colors.base02}; 
+              background: alpha(#${config.lib.stylix.colors.base02},0.8); 
           }
 
           #network {color: #${config.lib.stylix.colors.base0C};}

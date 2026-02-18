@@ -7,8 +7,6 @@
     ./opencode.nix
     ./fileChoose
     ./video
-    # ./wpsoffice/default.nix
-
   ];
   home.packages = with pkgs; [
     postman

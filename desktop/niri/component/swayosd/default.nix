@@ -52,8 +52,8 @@
         on-scroll-down = "swayosd-client --output-volume -1";
       };
       backlight = {
-        on-scroll-up = "swayosd-client --brightness +1";
-        on-scroll-down = "swayosd-client --brightness -1";
+        on-scroll-up = "swayosd-client --brightness raise";
+        on-scroll-down = "swayosd-client --brightness lower";
       };
     };
   };
