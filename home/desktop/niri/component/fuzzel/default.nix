@@ -9,7 +9,7 @@ let
 
   wallpaperDir = builtins.path {
     name = "wallpapers";
-    path = ../../../../assets/wallpapers;
+    path = ../../../../../assets/wallpapers;
   };
 in
 

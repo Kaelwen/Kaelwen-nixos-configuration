@@ -1,20 +1,11 @@
 {
   pkgs,
   config,
-  inputs,
-  lib,
   ...
 }:
 
 {
-  imports = [
-    inputs.stylix.nixosModules.stylix
-  ];
-  # specialisation = {
-  #   onedark.configuration = {
-  #     stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-  #   };
-  # };
+
   stylix = {
     enable = true;
     overlays.enable = true;
@@ -27,8 +18,8 @@
     polarity = "dark";
     cursor = {
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      # name = "Bibata-Modern-Classic";
+      # name = "Bibata-Modern-Ice";
+      name = "Bibata-Modern-Classic";
       size = 26;
     };
 
@@ -40,8 +31,8 @@
         name = "LXGW WenKai";
       };
       monospace = {
-        package = pkgs.maple-mono.NF-CN;
-        name = "Maple Mono NF CN";
+        package = pkgs.maple-mono.CN;
+        name = "Maple Mono CN";
       };
       emoji = {
         package = pkgs.noto-fonts-color-emoji;

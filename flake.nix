@@ -4,12 +4,12 @@
     # NixOS 官方软件源，这里使用 nixos-25.05 分支
     nixpkgs.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "nixpkgs/nixos-25.11";
-    # flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
-    # chaotic = {
-    #   url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
@@ -60,28 +60,12 @@
     };
   };
   outputs =
-    { self, nixpkgs, ... }@inputs:
-    let
-      userName = "binigo";
-      hostName = "nixos";
-    in
-    {
-      nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        specialArgs = {
-          my-pkgs = inputs.myNixpkgs.packages.${system};
-          inherit
-            self
-            inputs
-            userName
-            hostName
-            ;
-        };
-        modules = [
-          ./host/laptop
-          inputs.home-manager.nixosModules.default
-
-        ];
-      };
+    { self, ... }@inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+      imports = [
+        ./hosts/laptop
+        { _module.args = { inherit inputs self; }; }
+      ];
     };
 }

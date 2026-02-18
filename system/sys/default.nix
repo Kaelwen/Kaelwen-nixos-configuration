@@ -12,5 +12,7 @@
     ./plymouth.nix
     ./nix.nix
     ./user.nix
+    ./sddm.nix
+    ./niri.nix
   ];
 }

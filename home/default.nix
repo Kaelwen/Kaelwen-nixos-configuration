@@ -9,10 +9,10 @@
     ./develop
     ./setting
     ./terminal
-    ./game
     ./tools
     ./browser
-    ./daily
+    ./apps
+    ./desktop
 
   ];
   # programs.terminal.tty = "alacritty";
@@ -34,6 +34,6 @@
       after = lib.mkForce [ ];
     };
 
-    stateVersion = "25.05";
+    stateVersion = "26.05";
   };
 }

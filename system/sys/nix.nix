@@ -29,10 +29,6 @@
       ];
     };
   };
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowBroken = false;
-  };
   programs.nh = {
     enable = true;
   };
