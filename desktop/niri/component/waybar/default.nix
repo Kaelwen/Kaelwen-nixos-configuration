@@ -153,19 +153,19 @@ in
 
         };
         pulseaudio = {
-          format = "{icon} {volume:2}%";
-          format-muted = " ";
+          format = " {volume:2}%";
+          format-muted = " {volume:2}%";
           format-bluetooth = "";
           tooltip = false;
-          format-icons = {
-            headphone = "";
-            bluetooth = "";
-            speaker = [
-              ""
-              ""
-              ""
-            ];
-          };
+          # format-icons = {
+          #   headphone = "";
+          #   bluetooth = "";
+          #   speaker = [
+          #     ""
+          #     ""
+          #     ""
+          #   ];
+          # };
           on-click = "${lib.getExe pkgs.pavucontrol} -t 3";
           on-scroll-up = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
           on-scroll-down = lib.mkDefault "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
