@@ -37,7 +37,7 @@
     gestures.hot-corners.enable = false;
 
     layout = {
-      gaps = 4;
+      gaps = 8;
       background-color = "transparent";
       center-focused-column = "on-overflow";
       # center-focused-column = "never";
@@ -83,7 +83,7 @@
         scale = 1;
       };
       "eDP-1" = {
-        enable = true;
+        enable = false;
         scale = 1.5;
       };
     };

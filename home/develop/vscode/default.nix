@@ -12,7 +12,7 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    # package = pkgs.vscodium;
 
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -24,6 +24,7 @@ in
           # ms-vscode.remote-explorer
           ms-ceintl.vscode-language-pack-zh-hans
           adpyke.codesnap
+          saoudrizwan.claude-dev
           #python
           ms-python.python
           ms-pyright.pyright

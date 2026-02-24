@@ -2,7 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
@@ -61,7 +61,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("/tmp/rofi/images/pink_puppy.jpg", height);
+    background-image:            url("~/.config/rofi/images/pink_puppy.jpg", height);
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
     // children:                    [ "inputbar", "dummy"];
@@ -136,7 +136,7 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     10px;
     background-color:            transparent;
     text-color:                  @foreground;

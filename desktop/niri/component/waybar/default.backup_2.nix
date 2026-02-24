@@ -22,28 +22,26 @@ in
         orientation = "horizontal";
         fixed-center = true;
 
-        # margin = "2 4 2 4";
+        margin = "2 4 2 4";
         modules-left = [
+          # "custom/wlogout"
           "niri/workspaces"
           "cpu"
           "memory"
-          # "temperature"
-          "custom/div_left"
+          "temperature"
+          "mpd"
         ];
         modules-center = [
-          "custom/div_right"
-          "network"
-          "bluetooth"
-          "clock"
           "power-profiles-daemon"
+          "clock"
           "idle_inhibitor"
-          "custom/div_left"
         ];
         modules-right = [
           # "custom/apps"
-          "custom/div_right"
           "tray"
           "battery"
+          "network"
+          "bluetooth"
           "pulseaudio"
           "backlight"
           "custom/swaync"
@@ -108,10 +106,10 @@ in
           tooltip-format-deactivated = "idle Enabled";
         };
         network = {
-          format-disabled = "{icon}";
-          format-disconnected = "{icon}";
-          format-wifi = "{icon}";
-          format-ethernet = "{icon}";
+          format-disabled = "{icon} 开门!";
+          format-disconnected = "{icon} {Disconnected}";
+          format-wifi = "{icon} {essid}";
+          format-ethernet = "{icon} {ifname}";
           format-icons = {
             disconnected = "󰤮";
             disabled = "󰤮";
@@ -205,13 +203,31 @@ in
           tooltip = false;
           on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t";
         };
-        "custom/div_left" = {
-          format = "";
-          tooltip = false;
-        };
-        "custom/div_right" = {
-          format = "";
-          tooltip = false;
+        mpd = {
+          format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
+          format-disconnected = "Disconnected ";
+          format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
+          unknown-tag = "N/A";
+          interval = 5;
+          consume-icons = {
+            on = " ";
+          };
+          random-icons = {
+            off = "<span color=\"#f53c3c\"></span> ";
+            on = " ";
+          };
+          repeat-icons = {
+            on = " ";
+          };
+          single-icons = {
+            on = "1 ";
+          };
+          state-icons = {
+            paused = "";
+            playing = "";
+          };
+          tooltip-format = "MPD (connected)";
+          tooltip-format-disconnected = "MPD (disconnected)";
         };
       };
     };
@@ -226,7 +242,6 @@ in
           window#waybar {
               background: transparent;
               color: #${config.lib.stylix.colors.base05};
-              border-top: 0.5em solid #${config.lib.stylix.colors.base01};
           }
 
           tooltip {
@@ -239,11 +254,13 @@ in
             color: #${config.lib.stylix.colors.base05};
             font-size: 0.89em;
           }
+
           #workspaces button {
             padding: 0px 0.56em;
             border-radius: 0.8em;
             transition: all 0.3s ease;
             color: #${config.lib.stylix.colors.base03};
+
           }
           #workspaces button:hover {
             color: #${config.lib.stylix.colors.base06};
@@ -251,6 +268,10 @@ in
           #workspaces button.active {
             color: #${config.lib.stylix.colors.base06};
           }
+          #clock {
+            color: #${config.lib.stylix.colors.base06};
+          }
+
           #network,
           #battery,
           #pulseaudio,
@@ -265,9 +286,29 @@ in
           #idle_inhibitor,
           #custom-swaync,
           #workspaces {
+              background: alpha(#${config.lib.stylix.colors.base00},0.8);
+              transition: all 0.3s ease;
+              border-radius: 1em;
+              margin: 0 0.25em;
               padding: 0 0.7em;
-              background: #${config.lib.stylix.colors.base01};
           }
+
+          #network:hover,
+          #battery:hover,
+          #pulseaudio:hover,
+          #backlight:hover,
+          #bluetooth:hover,
+          #cpu:hover,
+          #memory:hover,
+          #temperature:hover,
+          #clock:hover,
+          #tray:hover,
+          #power-profiles-daemon:hover,
+          #idle_inhibitor:hover,
+          #custom-swaync:hover {
+              background: alpha(#${config.lib.stylix.colors.base02},0.8);
+          }
+
           #network {color: #${config.lib.stylix.colors.base0C};}
           #battery {color: #${config.lib.stylix.colors.base0B};}
           #pulseaudio {color: #${config.lib.stylix.colors.base0A};}
@@ -284,6 +325,7 @@ in
           #idle_inhibitor {
             color: #${config.lib.stylix.colors.base07};
           }
+
           #power-profiles-daemon.performance {
               color: #${config.lib.stylix.colors.base08};
           }
@@ -292,12 +334,6 @@ in
           }
           #power-profiles-daemon.power-saver {
               color: #${config.lib.stylix.colors.base0B}
-          }
-
-          #custom-div_left,
-          #custom-div_right {
-            font-size: 1.44em;
-            color: #${config.lib.stylix.colors.base01};
           }
         '';
   };

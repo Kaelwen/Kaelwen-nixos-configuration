@@ -7,7 +7,7 @@ in
     ./fastfetch.nix
     ./kitty.nix
     ./alacritty.nix
-    ./starship/default.nix
+    # ./starship/default.nix
     ./fish.nix
   ];
   options.programs.terminal = {

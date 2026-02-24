@@ -7,7 +7,7 @@ if [ -z "$history" ]; then
 fi
 
 # 使用 fuzzel 进行模糊选择（显示内容，但保留 ID）
-selected=$(echo "$history" | rofi - dmenu)
+selected=$(echo "$history" | rofi -dmenu -theme ~/.config/rofi/themes/clip.rasi)
 
 # 如果用户取消（无输出），则退出
 if [ -z "$selected" ]; then

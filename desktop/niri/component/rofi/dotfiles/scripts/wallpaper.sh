@@ -1,7 +1,6 @@
 set -euo pipefail
 
-# 配置
-WALLPAPER_DIR="${WALLPAPER_DIR:-$HOME/Pictures/wallpapers}/"
+WALLPAPER_DIR="$1"
 ROFI_THEME="${ROFI_THEME:-$HOME/.config/rofi/themes/wallpaper.rasi}"
 # ROFI_THEME="${ROFI_THEME:-$HOME/nixos-configuration/desktop/niri/rofi/dotfiles/themes/wallpaper.rasi}"
 

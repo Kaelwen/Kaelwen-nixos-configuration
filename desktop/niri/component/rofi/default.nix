@@ -5,6 +5,7 @@
     cliphist
     wl-clipboard
     swww
+    # ags
   ];
 
   xdg.configFile."rofi/config.rasi".source = ./dotfiles/config.rasi;
@@ -22,13 +23,13 @@
           selected:                    #${config.lib.stylix.colors.base07};
           active:                      #${config.lib.stylix.colors.base02};
           urgent:                      #${config.lib.stylix.colors.base08};
-      } 
+      }
     '';
 
   programs.niri.settings = {
-    spawn-at-startup = [
-      { command = [ "~/.config/rofi/scripts/bg-setup.sh" ]; }
-    ];
+    # spawn-at-startup = [
+    #   { command = [ "~/.config/rofi/scripts/bg-setup.sh" ]; }
+    # ];
     binds = {
       "Mod+D" = {
         hotkey-overlay.title = "打开搜索";
@@ -43,7 +44,10 @@
       "Mod+W" = {
         hotkey-overlay.title = "打开壁纸选择器";
         repeat = false;
-        action.spawn = [ "~/.config/rofi/scripts/wallpaper.sh" ];
+        action.spawn = [
+          "~/.config/rofi/scripts/wallpaper.sh"
+          "${../../../../assets/wallpapers}"
+        ];
       };
     };
   };
