@@ -4,31 +4,38 @@
 
 桌面组件：
 
-- waybar （顶栏）
-- fuzzel （程序选择器）
-- swayidle（自动熄屏）
-- swaylock（锁屏）
-- swayosd （音量、屏幕亮度窗口）
-- swaync （通知）
-- wlsunset (护眼模式)
-- swww (壁纸)
+| 组件     | 功能                         |
+| -------- | ---------------------------- |
+| waybar   | 顶栏                         |
+| rofi     | 程序选择器/剪贴板/壁纸切换器 |
+| swayidle | 自动熄屏                     |
+| swaylock | 锁屏                         |
+| swaync   | 通知                         |
+| wlsunset | 护眼模式                     |
+| swww     | 壁纸                         |
 
-主题配色管理：stylix
+- 主题配色管理：stylix
+- shell：fish
 
-![alt text](assets/images/image-1.png)
+### 展示
 
-也有gnome的配置
+#### waybar
 
-可在home.nix中选择要哪个终端和文件选择器（后续更改）
+![waybar](assets/images/waybar.png)
 
-```nix
-  programs.terminal.tty = "alacritty";
-  # programs.terminal.tty = "kitty";
-  programs.essential = {
-    fileChoose = "thunar";
-  };
-```
+#### rofi
 
-fish为shell
+- 程序选择
+  ![app选择](./assets/images/rofi.png)
+
+- 壁纸切换
+  ![壁纸切换](./assets/images/wallpaper.png)
+
+---
+
+## 待修改
+
+1. 完善options
+   打算整一个config.nix统一切换（有时候想用kitty,有时候想用alacirtty;有时候想用自己配的waybar、rofi之类的，有时候想直接noctalia;... ）【纠结】
 
 ---

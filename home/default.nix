@@ -15,8 +15,8 @@
     ./daily
 
   ];
-  # programs.terminal.tty = "alacritty";
-  programs.terminal.tty = "kitty";
+  programs.terminal.tty = "alacritty";
+  # programs.terminal.tty = "kitty";
   programs.essential = {
     fileChoose = "thunar";
   };
