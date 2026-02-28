@@ -1,16 +1,16 @@
 { userName, ... }:
 {
+  users.groups.i2c = { };
   users.users."${userName}" = {
     isNormalUser = true;
     description = "binigo";
     extraGroups = [
       "networkmanager"
       "wheel"
+      "i2c"
+      "video"
     ];
     useDefaultShell = true;
-    # hashedPassword = "$y$j9T$6gZ7oMbqXxIUsVlSDyYLv.$m/H7OSzGtWs6va8gu93FZaduMmutzEbGDlnoCw6G1LC";
-    # packages = with pkgs; [
-    #   #  thunderbird
-    # ];
+
   };
 }

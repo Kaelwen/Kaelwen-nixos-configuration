@@ -5,6 +5,7 @@
     cliphist
     wl-clipboard
     swww
+    ddcutil
     # ags
   ];
 

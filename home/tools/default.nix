@@ -19,5 +19,7 @@
     evince
     gthumb
     obsidian
+    # jetbrains.idea-community
+    # beekeeper-studio
   ];
 }
