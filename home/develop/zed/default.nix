@@ -11,7 +11,7 @@
     extensions = [
       "basher"
       "catppuccin-icons"
-      "Catppuccin"
+      "catppuccin"
       # "Tokyo Night Themes"
       # "csharp"
       "colorizer"

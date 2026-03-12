@@ -11,5 +11,6 @@
     # ./stm32.nix
     ./nixvim
     ./zed
+    # ./openclaw.nix
   ];
 }

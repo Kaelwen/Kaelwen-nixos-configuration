@@ -75,6 +75,7 @@
     outputs = {
       "HDMI-A-1" = {
         focus-at-startup = true;
+        # enable = false;
         mode = {
           width = 1920;
           height = 1080;
@@ -83,7 +84,7 @@
         scale = 1;
       };
       "eDP-1" = {
-        enable = false;
+        # enable = false;
         scale = 1.5;
       };
     };

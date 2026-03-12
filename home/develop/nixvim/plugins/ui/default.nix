@@ -1,7 +1,7 @@
 {
   imports = [
     ./ui.nix
-    # ./dashboard.nix
+    ./dashboard.nix
     ./bufferline.nix
   ];
 }

@@ -50,8 +50,11 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-
     };
+    # openclaw = {
+    #   url = "github:openclaw/nix-openclaw";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     myNixpkgs = {
       url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
@@ -80,7 +83,6 @@
           ./host/laptop
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
-
         ];
       };
     };
