@@ -15,13 +15,13 @@
           "store"
         ];
       }
-      # {
-      # command = [
-      #   "bash"
-      #   "-c"
-      #   "echo 'Xft.dpi: 144' | xrdb -merge"
-      # ];
-      # }
+      {
+        command = [
+          "bash"
+          "-c"
+          "echo 'Xft.dpi: 144' | xrdb -merge"
+        ];
+      }
       { command = [ "swww-daemon" ]; }
     ];
     prefer-no-csd = true;
@@ -37,7 +37,7 @@
     gestures.hot-corners.enable = false;
 
     layout = {
-      gaps = 8;
+      gaps = 4;
       background-color = "transparent";
       center-focused-column = "on-overflow";
       # center-focused-column = "never";

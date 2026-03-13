@@ -12,14 +12,11 @@
     postman
     filezilla
     localsend
-    libreoffice-fresh
     kdePackages.kdenlive
-    # wpsoffice-cn
+    wpsoffice-cn
     gimp3-with-plugins
     evince
     gthumb
     obsidian
-    # jetbrains.idea-community
-    # beekeeper-studio
   ];
 }
