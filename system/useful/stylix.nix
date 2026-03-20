@@ -2,7 +2,6 @@
   pkgs,
   config,
   inputs,
-  lib,
   ...
 }:
 
@@ -10,26 +9,16 @@
   imports = [
     inputs.stylix.nixosModules.stylix
   ];
-  # specialisation = {
-  #   onedark.configuration = {
-  #     stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-  #   };
-  # };
   stylix = {
     enable = true;
     overlays.enable = true;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/penumbra-dark.yaml";
-
     polarity = "dark";
     cursor = {
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      # name = "Bibata-Modern-Classic";
+      # name = "Bibata-Modern-Ice";
+      name = "Bibata-Modern-Classic";
       size = 26;
     };
 
@@ -65,7 +54,7 @@
     opacity = {
       desktop = 0.9;
       popups = 0.95;
-      terminal = 0.8;
+      terminal = 0.9;
     };
   };
 }

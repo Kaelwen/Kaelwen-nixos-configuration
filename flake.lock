@@ -350,26 +350,6 @@
         "type": "github"
       }
     },
-    "myNixpkgs": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1763727168,
-        "narHash": "sha256-w5o1pehpthSe8yMm8WaZ5Lqgm9Tpyw+JsL80HpPMdMI=",
-        "ref": "refs/heads/main",
-        "rev": "bdbe6f7f62e6e8908e61d62479159a589e3d1572",
-        "revCount": 3,
-        "type": "git",
-        "url": "https://gitee.com/binigo/nixos-repo-of-binigo.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://gitee.com/binigo/nixos-repo-of-binigo.git"
-      }
-    },
     "niri": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -614,7 +594,6 @@
       "inputs": {
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",
-        "myNixpkgs": "myNixpkgs",
         "niri": "niri",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nixpkgs": "nixpkgs",

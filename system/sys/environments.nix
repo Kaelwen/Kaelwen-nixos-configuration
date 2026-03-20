@@ -8,13 +8,11 @@
     git
     zip
     unzip
+    kitty
     nix-output-monitor
     unrar
     mesa
-    # intel-vaapi-driver
-    # bibata-cursors
     ffmpeg
-    # kdePackages.ksshaskpass
 
   ];
 

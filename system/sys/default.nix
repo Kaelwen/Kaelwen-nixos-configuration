@@ -4,7 +4,7 @@
     ./docker.nix
     ./environments.nix
     ./fonts.nix
-    ./hardware.nix
+    # ./hardware.nix
     ./i18n.nix
     ./networking.nix
     ./pipewire.nix

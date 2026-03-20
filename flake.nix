@@ -15,10 +15,7 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # dms = {
-    #   url = "github:AvengeMedia/DankMaterialShell/stable";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,13 +33,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # minecraft-plymouth-theme = {
-    #   url = "github:nikp123/minecraft-plymouth-theme";
-    #   inputs = {
-    #     flake-parts.follows = "flake-parts";
-    #     nixpkgs.follows = "nixpkgs";
-    #   };
-    # };
+
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,10 +43,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    myNixpkgs = {
-      url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # myNixpkgs = {
+    #   url = "git+https://gitee.com/binigo/nixos-repo-of-binigo.git";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
   outputs =
     { self, nixpkgs, ... }@inputs:
@@ -64,10 +55,10 @@
       hostName = "nixos";
     in
     {
-      nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem rec {
+      nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          my-pkgs = inputs.myNixpkgs.packages.${system};
+          # my-pkgs = inputs.myNixpkgs.packages.${system};
           inherit
             self
             inputs

@@ -51,7 +51,7 @@
         proportion = 0.5;
       };
       focus-ring = {
-        enable = true;
+        enable = false;
         width = 3;
         active.gradient = {
           angle = 45;
