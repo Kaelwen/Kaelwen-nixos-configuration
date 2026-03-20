@@ -131,7 +131,7 @@ in
           format-disabled = "󰂲";
           format = "󰂯";
           format-connected = "󰂱";
-          on-click = "${pkgs.blueberry}/bin/blueberry";
+          on-click = "${tty} -e ${lib.getExe pkgs.bluetui}";
         };
 
         backlight = {

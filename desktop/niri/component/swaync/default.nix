@@ -68,7 +68,7 @@
             }
             {
               label = "󰂯";
-              command = "${pkgs.swaynotificationcenter}/bin/swaync-client -t | ${pkgs.blueberry}/bin/blueberry";
+              # command = "${pkgs.swaynotificationcenter}/bin/swaync-client -t | ${pkgs.blueberry}/bin/blueberry";
             }
             {
               label = "󰏘";

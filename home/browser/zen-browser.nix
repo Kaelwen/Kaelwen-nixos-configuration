@@ -7,7 +7,7 @@
   programs.zen-browser = {
     enable = true;
     languagePacks = [ "zh-CN" ];
-    suppressXdgMigrationWarning = true;
+    # suppressXdgMigrationWarning = true;
     policies = {
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;

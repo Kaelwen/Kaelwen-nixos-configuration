@@ -5,6 +5,7 @@
     ./environments.nix
     ./fonts.nix
     # ./hardware.nix
+    ./bluetooth.nix
     ./i18n.nix
     ./networking.nix
     ./pipewire.nix
